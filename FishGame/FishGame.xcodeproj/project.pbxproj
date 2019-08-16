@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		51660B3ED39FAF3288303FFB /* Pods_FishGameUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E76E83D022E81F57663D4BAE /* Pods_FishGameUITests.framework */; };
+		5510D10BF76F3011A7295613 /* Pods_FishGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E76174F6C464EFFDD847811 /* Pods_FishGame.framework */; };
+		AB0426ECC48703FF4924C6A1 /* Pods_FishGameTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 470CCBA9A62833DB22C527F2 /* Pods_FishGameTests.framework */; };
 		EF0DD7DE23053F5700F7E7CB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0DD7DD23053F5700F7E7CB /* AppDelegate.swift */; };
 		EF0DD7E323053F5700F7E7CB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EF0DD7E123053F5700F7E7CB /* Main.storyboard */; };
 		EF0DD7E623053F5700F7E7CB /* FishGame.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = EF0DD7E423053F5700F7E7CB /* FishGame.xcdatamodeld */; };
@@ -38,6 +41,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04A7C152A4CC958AB2580DA1 /* Pods-FishGameUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FishGameUITests.release.xcconfig"; path = "Target Support Files/Pods-FishGameUITests/Pods-FishGameUITests.release.xcconfig"; sourceTree = "<group>"; };
+		0E76174F6C464EFFDD847811 /* Pods_FishGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FishGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		470CCBA9A62833DB22C527F2 /* Pods_FishGameTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FishGameTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		67AFBF13F14DA835B0E41E34 /* Pods-FishGameTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FishGameTests.debug.xcconfig"; path = "Target Support Files/Pods-FishGameTests/Pods-FishGameTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7FFDA331E1CA9E4A9070317D /* Pods-FishGameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FishGameTests.release.xcconfig"; path = "Target Support Files/Pods-FishGameTests/Pods-FishGameTests.release.xcconfig"; sourceTree = "<group>"; };
+		9BC7FE49DF6240F7C10575EF /* Pods-FishGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FishGame.release.xcconfig"; path = "Target Support Files/Pods-FishGame/Pods-FishGame.release.xcconfig"; sourceTree = "<group>"; };
+		E3CF834E1B8C75D41FE861D2 /* Pods-FishGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FishGame.debug.xcconfig"; path = "Target Support Files/Pods-FishGame/Pods-FishGame.debug.xcconfig"; sourceTree = "<group>"; };
+		E76E83D022E81F57663D4BAE /* Pods_FishGameUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FishGameUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF0DD7DA23053F5700F7E7CB /* FishGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FishGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF0DD7DD23053F5700F7E7CB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EF0DD7E223053F5700F7E7CB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -55,6 +66,7 @@
 		EF0DD8172305441700F7E7CB /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
 		EF0DD81B23054ED000F7E7CB /* UIDevice-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice-Extension.swift"; sourceTree = "<group>"; };
 		EF9518DA2306348B00B676C9 /* FishTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishTwoViewController.swift; sourceTree = "<group>"; };
+		F12964EABAE8A7EE12F1C357 /* Pods-FishGameUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FishGameUITests.debug.xcconfig"; path = "Target Support Files/Pods-FishGameUITests/Pods-FishGameUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5510D10BF76F3011A7295613 /* Pods_FishGame.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB0426ECC48703FF4924C6A1 /* Pods_FishGameTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,12 +90,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51660B3ED39FAF3288303FFB /* Pods_FishGameUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		168AD1C604BEF36E9896D105 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E3CF834E1B8C75D41FE861D2 /* Pods-FishGame.debug.xcconfig */,
+				9BC7FE49DF6240F7C10575EF /* Pods-FishGame.release.xcconfig */,
+				67AFBF13F14DA835B0E41E34 /* Pods-FishGameTests.debug.xcconfig */,
+				7FFDA331E1CA9E4A9070317D /* Pods-FishGameTests.release.xcconfig */,
+				F12964EABAE8A7EE12F1C357 /* Pods-FishGameUITests.debug.xcconfig */,
+				04A7C152A4CC958AB2580DA1 /* Pods-FishGameUITests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		6F5A20D8C468F0B7A68B2146 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0E76174F6C464EFFDD847811 /* Pods_FishGame.framework */,
+				470CCBA9A62833DB22C527F2 /* Pods_FishGameTests.framework */,
+				E76E83D022E81F57663D4BAE /* Pods_FishGameUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EF0DD7D123053F5600F7E7CB = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +128,8 @@
 				EF0DD7F423053F5900F7E7CB /* FishGameTests */,
 				EF0DD7FF23053F5900F7E7CB /* FishGameUITests */,
 				EF0DD7DB23053F5700F7E7CB /* Products */,
+				168AD1C604BEF36E9896D105 /* Pods */,
+				6F5A20D8C468F0B7A68B2146 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -184,9 +225,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF0DD80523053F5900F7E7CB /* Build configuration list for PBXNativeTarget "FishGame" */;
 			buildPhases = (
+				11931914489F46741F9D11BF /* [CP] Check Pods Manifest.lock */,
 				EF0DD7D623053F5700F7E7CB /* Sources */,
 				EF0DD7D723053F5700F7E7CB /* Frameworks */,
 				EF0DD7D823053F5700F7E7CB /* Resources */,
+				9EBC0BEE1E1B6C7CD600C1E2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -201,6 +244,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF0DD80823053F5900F7E7CB /* Build configuration list for PBXNativeTarget "FishGameTests" */;
 			buildPhases = (
+				1C72653089C33DF45BCDD078 /* [CP] Check Pods Manifest.lock */,
 				EF0DD7ED23053F5900F7E7CB /* Sources */,
 				EF0DD7EE23053F5900F7E7CB /* Frameworks */,
 				EF0DD7EF23053F5900F7E7CB /* Resources */,
@@ -219,6 +263,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EF0DD80B23053F5900F7E7CB /* Build configuration list for PBXNativeTarget "FishGameUITests" */;
 			buildPhases = (
+				05F98F48C1309EFCAF4D1592 /* [CP] Check Pods Manifest.lock */,
 				EF0DD7F823053F5900F7E7CB /* Sources */,
 				EF0DD7F923053F5900F7E7CB /* Frameworks */,
 				EF0DD7FA23053F5900F7E7CB /* Resources */,
@@ -302,6 +347,92 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		05F98F48C1309EFCAF4D1592 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FishGameUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		11931914489F46741F9D11BF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FishGame-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1C72653089C33DF45BCDD078 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FishGameTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9EBC0BEE1E1B6C7CD600C1E2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FishGame/Pods-FishGame-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FishGame/Pods-FishGame-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FishGame/Pods-FishGame-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EF0DD7D623053F5700F7E7CB /* Sources */ = {
@@ -486,6 +617,7 @@
 		};
 		EF0DD80623053F5900F7E7CB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E3CF834E1B8C75D41FE861D2 /* Pods-FishGame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -505,6 +637,7 @@
 		};
 		EF0DD80723053F5900F7E7CB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9BC7FE49DF6240F7C10575EF /* Pods-FishGame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -524,6 +657,7 @@
 		};
 		EF0DD80923053F5900F7E7CB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 67AFBF13F14DA835B0E41E34 /* Pods-FishGameTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -545,6 +679,7 @@
 		};
 		EF0DD80A23053F5900F7E7CB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7FFDA331E1CA9E4A9070317D /* Pods-FishGameTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -566,6 +701,7 @@
 		};
 		EF0DD80C23053F5900F7E7CB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F12964EABAE8A7EE12F1C357 /* Pods-FishGameUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -586,6 +722,7 @@
 		};
 		EF0DD80D23053F5900F7E7CB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04A7C152A4CC958AB2580DA1 /* Pods-FishGameUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
