@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Lottie
 
 class FishOneViewController: UIViewController
 {
@@ -23,7 +24,10 @@ class FishOneViewController: UIViewController
     let barLeftFish = UIImageView()
     let barRightFish = UIImageView()
     
-    let fishView = UIImageView()
+    let fishView = AnimationView()
+    
+
+    let Bubble = BubbleView(frame: CGRect(x: 0.45*K_ScreenW, y: 0.1*K_ScreenH, width: 0.135*K_ScreenW, height: 0.72*0.135*K_ScreenW), idiom: "学富五车")
     
     override func viewDidLoad()
     {
@@ -43,10 +47,17 @@ extension FishOneViewController
         backgroundView.image = UIImage(named: "背景图")
         self.view.addSubview(backgroundView)
         
-        fishView.image = UIImage(named: "鱼1")
-        fishView.frame = CGRect(x: 1.2*K_ScreenW, y: 100, width: 0.108*K_ScreenW, height: 0.653*0.108*K_ScreenW)
+        let animation = Animation.named("8194-sea-turtle")
+        fishView.animation = animation
+        fishView.contentMode = .scaleAspectFit
+        fishView.play()
+        fishView.loopMode = .loop
+        fishView.isUserInteractionEnabled = true
+        fishView.tag = 1000
+//        fishView.frame = CGRect(x: 1.2*K_ScreenW, y: 100, width: 0.108*K_ScreenW, height: 0.653*0.108*K_ScreenW)
+        fishView.frame = CGRect(x: 1.2*K_ScreenW, y: 100, width: 300, height: 100)
         self.view.addSubview(fishView)
-        //第一个界面没有更小的鱼
+        //        第一个界面没有更小的鱼
         //        barLeftFish.frame = CGRect(x: 0.0255*K_ScreenW, y: 0.035*K_ScreenH, width: 0.078*K_ScreenW, height: 0.63*0.078*K_ScreenW)
         //        barLeftFish.image = UIImage(named: "小鱼1")
         //        self.view.addSubview(barLeftFish)
@@ -55,7 +66,7 @@ extension FishOneViewController
         progressBar.image = UIImage(named: "进度条")
         self.view.addSubview(progressBar)
         
-        barRightFish.frame = CGRect(x: progressBar.frame.origin.x + 0.253*K_ScreenW + 0.018*K_ScreenW, y: 0.025*K_ScreenH, width: 0.078*K_ScreenW, height: 0.63*0.078*K_ScreenW)
+        barRightFish.frame = CGRect(x: progressBar.frame.origin.x + 0.253*K_ScreenW + 0.018*K_ScreenW, y: 0.035*K_ScreenH, width: 0.06*K_ScreenW, height: 0.63*0.06*K_ScreenW)
         barRightFish.image = UIImage(named: "小鱼2")
         self.view.addSubview(barRightFish)
         
@@ -90,6 +101,12 @@ extension FishOneViewController
         //        }
         //        turnleftButton.setImage(UIImage(named: "左切换"), for: .normal)
         //        self.view.addSubview(turnleftButton)
+        setupBubble()
+    }
+    private func setupBubble()
+    {
+        Bubble.alpha = 0.0
+        self.view.addSubview(Bubble)
     }
 }
 
@@ -113,6 +130,11 @@ extension FishOneViewController
         animation1.timingFunctions = [CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)]
         animation1.delegate = self
         fishView.layer.add(animation1, forKey: "route1")
+        UIView.animate(withDuration: 1.0, delay: 5, options: .curveEaseIn, animations: {
+            self.Bubble.alpha = 1.0
+        }, completion: {(Bool) in UIView.animate(withDuration: 1, delay: 0, options: .curveEaseOut, animations: {
+            self.Bubble.alpha = 0.0
+        }, completion: {(Bool) in print("2结束")})})
     }
     @objc func fishRunRoute2()
     {
