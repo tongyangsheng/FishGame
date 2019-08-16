@@ -55,7 +55,7 @@ extension FishOneViewController
         progressBar.image = UIImage(named: "进度条")
         self.view.addSubview(progressBar)
         
-        barRightFish.frame = CGRect(x: progressBar.frame.origin.x + 0.253*K_ScreenW + 0.018*K_ScreenW, y: 0.03*K_ScreenH, width: 0.078*K_ScreenW, height: 0.63*0.078*K_ScreenW)
+        barRightFish.frame = CGRect(x: progressBar.frame.origin.x + 0.253*K_ScreenW + 0.018*K_ScreenW, y: 0.025*K_ScreenH, width: 0.078*K_ScreenW, height: 0.63*0.078*K_ScreenW)
         barRightFish.image = UIImage(named: "小鱼2")
         self.view.addSubview(barRightFish)
         
@@ -99,12 +99,15 @@ extension FishOneViewController
     {
         //路线1
         let animation1 = CAKeyframeAnimation(keyPath: "position")
-        let value1: NSValue = NSValue(cgPoint: CGPoint(x: 1.2*K_ScreenW, y: 0.24*K_ScreenH))
-        let value2: NSValue = NSValue(cgPoint: CGPoint(x: -0.2*K_ScreenW, y: 0.3*K_ScreenH))
-        animation1.values = [value1, value2]
+        let value1: NSValue = NSValue(cgPoint: CGPoint(x: 1.21*K_ScreenW, y: 0.24*K_ScreenH))
+        let value2: NSValue = NSValue(cgPoint: CGPoint(x: 0.9*K_ScreenW, y: 0.6*K_ScreenH))
+        let value3: NSValue = NSValue(cgPoint: CGPoint(x: 0.7*K_ScreenW, y: 0.35*K_ScreenH))
+        let value4: NSValue = NSValue(cgPoint: CGPoint(x: 0.3*K_ScreenW, y: 0.65*K_ScreenH))
+        let value5: NSValue = NSValue(cgPoint: CGPoint(x: -0.1*K_ScreenW, y: 0.3*K_ScreenH))
+        animation1.values = [value1, value2, value3, value4, value5]
         
         animation1.autoreverses = false
-        animation1.duration = 6.0
+        animation1.duration = 10.0
         animation1.isRemovedOnCompletion = false
         animation1.fillMode = CAMediaTimingFillMode.forwards
         animation1.timingFunctions = [CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)]
@@ -115,15 +118,15 @@ extension FishOneViewController
     {
         //路线2
         let animation1 = CAKeyframeAnimation(keyPath: "position")
-        let value1: NSValue = NSValue(cgPoint: CGPoint(x: -0.2*K_ScreenW, y: 0.3*K_ScreenH))
+        let value1: NSValue = NSValue(cgPoint: CGPoint(x: -0.1*K_ScreenW, y: 0.3*K_ScreenH))
         let value2: NSValue = NSValue(cgPoint: CGPoint(x: 0.1*K_ScreenW, y: 0.7*K_ScreenH))
         let value3: NSValue = NSValue(cgPoint: CGPoint(x: 0.4*K_ScreenW, y: 0.3*K_ScreenH))
         let value4: NSValue = NSValue(cgPoint: CGPoint(x: 0.7*K_ScreenW, y: 0.6*K_ScreenH))
-        let value5: NSValue = NSValue(cgPoint: CGPoint(x: 1.2*K_ScreenW, y: 0.5*K_ScreenH))
+        let value5: NSValue = NSValue(cgPoint: CGPoint(x: 1.1*K_ScreenW, y: 0.5*K_ScreenH))
         animation1.values = [value1, value2, value3, value4, value5]
         
         animation1.autoreverses = false
-        animation1.duration = 8.0
+        animation1.duration = 12.0
         animation1.isRemovedOnCompletion = false
         animation1.fillMode = CAMediaTimingFillMode.forwards
         animation1.timingFunctions = [CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)]
@@ -134,9 +137,9 @@ extension FishOneViewController
     {
         //路线3
         let animation1 = CAKeyframeAnimation(keyPath: "position")
-        let value1: NSValue = NSValue(cgPoint: CGPoint(x: 1.2*K_ScreenW, y: 0.5*K_ScreenH))
+        let value1: NSValue = NSValue(cgPoint: CGPoint(x: 1.1*K_ScreenW, y: 0.5*K_ScreenH))
         let value2: NSValue = NSValue(cgPoint: CGPoint(x: 0.5*K_ScreenW, y: 0.25*K_ScreenH))
-        let value3: NSValue = NSValue(cgPoint: CGPoint(x: -0.2*K_ScreenW, y: 0.3*K_ScreenH))
+        let value3: NSValue = NSValue(cgPoint: CGPoint(x: -0.1*K_ScreenW, y: 0.3*K_ScreenH))
         animation1.values = [value1, value2, value3]
         
         animation1.autoreverses = false
@@ -151,16 +154,16 @@ extension FishOneViewController
     {
         //路线4
         let animation1 = CAKeyframeAnimation(keyPath: "position")
-        let value1: NSValue = NSValue(cgPoint: CGPoint(x: -0.2*K_ScreenW, y: 0.3*K_ScreenH))
+        let value1: NSValue = NSValue(cgPoint: CGPoint(x: -0.1*K_ScreenW, y: 0.3*K_ScreenH))
         let value2: NSValue = NSValue(cgPoint: CGPoint(x: 0.2*K_ScreenW, y: 0.25*K_ScreenH))
         let value3: NSValue = NSValue(cgPoint: CGPoint(x: 0.3*K_ScreenW, y: 0.6*K_ScreenH))
         let value4: NSValue = NSValue(cgPoint: CGPoint(x: 0.6*K_ScreenW, y: 0.5*K_ScreenH))
-        let value5: NSValue = NSValue(cgPoint: CGPoint(x: 1.2*K_ScreenW, y: 0.24*K_ScreenH))
+        let value5: NSValue = NSValue(cgPoint: CGPoint(x: 1.1*K_ScreenW, y: 0.24*K_ScreenH))
         
         animation1.values = [value1, value2, value3, value4, value5]
         
         animation1.autoreverses = false
-        animation1.duration = 6.0
+        animation1.duration = 11.0
         animation1.isRemovedOnCompletion = false
         animation1.fillMode = CAMediaTimingFillMode.forwards
         animation1.timingFunctions = [CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)]
@@ -182,7 +185,6 @@ extension FishOneViewController: CAAnimationDelegate
 {
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool)
     {
-        print(self.fishView.layer.animationKeys()!)
         if self.fishView.layer.animationKeys()! == ["route1"]
         {
             var transform: CGAffineTransform = CGAffineTransform.identity
