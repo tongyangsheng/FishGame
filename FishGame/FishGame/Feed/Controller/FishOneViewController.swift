@@ -28,6 +28,8 @@ class FishOneViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        self.navigationController?.delegate = self
+        self.edgesForExtendedLayout = UIRectEdge.init(rawValue: 0)
         setupUI()
         fishRun()
     }
@@ -42,18 +44,18 @@ extension FishOneViewController
         self.view.addSubview(backgroundView)
         
         fishView.image = UIImage(named: "鱼1")
-        fishView.frame = CGRect(x: 700, y: 100, width: 0.108*K_ScreenW, height: 0.653*0.108*K_ScreenW)
+        fishView.frame = CGRect(x: 1.2*K_ScreenW, y: 100, width: 0.108*K_ScreenW, height: 0.653*0.108*K_ScreenW)
         self.view.addSubview(fishView)
-        
-        barLeftFish.frame = CGRect(x: 0.0255*K_ScreenW, y: 0.04*K_ScreenH, width: 0.078*K_ScreenW, height: 0.63*0.078*K_ScreenW)
-        barLeftFish.image = UIImage(named: "小鱼1")
-        self.view.addSubview(barLeftFish)
+          //第一个界面没有更小的鱼
+//        barLeftFish.frame = CGRect(x: 0.0255*K_ScreenW, y: 0.035*K_ScreenH, width: 0.078*K_ScreenW, height: 0.63*0.078*K_ScreenW)
+//        barLeftFish.image = UIImage(named: "小鱼1")
+//        self.view.addSubview(barLeftFish)
         
         progressBar.frame = CGRect(x: 0.0255*K_ScreenW + 0.078*K_ScreenW + 0.018*K_ScreenW, y: 0.05*K_ScreenH, width: 0.253*K_ScreenW, height: 0.065*K_ScreenH)
         progressBar.image = UIImage(named: "进度条")
         self.view.addSubview(progressBar)
         
-        barRightFish.frame = CGRect(x: progressBar.frame.origin.x + 0.253*K_ScreenW + 0.018*K_ScreenW, y: 0.04*K_ScreenH, width: 0.078*K_ScreenW, height: 0.63*0.078*K_ScreenW)
+        barRightFish.frame = CGRect(x: progressBar.frame.origin.x + 0.253*K_ScreenW + 0.018*K_ScreenW, y: 0.03*K_ScreenH, width: 0.078*K_ScreenW, height: 0.63*0.078*K_ScreenW)
         barRightFish.image = UIImage(named: "小鱼2")
         self.view.addSubview(barRightFish)
         
@@ -75,47 +77,78 @@ extension FishOneViewController
         
         turnrightButton.frame = CGRect(x: K_ScreenW - 0.03*K_ScreenW - 0.033*K_ScreenW, y: 0.437*K_ScreenH, width: 0.033*K_ScreenW, height: 0.128*K_ScreenH)
         turnrightButton.setImage(UIImage(named: "右切换"), for: .normal)
+        turnrightButton.addTarget(self, action: #selector(pressNext(_:)), for: .touchUpInside)
         self.view.addSubview(turnrightButton)
-        
-        if(UIDevice.current.isX())
-        {
-            turnleftButton.frame = CGRect(x: 0.055*K_ScreenW, y: 0.437*K_ScreenH, width: 0.033*K_ScreenW, height: 0.128*K_ScreenH)
-        }
-        else
-        {
-            turnleftButton.frame = CGRect(x: 0.03*K_ScreenW, y: 0.437*K_ScreenH, width: 0.033*K_ScreenW, height: 0.128*K_ScreenH)
-        }
-        turnleftButton.setImage(UIImage(named: "左切换"), for: .normal)
-        self.view.addSubview(turnleftButton)
+        //第一个界面不能左滑
+//        if(UIDevice.current.isX())
+//        {
+//            turnleftButton.frame = CGRect(x: 0.055*K_ScreenW, y: 0.437*K_ScreenH, width: 0.033*K_ScreenW, height: 0.128*K_ScreenH)
+//        }
+//        else
+//        {
+//            turnleftButton.frame = CGRect(x: 0.03*K_ScreenW, y: 0.437*K_ScreenH, width: 0.033*K_ScreenW, height: 0.128*K_ScreenH)
+//        }
+//        turnleftButton.setImage(UIImage(named: "左切换"), for: .normal)
+//        self.view.addSubview(turnleftButton)
     }
     @objc func fishRun()
     {
-        /*
-         提供一组关键帧位置，使得动画view的中心依次落在这些关键点上，形成动画
-         */
-        let animation = CAKeyframeAnimation(keyPath: "position")
-        let value1: NSValue = NSValue(cgPoint: CGPoint(x: 0.78*K_ScreenW, y: 0.24*K_ScreenH))
+        //路线1
+        let animation1 = CAKeyframeAnimation(keyPath: "position")
+        let value1: NSValue = NSValue(cgPoint: CGPoint(x: 1.2*K_ScreenW, y: 0.24*K_ScreenH))
         let value2: NSValue = NSValue(cgPoint: CGPoint(x: 0.2*K_ScreenW, y: 0.3*K_ScreenH))
-        let value3: NSValue = NSValue(cgPoint: CGPoint(x: 0.5*K_ScreenW, y: 0.6*K_ScreenH))
-        let value4: NSValue = NSValue(cgPoint: CGPoint(x: 0.4*K_ScreenW, y: 0.5*K_ScreenH))
-        let value5: NSValue = NSValue(cgPoint: CGPoint(x: 0.25*K_ScreenW, y: 0.4*K_ScreenH))
-        let value6: NSValue = NSValue(cgPoint: CGPoint(x: 0.78*K_ScreenW, y: 0.6*K_ScreenH))
-        animation.values = [value1, value2, value3, value4, value5, value6]
+        animation1.values = [value1, value2]
         
-        animation.repeatCount = MAXFLOAT
-        animation.autoreverses = true
-        animation.duration = 15.0
-        animation.isRemovedOnCompletion = false
-        animation.fillMode = CAMediaTimingFillMode.forwards
-        animation.timingFunctions = [CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)]
-        animation.delegate = self
-        fishView.layer.add(animation, forKey: nil)
+        //路线2
+        let animation2 = CAKeyframeAnimation(keyPath: "position")
+        let value3: NSValue = NSValue(cgPoint: CGPoint(x: 1.2*K_ScreenW, y: 0.24*K_ScreenH))
+        let value4: NSValue = NSValue(cgPoint: CGPoint(x: 0.2*K_ScreenW, y: 0.3*K_ScreenH))
+        animation2.values = [value3, value4]
+        
+        //动画组合
+        let animationGroup: CAAnimationGroup = CAAnimationGroup()
+        animationGroup.animations = [animation1,animation2]
+        animationGroup.duration = 5.0;
+        animationGroup.delegate = self
+        animationGroup.fillMode = CAMediaTimingFillMode.forwards;
+        animationGroup.isRemovedOnCompletion = false
+        fishView.layer.add(animationGroup, forKey:nil)
+        
+//        animation1.autoreverses = false
+//        animation1.duration = 5.0
+//        animation1.isRemovedOnCompletion = false
+//        animation1.fillMode = CAMediaTimingFillMode.forwards
+//        animation1.timingFunctions = [CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)]
+//        animation1.delegate = self
+//        fishView.layer.add(animation1, forKey: "route1")
     }
-    
+}
+
+extension FishOneViewController
+{
+    @objc func pressNext(_ button: UIButton)
+    {
+        let SecondVC = FishTwoViewController()
+        self.navigationController?.pushViewController(SecondVC, animated: true)
+    }
 }
 
 extension FishOneViewController: CAAnimationDelegate
 {
-    
+//    func animationDidStop(_ anim: CAAnimation, finished flag: Bool)
+//    {
+//            print("翻转")
+//            var transform: CGAffineTransform = CGAffineTransform.identity
+//            transform = CGAffineTransform.init(scaleX: -1, y: 1)
+//            fishView.transform = transform
+//    }
+}
+
+extension FishOneViewController: UINavigationControllerDelegate
+{
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool)
+    {
+            navigationController.setNavigationBarHidden(true, animated: true)
+    }
 }
 
