@@ -31,7 +31,7 @@ class FishOneViewController: UIViewController
         self.navigationController?.delegate = self
         self.edgesForExtendedLayout = UIRectEdge.init(rawValue: 0)
         setupUI()
-        fishRun()
+        fishRunRoute1()
     }
 }
 
@@ -91,36 +91,58 @@ extension FishOneViewController
 //        turnleftButton.setImage(UIImage(named: "左切换"), for: .normal)
 //        self.view.addSubview(turnleftButton)
     }
-    @objc func fishRun()
+}
+
+extension FishOneViewController
+{
+    @objc func fishRunRoute1()
     {
         //路线1
         let animation1 = CAKeyframeAnimation(keyPath: "position")
         let value1: NSValue = NSValue(cgPoint: CGPoint(x: 1.2*K_ScreenW, y: 0.24*K_ScreenH))
-        let value2: NSValue = NSValue(cgPoint: CGPoint(x: 0.2*K_ScreenW, y: 0.3*K_ScreenH))
+        let value2: NSValue = NSValue(cgPoint: CGPoint(x: -0.2*K_ScreenW, y: 0.3*K_ScreenH))
         animation1.values = [value1, value2]
         
+        animation1.autoreverses = false
+        animation1.duration = 6.0
+        animation1.isRemovedOnCompletion = false
+        animation1.fillMode = CAMediaTimingFillMode.forwards
+        animation1.timingFunctions = [CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)]
+        animation1.delegate = self
+        fishView.layer.add(animation1, forKey: "route1")
+    }
+    @objc func fishRunRoute2()
+    {
         //路线2
-        let animation2 = CAKeyframeAnimation(keyPath: "position")
-        let value3: NSValue = NSValue(cgPoint: CGPoint(x: 1.2*K_ScreenW, y: 0.24*K_ScreenH))
-        let value4: NSValue = NSValue(cgPoint: CGPoint(x: 0.2*K_ScreenW, y: 0.3*K_ScreenH))
-        animation2.values = [value3, value4]
+        let animation1 = CAKeyframeAnimation(keyPath: "position")
+        let value1: NSValue = NSValue(cgPoint: CGPoint(x: -0.2*K_ScreenW, y: 0.3*K_ScreenH))
+        let value2: NSValue = NSValue(cgPoint: CGPoint(x: 1.2*K_ScreenW, y: 0.5*K_ScreenH))
+        animation1.values = [value1, value2]
         
-        //动画组合
-        let animationGroup: CAAnimationGroup = CAAnimationGroup()
-        animationGroup.animations = [animation1,animation2]
-        animationGroup.duration = 5.0;
-        animationGroup.delegate = self
-        animationGroup.fillMode = CAMediaTimingFillMode.forwards;
-        animationGroup.isRemovedOnCompletion = false
-        fishView.layer.add(animationGroup, forKey:nil)
+        animation1.autoreverses = false
+        animation1.duration = 8.0
+        animation1.isRemovedOnCompletion = false
+        animation1.fillMode = CAMediaTimingFillMode.forwards
+        animation1.timingFunctions = [CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)]
+        animation1.delegate = self
+        fishView.layer.add(animation1, forKey: "route2")
+    }
+    @objc func fishRunRoute3()
+    {
+        //路线2
+        let animation1 = CAKeyframeAnimation(keyPath: "position")
+        let value1: NSValue = NSValue(cgPoint: CGPoint(x: 1.2*K_ScreenW, y: 0.5*K_ScreenH))
+        let value2: NSValue = NSValue(cgPoint: CGPoint(x: 0.5*K_ScreenW, y: 0.2*K_ScreenH))
+        let value3: NSValue = NSValue(cgPoint: CGPoint(x: -0.2*K_ScreenW, y: 0.3*K_ScreenH))
+        animation1.values = [value1, value2, value3]
         
-//        animation1.autoreverses = false
-//        animation1.duration = 5.0
-//        animation1.isRemovedOnCompletion = false
-//        animation1.fillMode = CAMediaTimingFillMode.forwards
-//        animation1.timingFunctions = [CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)]
-//        animation1.delegate = self
-//        fishView.layer.add(animation1, forKey: "route1")
+        animation1.autoreverses = false
+        animation1.duration = 8.0
+        animation1.isRemovedOnCompletion = false
+        animation1.fillMode = CAMediaTimingFillMode.forwards
+        animation1.timingFunctions = [CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)]
+        animation1.delegate = self
+        fishView.layer.add(animation1, forKey: "route3")
     }
 }
 
@@ -135,13 +157,32 @@ extension FishOneViewController
 
 extension FishOneViewController: CAAnimationDelegate
 {
-//    func animationDidStop(_ anim: CAAnimation, finished flag: Bool)
-//    {
-//            print("翻转")
-//            var transform: CGAffineTransform = CGAffineTransform.identity
-//            transform = CGAffineTransform.init(scaleX: -1, y: 1)
-//            fishView.transform = transform
-//    }
+    func animationDidStop(_ anim: CAAnimation, finished flag: Bool)
+    {
+        print(self.fishView.layer.animationKeys()!)
+        print("执行")
+        if self.fishView.layer.animationKeys()! == ["route1"]
+        {
+            print("翻转1")
+            var transform: CGAffineTransform = CGAffineTransform.identity
+            transform = CGAffineTransform.init(scaleX: -1, y: 1)
+            fishView.transform = transform
+            fishView.layer.removeAllAnimations()
+            fishRunRoute2()
+        }
+        else
+        {
+            if self.fishView.layer.animationKeys()! == ["route2"]
+            {
+                print("翻转2")
+                var transform: CGAffineTransform = CGAffineTransform.identity
+                transform = CGAffineTransform.init(scaleX: 1, y: 1)
+                fishView.transform = transform
+                fishView.layer.removeAllAnimations()
+                fishRunRoute3()
+            }
+        }
+    }
 }
 
 extension FishOneViewController: UINavigationControllerDelegate
