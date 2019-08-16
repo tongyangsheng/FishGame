@@ -183,10 +183,8 @@ extension FishOneViewController: CAAnimationDelegate
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool)
     {
         print(self.fishView.layer.animationKeys()!)
-        print("执行")
         if self.fishView.layer.animationKeys()! == ["route1"]
         {
-            print("翻转1")
             var transform: CGAffineTransform = CGAffineTransform.identity
             transform = CGAffineTransform.init(scaleX: -1, y: 1)
             fishView.transform = transform
@@ -197,7 +195,6 @@ extension FishOneViewController: CAAnimationDelegate
         {
             if self.fishView.layer.animationKeys()! == ["route2"]
             {
-                print("翻转2")
                 var transform: CGAffineTransform = CGAffineTransform.identity
                 transform = CGAffineTransform.init(scaleX: 1, y: 1)
                 fishView.transform = transform
@@ -208,7 +205,6 @@ extension FishOneViewController: CAAnimationDelegate
             {
                 if self.fishView.layer.animationKeys()! == ["route3"]
                 {
-                    print("翻转3")
                     var transform: CGAffineTransform = CGAffineTransform.identity
                     transform = CGAffineTransform.init(scaleX: -1, y: 1)
                     fishView.transform = transform
@@ -235,4 +231,5 @@ extension FishOneViewController: UINavigationControllerDelegate
         navigationController.setNavigationBarHidden(true, animated: true)
     }
 }
+
 
