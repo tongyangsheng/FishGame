@@ -17,8 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         self.window = UIWindow(frame: UIScreen.main.bounds)
-        let vc = FishOneViewController()
-        window?.rootViewController = vc
+        let FirstVC = FishOneViewController()
+        let nav = UINavigationController.init(rootViewController: FirstVC)
+        self.window?.rootViewController = nav
         window?.makeKeyAndVisible()
         return true
     }
