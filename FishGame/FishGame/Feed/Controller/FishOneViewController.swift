@@ -31,6 +31,8 @@ class FishOneViewController: UIViewController
     let BaitStr = UILabel()
     
     let progressLabel = UILabel()
+    let progressBackImage = UIImageView()
+    
     private lazy var progressView: STProgressView = {
         let progressView = STProgressView()
         progressView.backgroundColor = UIColor.init(r: 204, g: 204, b: 204)
@@ -38,7 +40,7 @@ class FishOneViewController: UIViewController
 
         progressView.endColor = UIColor.init(r: 255, g: 183, b: 39)
         
-        progressView.cornerRadius = 10
+        progressView.cornerRadius = 12
         progressView.progress = 0
         self.view.addSubview(progressView)
         return progressView
@@ -75,6 +77,10 @@ extension FishOneViewController
         fishBubble.isUserInteractionEnabled = true
         fishBubble.tag = 1000
         fishBubble.frame = CGRect(x: 0, y: -10, width: 0.092*K_ScreenW, height: 0.653*0.108*K_ScreenW)
+        
+        progressBackImage.image = UIImage(named: "进度条")
+        progressBackImage.frame = CGRect(x: 0.11*K_ScreenW, y: 0.035*K_ScreenH, width: 0.29*K_ScreenW, height: 0.09*K_ScreenH)
+        self.view.addSubview(progressBackImage)
         
         progressView.snp.makeConstraints { (maker) in
             maker.left.equalTo(0.12*K_ScreenW)
