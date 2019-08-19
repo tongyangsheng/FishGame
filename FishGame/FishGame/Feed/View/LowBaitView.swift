@@ -44,14 +44,24 @@ extension LowBaitView
         let backgroundColorView = UIImageView()
         backgroundColorView.backgroundColor = UIColor.init(r: 204, g: 227, b: 251)
         backgroundColorView.layer.cornerRadius = 11.0
-        backgroundColorView.frame = CGRect(x: 0.006*contentView.frame.width, y: 0.01*contentView.frame.height, width: 0.988*contentView.frame.width, height: 0.98*contentView.frame.height)
+        backgroundColorView.frame = CGRect(x: 0.012*contentView.frame.width, y: 0.02*contentView.frame.height, width: 0.976*contentView.frame.width, height: 0.96*contentView.frame.height)
         contentView.addSubview(backgroundColorView)
         
         let baitIcon = UIImageView()
         baitIcon.image = UIImage(named: "鱼食")
         baitIcon.frame = CGRect(x: (0.48*K_ScreenW-0.118*0.48*K_ScreenW)/2, y: 0.095*0.504*K_ScreenH, width: 0.118*0.48*K_ScreenW, height: 1.1*0.118*0.48*K_ScreenW)
-        
         contentView.addSubview(baitIcon)
+        
+        print(contentView.frame.width)
+        
+        let contextLabel = UILabel()
+        contextLabel.frame = CGRect(x: 0.35*contentView.frame.width, y: baitIcon.frame.origin.y + 1.1*0.118*0.48*K_ScreenW, width: 0.3*contentView.frame.width, height: 0.46*0.3*contentView.frame.width)
+        contextLabel.text = "没有足够鱼食了～快去赢取吧！"
+        contextLabel.textColor = UIColor.init(r: 10, g: 110, b: 203)
+        contextLabel.font = UIFont(name: "PingFang SC", size: 16)
+        contextLabel.textAlignment = .center
+        contextLabel.numberOfLines = 2
+        contentView.addSubview(contextLabel)
         
         let cancelButton = UIButton()
         cancelButton.setBackgroundImage(UIImage(named: "白按钮"), for: .normal)
