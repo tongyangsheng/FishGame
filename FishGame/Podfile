@@ -1,11 +1,14 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '12.0'
 # Comment the next line if you don't want to use dynamic frameworks
 use_frameworks!
 
 target 'FishGame' do
 
 pod 'lottie-ios'
+pod 'STKitSwift'
+pod 'STKitSwift/STSegmentedControl'
+pod 'STKitSwift/STProgressView'
 
   # Pods for FishGame
 
