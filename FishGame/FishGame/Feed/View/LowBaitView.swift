@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class LowBaitView: UIView
 {
     let contentView = UIView()
@@ -51,8 +52,6 @@ extension LowBaitView
         baitIcon.image = UIImage(named: "鱼食")
         baitIcon.frame = CGRect(x: (0.48*K_ScreenW-0.118*0.48*K_ScreenW)/2, y: 0.095*0.504*K_ScreenH, width: 0.118*0.48*K_ScreenW, height: 1.1*0.118*0.48*K_ScreenW)
         contentView.addSubview(baitIcon)
-        
-        print(contentView.frame.width)
         
         let contextLabel = UILabel()
         contextLabel.frame = CGRect(x: 0.35*contentView.frame.width, y: baitIcon.frame.origin.y + 1.1*0.118*0.48*K_ScreenW, width: 0.3*contentView.frame.width, height: 0.46*0.3*contentView.frame.width)
