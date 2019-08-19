@@ -1,16 +1,33 @@
 PODS:
   - lottie-ios (3.1.1)
+  - SnapKit (5.0.0)
+  - STKitSwift (1.1):
+    - SnapKit
+    - STKitSwift/STKit (= 1.1)
+  - STKitSwift/STKit (1.1):
+    - SnapKit
+  - STKitSwift/STProgressView (1.1):
+    - SnapKit
+  - STKitSwift/STSegmentedControl (1.1):
+    - SnapKit
 
 DEPENDENCIES:
   - lottie-ios
+  - STKitSwift
+  - STKitSwift/STProgressView
+  - STKitSwift/STSegmentedControl
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - lottie-ios
+    - SnapKit
+    - STKitSwift
 
 SPEC CHECKSUMS:
   lottie-ios: 43a472d22b2dd2bed292cc4010c0b4d2e66d3ba8
+  SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
+  STKitSwift: 377793b3f8d259f4426fb1e9d2f9acc44756d8f3
 
-PODFILE CHECKSUM: 183ed17a919b59e7a50abcf4cfd186227e0c9ff1
+PODFILE CHECKSUM: 413f6984f900accc774cb5d7c507c3fe1d1367c6
 
 COCOAPODS: 1.7.1
