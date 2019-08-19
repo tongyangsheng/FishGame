@@ -27,6 +27,8 @@
 		EF9518E62306977400B676C9 /* fishJson.json in Resources */ = {isa = PBXBuildFile; fileRef = EF9518E52306977400B676C9 /* fishJson.json */; };
 		EF9518E8230699D900B676C9 /* fishfish.json in Resources */ = {isa = PBXBuildFile; fileRef = EF9518E7230699D900B676C9 /* fishfish.json */; };
 		EF9518EA23069AA400B676C9 /* 8194-sea-turtle.json in Resources */ = {isa = PBXBuildFile; fileRef = EF9518E923069AA400B676C9 /* 8194-sea-turtle.json */; };
+		EF9D262F230A2E28007EECDB /* LowBaitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9D262E230A2E28007EECDB /* LowBaitView.swift */; };
+		EF9D2634230A35C9007EECDB /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9D2633230A35C9007EECDB /* UIColor-Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,8 @@
 		EF9518E52306977400B676C9 /* fishJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fishJson.json; sourceTree = "<group>"; };
 		EF9518E7230699D900B676C9 /* fishfish.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fishfish.json; sourceTree = "<group>"; };
 		EF9518E923069AA400B676C9 /* 8194-sea-turtle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "8194-sea-turtle.json"; sourceTree = "<group>"; };
+		EF9D262E230A2E28007EECDB /* LowBaitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowBaitView.swift; sourceTree = "<group>"; };
+		EF9D2633230A35C9007EECDB /* UIColor-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
 		F12964EABAE8A7EE12F1C357 /* Pods-FishGameUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FishGameUITests.debug.xcconfig"; path = "Target Support Files/Pods-FishGameUITests/Pods-FishGameUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -209,6 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				EF9518DC23067AA900B676C9 /* BubbleView.swift */,
+				EF9D262E230A2E28007EECDB /* LowBaitView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -225,8 +230,8 @@
 		EF0DD8162305440700F7E7CB /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				EF9D2631230A3587007EECDB /* Extension */,
 				EF0DD8172305441700F7E7CB /* Common.swift */,
-				EF0DD81B23054ED000F7E7CB /* UIDevice-Extension.swift */,
 				EF9518DE230683FA00B676C9 /* TYSTimer.swift */,
 			);
 			path = Tools;
@@ -241,6 +246,15 @@
 				EF9518E923069AA400B676C9 /* 8194-sea-turtle.json */,
 			);
 			path = AnimationJson;
+			sourceTree = "<group>";
+		};
+		EF9D2631230A3587007EECDB /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				EF0DD81B23054ED000F7E7CB /* UIDevice-Extension.swift */,
+				EF9D2633230A35C9007EECDB /* UIColor-Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -469,10 +483,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF0DD8182305441700F7E7CB /* Common.swift in Sources */,
+				EF9D2634230A35C9007EECDB /* UIColor-Extension.swift in Sources */,
 				EF9518DB2306348B00B676C9 /* FishTwoViewController.swift in Sources */,
 				EF9518DF230683FA00B676C9 /* TYSTimer.swift in Sources */,
 				EF9518DD23067AA900B676C9 /* BubbleView.swift in Sources */,
 				EF0DD7E623053F5700F7E7CB /* FishGame.xcdatamodeld in Sources */,
+				EF9D262F230A2E28007EECDB /* LowBaitView.swift in Sources */,
 				EF0DD7DE23053F5700F7E7CB /* AppDelegate.swift in Sources */,
 				EF0DD81C23054ED000F7E7CB /* UIDevice-Extension.swift in Sources */,
 				EF0DD8112305412500F7E7CB /* FishOneViewController.swift in Sources */,
