@@ -110,7 +110,7 @@ extension FishOneViewController
         //        barLeftFish.image = UIImage(named: "小鱼1")
         //        self.view.addSubview(barLeftFish)
         
-        barRightFish.frame = CGRect(x: 0.12*K_ScreenW + 0.27*K_ScreenW + 0.018*K_ScreenW, y: 0.035*K_ScreenH, width: 0.06*K_ScreenW, height: 0.63*0.06*K_ScreenW)
+        barRightFish.frame = CGRect(x: 0.11*K_ScreenW + 0.29*K_ScreenW + 0.018*K_ScreenW, y: 0.035*K_ScreenH, width: 0.06*K_ScreenW, height: 0.63*0.06*K_ScreenW)
         barRightFish.image = UIImage(named: "小鱼2")
         self.view.addSubview(barRightFish)
         
