@@ -29,7 +29,7 @@ class FishOneViewController: UIViewController
     let fishImage = UIImageView()
     
     let BaitStr = UILabel()
-
+    
     let Bubble1 = BubbleView(frame: CGRect(x: 0.45*K_ScreenW, y: 0.1*K_ScreenH, width: 0.135*K_ScreenW, height: 0.72*0.135*K_ScreenW), idiom: "学富五车")
     let Bubble2 = BubbleView(frame: CGRect(x: 0.1*K_ScreenW, y: 0.45*K_ScreenH, width: 0.135*K_ScreenW, height: 0.72*0.135*K_ScreenW), idiom: "车水马龙")
     
@@ -71,7 +71,7 @@ extension FishOneViewController
         fishView.addSubview(fishBubble)
         
         fishView.addSubview(fishImage)
-
+        
         self.view.addSubview(fishView)
         //        第一个界面没有更小的鱼
         //        barLeftFish.frame = CGRect(x: 0.0255*K_ScreenW, y: 0.035*K_ScreenH, width: 0.078*K_ScreenW, height: 0.63*0.078*K_ScreenW)
@@ -90,8 +90,6 @@ extension FishOneViewController
         feedButton.setImage(UIImage(named: "喂食"), for: .normal)
         feedButton.addTarget(self, action: #selector(pressFeed(_:)), for: .touchUpInside)
         self.view.addSubview(feedButton)
-        
-        print(feedButton.frame.width)
         
         BaitStr.frame = CGRect(x: feedButton.frame.origin.x + 0.6*feedButton.frame.width, y: feedButton.frame.origin.y+0.32*feedButton.frame.height, width: 0.14*feedButton.frame.width, height: 0.6*0.14*feedButton.frame.width)
         BaitStr.textColor = .white
@@ -236,8 +234,23 @@ extension FishOneViewController
     
     @objc func pressFeed(_ button: UIButton)
     {
-        let WarningView = LowBaitView()
-        WarningView.show()
+        if K_Bait <= 0
+        {
+            let WarningView = LowBaitView()
+            WarningView.show()
+            K_Bait = 0
+        }
+        else
+        {
+            print("喂鱼")
+            K_Bait = K_Bait - 5
+            ObserveBait()
+        }
+    }
+    
+    @objc func ObserveBait()
+    {
+        BaitStr.text = K_Bait.description
     }
 }
 
@@ -293,5 +306,6 @@ extension FishOneViewController: UINavigationControllerDelegate
         navigationController.setNavigationBarHidden(true, animated: true)
     }
 }
+
 
 
