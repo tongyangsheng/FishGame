@@ -8,6 +8,7 @@
 
 import UIKit
 import Lottie
+import STKitSwift
 
 class FishOneViewController: UIViewController
 {
@@ -20,7 +21,6 @@ class FishOneViewController: UIViewController
     let turnleftButton = UIButton()
     let turnrightButton = UIButton()
     
-    let progressBar = UIImageView()
     let barLeftFish = UIImageView()
     let barRightFish = UIImageView()
     
@@ -29,6 +29,20 @@ class FishOneViewController: UIViewController
     let fishImage = UIImageView()
     
     let BaitStr = UILabel()
+    
+    let progressLabel = UILabel()
+    private lazy var progressView: STProgressView = {
+        let progressView = STProgressView()
+        progressView.backgroundColor = UIColor.init(r: 204, g: 204, b: 204)
+        progressView.startColor = UIColor.init(r: 255, g: 183, b: 39)
+
+        progressView.endColor = UIColor.init(r: 255, g: 183, b: 39)
+        
+        progressView.cornerRadius = 10
+        progressView.progress = 0
+        self.view.addSubview(progressView)
+        return progressView
+    }()
     
     let Bubble1 = BubbleView(frame: CGRect(x: 0.45*K_ScreenW, y: 0.1*K_ScreenH, width: 0.135*K_ScreenW, height: 0.72*0.135*K_ScreenW), idiom: "学富五车")
     let Bubble2 = BubbleView(frame: CGRect(x: 0.1*K_ScreenW, y: 0.45*K_ScreenH, width: 0.135*K_ScreenW, height: 0.72*0.135*K_ScreenW), idiom: "车水马龙")
@@ -62,11 +76,23 @@ extension FishOneViewController
         fishBubble.tag = 1000
         fishBubble.frame = CGRect(x: 0, y: -10, width: 0.092*K_ScreenW, height: 0.653*0.108*K_ScreenW)
         
+        progressView.snp.makeConstraints { (maker) in
+            maker.left.equalTo(0.12*K_ScreenW)
+            maker.width.equalTo(0.27*K_ScreenW)
+            maker.top.equalTo(0.053*K_ScreenH)
+            maker.height.equalTo(0.053*K_ScreenH)
+        }
+        
+        progressLabel.frame = CGRect(x: 0.12*K_ScreenW + 0.5*0.27*K_ScreenW - 50, y: 0.053*K_ScreenH, width: 100, height: 0.053*K_ScreenH)
+        progressLabel.textAlignment = .center
+        progressLabel.textColor = .white
+        progressLabel.font = UIFont(name: "PingFang SC", size: 12)
+        let progressInt = Int(K_fishProgress)
+        progressLabel.text = "\(progressInt)/100"
+        self.view.addSubview(progressLabel)
         
         fishImage.image = UIImage(named: "鱼1")
         fishImage.frame = CGRect(x: 0.03*K_ScreenW, y: 0, width: 0.108*K_ScreenW, height: 0.653*0.108*K_ScreenW)
-        
-        
         
         fishView.addSubview(fishBubble)
         
@@ -78,11 +104,7 @@ extension FishOneViewController
         //        barLeftFish.image = UIImage(named: "小鱼1")
         //        self.view.addSubview(barLeftFish)
         
-        progressBar.frame = CGRect(x: 0.0255*K_ScreenW + 0.078*K_ScreenW + 0.018*K_ScreenW, y: 0.05*K_ScreenH, width: 0.253*K_ScreenW, height: 0.065*K_ScreenH)
-        progressBar.image = UIImage(named: "进度条")
-        self.view.addSubview(progressBar)
-        
-        barRightFish.frame = CGRect(x: progressBar.frame.origin.x + 0.253*K_ScreenW + 0.018*K_ScreenW, y: 0.035*K_ScreenH, width: 0.06*K_ScreenW, height: 0.63*0.06*K_ScreenW)
+        barRightFish.frame = CGRect(x: 0.12*K_ScreenW + 0.27*K_ScreenW + 0.018*K_ScreenW, y: 0.035*K_ScreenH, width: 0.06*K_ScreenW, height: 0.63*0.06*K_ScreenW)
         barRightFish.image = UIImage(named: "小鱼2")
         self.view.addSubview(barRightFish)
         
@@ -242,15 +264,23 @@ extension FishOneViewController
         }
         else
         {
-            print("喂鱼")
-            K_Bait = K_Bait - 5
+            K_Bait = K_Bait - 10
+            K_fishProgress = K_fishProgress + 10
             ObserveBait()
+            ObserveProgress()
+            let progressNow = K_fishProgress / 100.0
+            progressView.progress = CGFloat(progressNow)
         }
     }
     
-    @objc func ObserveBait()
+    private func ObserveBait()
     {
         BaitStr.text = K_Bait.description
+    }
+    private func ObserveProgress()
+    {
+        let progressInt = Int(K_fishProgress)
+        progressLabel.text = "\(progressInt)/100"
     }
 }
 
