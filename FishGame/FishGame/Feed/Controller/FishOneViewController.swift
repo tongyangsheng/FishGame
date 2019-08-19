@@ -24,10 +24,12 @@ class FishOneViewController: UIViewController
     let barLeftFish = UIImageView()
     let barRightFish = UIImageView()
     
-    let fishView = AnimationView()
-    
+    let fishView = UIView()
+    let fishBubble = AnimationView()
+    let fishImage = UIImageView()
 
-    let Bubble = BubbleView(frame: CGRect(x: 0.45*K_ScreenW, y: 0.1*K_ScreenH, width: 0.135*K_ScreenW, height: 0.72*0.135*K_ScreenW), idiom: "学富五车")
+    let Bubble1 = BubbleView(frame: CGRect(x: 0.45*K_ScreenW, y: 0.1*K_ScreenH, width: 0.135*K_ScreenW, height: 0.72*0.135*K_ScreenW), idiom: "学富五车")
+    let Bubble2 = BubbleView(frame: CGRect(x: 0.1*K_ScreenW, y: 0.45*K_ScreenH, width: 0.135*K_ScreenW, height: 0.72*0.135*K_ScreenW), idiom: "车水马龙")
     
     override func viewDidLoad()
     {
@@ -47,15 +49,27 @@ extension FishOneViewController
         backgroundView.image = UIImage(named: "背景图")
         self.view.addSubview(backgroundView)
         
-        let animation = Animation.named("8194-sea-turtle")
-        fishView.animation = animation
-        fishView.contentMode = .scaleAspectFit
-        fishView.play()
-        fishView.loopMode = .loop
-        fishView.isUserInteractionEnabled = true
-        fishView.tag = 1000
-//        fishView.frame = CGRect(x: 1.2*K_ScreenW, y: 100, width: 0.108*K_ScreenW, height: 0.653*0.108*K_ScreenW)
-        fishView.frame = CGRect(x: 1.2*K_ScreenW, y: 100, width: 300, height: 100)
+        fishView.frame = CGRect(x: 1.2*K_ScreenW, y: 100, width: 0.18*K_ScreenW, height: 0.653*0.108*K_ScreenW)
+        
+        let animation = Animation.named("fishJson")
+        fishBubble.animation = animation
+        fishBubble.contentMode = .scaleAspectFit
+        fishBubble.play()
+        fishBubble.loopMode = .loop
+        fishBubble.isUserInteractionEnabled = true
+        fishBubble.tag = 1000
+        fishBubble.frame = CGRect(x: 0, y: -10, width: 0.092*K_ScreenW, height: 0.653*0.108*K_ScreenW)
+        
+        
+        fishImage.image = UIImage(named: "鱼1")
+        fishImage.frame = CGRect(x: 0.03*K_ScreenW, y: 0, width: 0.108*K_ScreenW, height: 0.653*0.108*K_ScreenW)
+        
+        
+        
+        fishView.addSubview(fishBubble)
+        
+        fishView.addSubview(fishImage)
+
         self.view.addSubview(fishView)
         //        第一个界面没有更小的鱼
         //        barLeftFish.frame = CGRect(x: 0.0255*K_ScreenW, y: 0.035*K_ScreenH, width: 0.078*K_ScreenW, height: 0.63*0.078*K_ScreenW)
@@ -72,6 +86,7 @@ extension FishOneViewController
         
         feedButton.frame = CGRect(x: 0.28*K_ScreenW, y: 0.787*K_ScreenH, width: 0.2*K_ScreenW, height: 0.16*K_ScreenH)
         feedButton.setImage(UIImage(named: "喂食"), for: .normal)
+        feedButton.addTarget(self, action: #selector(pressFeed(_:)), for: .touchUpInside)
         self.view.addSubview(feedButton)
         
         earnButton.frame = CGRect(x: K_ScreenW - 0.28*K_ScreenW - 0.2*K_ScreenW, y: 0.787*K_ScreenH, width: 0.2*K_ScreenW, height: 0.16*K_ScreenH)
@@ -105,8 +120,10 @@ extension FishOneViewController
     }
     private func setupBubble()
     {
-        Bubble.alpha = 0.0
-        self.view.addSubview(Bubble)
+        Bubble1.alpha = 0.0
+        self.view.addSubview(Bubble1)
+        Bubble2.alpha = 0.0
+        self.view.addSubview(Bubble2)
     }
 }
 
@@ -131,17 +148,17 @@ extension FishOneViewController
         animation1.delegate = self
         fishView.layer.add(animation1, forKey: "route1")
         UIView.animate(withDuration: 1.0, delay: 5, options: .curveEaseIn, animations: {
-            self.Bubble.alpha = 1.0
+            self.Bubble1.alpha = 1.0
         }, completion: {(Bool) in UIView.animate(withDuration: 1, delay: 0, options: .curveEaseOut, animations: {
-            self.Bubble.alpha = 0.0
-        }, completion: {(Bool) in print("2结束")})})
+            self.Bubble1.alpha = 0.0
+        }, completion: nil)})
     }
     @objc func fishRunRoute2()
     {
         //路线2
         let animation1 = CAKeyframeAnimation(keyPath: "position")
         let value1: NSValue = NSValue(cgPoint: CGPoint(x: -0.1*K_ScreenW, y: 0.3*K_ScreenH))
-        let value2: NSValue = NSValue(cgPoint: CGPoint(x: 0.1*K_ScreenW, y: 0.7*K_ScreenH))
+        let value2: NSValue = NSValue(cgPoint: CGPoint(x: 0.14*K_ScreenW, y: 0.75*K_ScreenH))
         let value3: NSValue = NSValue(cgPoint: CGPoint(x: 0.4*K_ScreenW, y: 0.3*K_ScreenH))
         let value4: NSValue = NSValue(cgPoint: CGPoint(x: 0.7*K_ScreenW, y: 0.6*K_ScreenH))
         let value5: NSValue = NSValue(cgPoint: CGPoint(x: 1.1*K_ScreenW, y: 0.5*K_ScreenH))
@@ -154,6 +171,11 @@ extension FishOneViewController
         animation1.timingFunctions = [CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)]
         animation1.delegate = self
         fishView.layer.add(animation1, forKey: "route2")
+        UIView.animate(withDuration: 1.0, delay: 3, options: .curveEaseIn, animations: {
+            self.Bubble2.alpha = 1.0
+        }, completion: {(Bool) in UIView.animate(withDuration: 1, delay: 0, options: .curveEaseOut, animations: {
+            self.Bubble2.alpha = 0.0
+        }, completion: nil)})
     }
     @objc func fishRunRoute3()
     {
@@ -200,6 +222,11 @@ extension FishOneViewController
     {
         let SecondVC = FishTwoViewController()
         self.navigationController?.pushViewController(SecondVC, animated: true)
+    }
+    
+    @objc func pressFeed(_ button: UIButton)
+    {
+        print("喂鱼")
     }
 }
 
