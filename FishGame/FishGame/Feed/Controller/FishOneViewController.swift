@@ -332,11 +332,11 @@ extension FishOneViewController
         self.view.addSubview(flashView)
         flashView.alpha = 1
         UIView.beginAnimations("flash screen", context: nil)
-        UIView.setAnimationDuration(1)
+        UIView.setAnimationDuration(0.7)
         UIView.setAnimationCurve(.easeInOut)
         flashView.alpha = 0
         UIView.commitAnimations()
-        let WarningView = ScreenShotView()
+        let WarningView = ScreenShotView(frame: UIScreen.main.bounds, fishTypeImageStr: "鱼1")
         WarningView.show()
     }
     
