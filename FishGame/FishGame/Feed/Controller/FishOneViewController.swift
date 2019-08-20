@@ -37,7 +37,7 @@ class FishOneViewController: UIViewController
     let BaitAnimationView = AnimationView()
     
     var nowCenterPoint:CGPoint = CGPoint(x: 0, y: 0)
-
+    
     
     private lazy var progressView: STProgressView = {
         let progressView = STProgressView()
@@ -108,7 +108,6 @@ extension FishOneViewController
         
         fishView.addSubview(fishBubble)
         
-        fishView.backgroundColor = .lightGray
         fishView.addSubview(fishImage)
         
         self.view.addSubview(fishView)
@@ -262,7 +261,7 @@ extension FishOneViewController
         fishView.layer.add(animation1, forKey: "route4")
     }
     
-    @objc func fishGetFoodRoute()
+    @objc func fishGetFoodRouteRightToLeft()
     {
         let animation = CAKeyframeAnimation(keyPath: "position")
         
@@ -281,6 +280,37 @@ extension FishOneViewController
         fishView.layer.add(animation, forKey: "route5")
     }
     
+    @objc func fishGetFoodRouteLeftToRight()
+    {
+        let animation = CAKeyframeAnimation(keyPath: "position")
+        
+        print("动画开始坐标：\(nowCenterPoint)")
+        let startValue: NSValue = NSValue(cgPoint: nowCenterPoint)
+        let endValue: NSValue = NSValue(cgPoint: CGPoint(x: 0.43*K_ScreenW, y: 0.4*K_ScreenH))
+        print("动画终点坐标应该是：\(0.55*K_ScreenW)")
+        
+        animation.values = [startValue,endValue]
+        
+        animation.autoreverses = false
+        animation.duration = 1
+        animation.isRemovedOnCompletion = false
+        animation.fillMode = CAMediaTimingFillMode.forwards
+        animation.delegate = self
+        fishView.layer.add(animation, forKey: "route5")
+    }
+    
+    @objc func pushBait()
+    {
+        let animation = Animation.named("weishi")
+        BaitAnimationView.animation = animation
+        BaitAnimationView.contentMode = .scaleAspectFit
+        BaitAnimationView.play()
+        BaitAnimationView.loopMode = .loop
+        BaitAnimationView.isUserInteractionEnabled = true
+        BaitAnimationView.tag = 1000
+        BaitAnimationView.frame = CGRect(x: 0.44*K_ScreenW, y: 0, width: 0.1*K_ScreenW, height: 0.47*K_ScreenH)
+        self.view.addSubview(BaitAnimationView)
+    }
 }
 
 extension FishOneViewController
@@ -301,17 +331,37 @@ extension FishOneViewController
         }
         else
         {
-            fishView.layer.removeAllAnimations()
-            fishView.layer.position = fishView.layer.presentation()!.position
+            guard let animationName = self.fishView.layer.animationKeys() else {  print("当前无动画"); return }
+            if animationName == ["route1"]||animationName == ["route1"]
+            {
+                fishView.layer.removeAllAnimations()
+                fishView.layer.position = fishView.layer.presentation()!.position
+                
+                Bubble1.alpha = 0
+                Bubble2.alpha = 0
+                Bubble1.layer.removeAllAnimations()
+                Bubble2.layer.removeAllAnimations()
+                
+                nowCenterPoint = fishView.layer.position
+                
+                fishGetFoodRouteRightToLeft()
+            }
+            else
+            {
+                fishView.layer.removeAllAnimations()
+                fishView.layer.position = fishView.layer.presentation()!.position
+                
+                Bubble1.alpha = 0
+                Bubble2.alpha = 0
+                Bubble1.layer.removeAllAnimations()
+                Bubble2.layer.removeAllAnimations()
+                
+                nowCenterPoint = fishView.layer.position
+                
+                fishGetFoodRouteLeftToRight()
+            }
             
-            Bubble1.alpha = 0
-            Bubble2.alpha = 0
-            Bubble1.layer.removeAllAnimations()
-            Bubble2.layer.removeAllAnimations()
-            
-            nowCenterPoint = fishView.layer.position
-            
-            fishGetFoodRoute()
+            pushBait()
             
             K_Bait = K_Bait - 10
             K_fishProgress = K_fishProgress + 10
@@ -368,42 +418,42 @@ extension FishOneViewController: CAAnimationDelegate
         case ["route1"]:
             do {
                 print("调用1")
-            var transform: CGAffineTransform = CGAffineTransform.identity
-            transform = CGAffineTransform.init(scaleX: -1, y: 1)
-            fishView.transform = transform
-            fishView.layer.removeAllAnimations()
-            fishRunRoute2()
-            break
+                var transform: CGAffineTransform = CGAffineTransform.identity
+                transform = CGAffineTransform.init(scaleX: -1, y: 1)
+                fishView.transform = transform
+                fishView.layer.removeAllAnimations()
+                fishRunRoute2()
+                break
             }
         case ["route2"]:
             do {
                 print("调用2")
-            var transform: CGAffineTransform = CGAffineTransform.identity
-            transform = CGAffineTransform.init(scaleX: 1, y: 1)
-            fishView.transform = transform
-            fishView.layer.removeAllAnimations()
-            fishRunRoute3()
-            break
+                var transform: CGAffineTransform = CGAffineTransform.identity
+                transform = CGAffineTransform.init(scaleX: 1, y: 1)
+                fishView.transform = transform
+                fishView.layer.removeAllAnimations()
+                fishRunRoute3()
+                break
             }
         case ["route3"]:
             do {
                 print("调用3")
-            var transform: CGAffineTransform = CGAffineTransform.identity
-            transform = CGAffineTransform.init(scaleX: -1, y: 1)
-            fishView.transform = transform
-            fishView.layer.removeAllAnimations()
-            fishRunRoute4()
-            break
+                var transform: CGAffineTransform = CGAffineTransform.identity
+                transform = CGAffineTransform.init(scaleX: -1, y: 1)
+                fishView.transform = transform
+                fishView.layer.removeAllAnimations()
+                fishRunRoute4()
+                break
             }
         case ["route4"]:
             do {
                 print("调用4")
-            var transform: CGAffineTransform = CGAffineTransform.identity
-            transform = CGAffineTransform.init(scaleX: 1, y: 1)
-            fishView.transform = transform
-            fishView.layer.removeAllAnimations()
-            fishRunRoute1()
-            break
+                var transform: CGAffineTransform = CGAffineTransform.identity
+                transform = CGAffineTransform.init(scaleX: 1, y: 1)
+                fishView.transform = transform
+                fishView.layer.removeAllAnimations()
+                fishRunRoute1()
+                break
             }
         case ["route5"]:
             print("调用5")
@@ -422,6 +472,7 @@ extension FishOneViewController: UINavigationControllerDelegate
         navigationController.setNavigationBarHidden(true, animated: true)
     }
 }
+
 
 
 
