@@ -77,7 +77,7 @@ extension ScreenShotView
     {
         self.alpha = 0
         contentView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
-        UIView.animate(withDuration: 0.2) {
+        UIView.animate(withDuration: 0.4) {
             self.alpha = 1
             self.contentView.transform = CGAffineTransform.identity
         }

@@ -9,6 +9,8 @@
 import UIKit
 import Lottie
 import STKitSwift
+import CoreGraphics
+import QuartzCore
 
 class FishOneViewController: UIViewController
 {
@@ -33,11 +35,14 @@ class FishOneViewController: UIViewController
     let progressLabel = UILabel()
     let progressBackImage = UIImageView()
     
+    var nowXPoint:CGFloat = 0
+    var nowYPoint:CGFloat = 0
+    
     private lazy var progressView: STProgressView = {
         let progressView = STProgressView()
         progressView.backgroundColor = UIColor.init(r: 204, g: 204, b: 204)
         progressView.startColor = UIColor.init(r: 255, g: 183, b: 39)
-
+        
         progressView.endColor = UIColor.init(r: 255, g: 183, b: 39)
         
         progressView.cornerRadius = 12
@@ -102,6 +107,7 @@ extension FishOneViewController
         
         fishView.addSubview(fishBubble)
         
+        fishView.backgroundColor = .lightGray
         fishView.addSubview(fishImage)
         
         self.view.addSubview(fishView)
@@ -135,6 +141,7 @@ extension FishOneViewController
         
         screenshotButton.frame = CGRect(x: offButton.frame.origin.x - 0.005*K_ScreenW - 0.057*K_ScreenW, y: 0.04*K_ScreenH, width: 0.057*K_ScreenW, height: 0.057*K_ScreenW)
         screenshotButton.setImage(UIImage(named: "拍照"), for: .normal)
+        screenshotButton.addTarget(self, action: #selector(pressScreenshot(_:)), for: .touchUpInside)
         self.view.addSubview(screenshotButton)
         
         turnrightButton.frame = CGRect(x: K_ScreenW - 0.03*K_ScreenW - 0.033*K_ScreenW, y: 0.437*K_ScreenH, width: 0.033*K_ScreenW, height: 0.128*K_ScreenH)
@@ -189,6 +196,7 @@ extension FishOneViewController
             self.Bubble1.alpha = 0.0
         }, completion: nil)})
     }
+    
     @objc func fishRunRoute2()
     {
         //路线2
@@ -213,6 +221,7 @@ extension FishOneViewController
             self.Bubble2.alpha = 0.0
         }, completion: nil)})
     }
+    
     @objc func fishRunRoute3()
     {
         //路线3
@@ -230,6 +239,7 @@ extension FishOneViewController
         animation1.delegate = self
         fishView.layer.add(animation1, forKey: "route3")
     }
+    
     @objc func fishRunRoute4()
     {
         //路线4
@@ -249,6 +259,26 @@ extension FishOneViewController
         animation1.timingFunctions = [CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeIn)]
         animation1.delegate = self
         fishView.layer.add(animation1, forKey: "route4")
+    }
+    
+    @objc func fishGetFoodRoute()
+    {
+        let animation = CAKeyframeAnimation(keyPath: "position")
+        
+        
+        print("动画开始坐标：\(nowXPoint)")
+        let startValue: NSValue = NSValue(cgPoint: CGPoint(x: nowXPoint, y: nowYPoint))
+        let endValue: NSValue = NSValue(cgPoint: CGPoint(x: 0.55*K_ScreenW, y: 0.4*K_ScreenH))
+        print("动画终点坐标：\(0.55*K_ScreenW)")
+        
+        animation.values = [startValue,endValue]
+        
+        animation.autoreverses = false
+        animation.duration = 1
+        animation.isRemovedOnCompletion = false
+        animation.fillMode = CAMediaTimingFillMode.forwards
+        animation.delegate = self
+        fishView.layer.add(animation, forKey: "route5")
     }
 }
 
@@ -270,6 +300,20 @@ extension FishOneViewController
         }
         else
         {
+            fishView.layer.removeAllAnimations()
+            fishView.layer.frame = fishView.layer.presentation()!.frame
+            
+            Bubble1.alpha = 0
+            Bubble2.alpha = 0
+            Bubble1.layer.removeAllAnimations()
+            Bubble2.layer.removeAllAnimations()
+            
+            nowXPoint = fishView.layer.frame.origin.x
+            nowYPoint = fishView.layer.frame.origin.y
+            print("点击按钮时：\(fishView.layer.frame.origin.x)")
+            
+            fishGetFoodRoute()
+            
             K_Bait = K_Bait - 10
             K_fishProgress = K_fishProgress + 10
             ObserveBait()
@@ -277,6 +321,23 @@ extension FishOneViewController
             let progressNow = K_fishProgress / 100.0
             progressView.progress = CGFloat(progressNow)
         }
+    }
+    
+    @objc func pressScreenshot(_ button: UIButton)
+    {
+        print("截图")
+        let flashView = UIView()
+        flashView.frame = CGRect(x: 0, y: 0, width: K_ScreenW, height: K_ScreenH)
+        flashView.backgroundColor = .white
+        self.view.addSubview(flashView)
+        flashView.alpha = 1
+        UIView.beginAnimations("flash screen", context: nil)
+        UIView.setAnimationDuration(1)
+        UIView.setAnimationCurve(.easeInOut)
+        flashView.alpha = 0
+        UIView.commitAnimations()
+        let WarningView = ScreenShotView()
+        WarningView.show()
     }
     
     private func ObserveBait()
@@ -294,7 +355,9 @@ extension FishOneViewController: CAAnimationDelegate
 {
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool)
     {
-        if self.fishView.layer.animationKeys()! == ["route1"]
+        fishView.layer.frame = fishView.layer.presentation()!.frame
+        guard let animationName = self.fishView.layer.animationKeys() else {  print("当前无动画"); return }
+        if animationName == ["route1"]
         {
             var transform: CGAffineTransform = CGAffineTransform.identity
             transform = CGAffineTransform.init(scaleX: -1, y: 1)
@@ -304,7 +367,7 @@ extension FishOneViewController: CAAnimationDelegate
         }
         else
         {
-            if self.fishView.layer.animationKeys()! == ["route2"]
+            if animationName == ["route2"]
             {
                 var transform: CGAffineTransform = CGAffineTransform.identity
                 transform = CGAffineTransform.init(scaleX: 1, y: 1)
@@ -314,7 +377,7 @@ extension FishOneViewController: CAAnimationDelegate
             }
             else
             {
-                if self.fishView.layer.animationKeys()! == ["route3"]
+                if animationName == ["route3"]
                 {
                     var transform: CGAffineTransform = CGAffineTransform.identity
                     transform = CGAffineTransform.init(scaleX: -1, y: 1)
@@ -324,11 +387,21 @@ extension FishOneViewController: CAAnimationDelegate
                 }
                 else
                 {
-                    var transform: CGAffineTransform = CGAffineTransform.identity
-                    transform = CGAffineTransform.init(scaleX: 1, y: 1)
-                    fishView.transform = transform
-                    fishView.layer.removeAllAnimations()
-                    fishRunRoute1()
+                    if animationName == ["route4"]
+                    {
+                        var transform: CGAffineTransform = CGAffineTransform.identity
+                        transform = CGAffineTransform.init(scaleX: 1, y: 1)
+                        fishView.transform = transform
+                        fishView.layer.removeAllAnimations()
+                        fishRunRoute1()
+                    }
+                    else
+                    {
+                        if animationName == ["route5"]
+                        {
+                            print("动画结束时layer位置:\(fishView.layer.presentation()!.frame.origin.x)")
+                        }
+                    }
                 }
             }
         }
@@ -342,6 +415,7 @@ extension FishOneViewController: UINavigationControllerDelegate
         navigationController.setNavigationBarHidden(true, animated: true)
     }
 }
+
 
 
 
