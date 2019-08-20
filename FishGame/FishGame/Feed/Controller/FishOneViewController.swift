@@ -34,8 +34,10 @@ class FishOneViewController: UIViewController
     let progressLabel = UILabel()
     let progressBackImage = UIImageView()
     
-    var nowXPoint:CGFloat = 0
-    var nowYPoint:CGFloat = 0
+    let BaitAnimationView = AnimationView()
+    
+    var nowCenterPoint:CGPoint = CGPoint(x: 0, y: 0)
+
     
     private lazy var progressView: STProgressView = {
         let progressView = STProgressView()
@@ -264,11 +266,10 @@ extension FishOneViewController
     {
         let animation = CAKeyframeAnimation(keyPath: "position")
         
-        
-        print("动画开始坐标：\(nowXPoint)")
-        let startValue: NSValue = NSValue(cgPoint: CGPoint(x: nowXPoint, y: nowYPoint))
+        print("动画开始坐标：\(nowCenterPoint)")
+        let startValue: NSValue = NSValue(cgPoint: nowCenterPoint)
         let endValue: NSValue = NSValue(cgPoint: CGPoint(x: 0.55*K_ScreenW, y: 0.4*K_ScreenH))
-        print("动画终点坐标：\(0.55*K_ScreenW)")
+        print("动画终点坐标应该是：\(0.55*K_ScreenW)")
         
         animation.values = [startValue,endValue]
         
@@ -279,6 +280,7 @@ extension FishOneViewController
         animation.delegate = self
         fishView.layer.add(animation, forKey: "route5")
     }
+    
 }
 
 extension FishOneViewController
@@ -300,16 +302,14 @@ extension FishOneViewController
         else
         {
             fishView.layer.removeAllAnimations()
-            fishView.layer.frame = fishView.layer.presentation()!.frame
+            fishView.layer.position = fishView.layer.presentation()!.position
             
             Bubble1.alpha = 0
             Bubble2.alpha = 0
             Bubble1.layer.removeAllAnimations()
             Bubble2.layer.removeAllAnimations()
             
-            nowXPoint = fishView.layer.frame.origin.x
-            nowYPoint = fishView.layer.frame.origin.y
-            print("点击按钮时：\(fishView.layer.frame.origin.x)")
+            nowCenterPoint = fishView.layer.position
             
             fishGetFoodRoute()
             
@@ -359,57 +359,58 @@ extension FishOneViewController
 
 extension FishOneViewController: CAAnimationDelegate
 {
+    
     func animationDidStop(_ anim: CAAnimation, finished flag: Bool)
     {
         fishView.layer.frame = fishView.layer.presentation()!.frame
         guard let animationName = self.fishView.layer.animationKeys() else {  print("当前无动画"); return }
-        if animationName == ["route1"]
-        {
+        switch animationName {
+        case ["route1"]:
+            do {
+                print("调用1")
             var transform: CGAffineTransform = CGAffineTransform.identity
             transform = CGAffineTransform.init(scaleX: -1, y: 1)
             fishView.transform = transform
             fishView.layer.removeAllAnimations()
             fishRunRoute2()
-        }
-        else
-        {
-            if animationName == ["route2"]
-            {
-                var transform: CGAffineTransform = CGAffineTransform.identity
-                transform = CGAffineTransform.init(scaleX: 1, y: 1)
-                fishView.transform = transform
-                fishView.layer.removeAllAnimations()
-                fishRunRoute3()
+            break
             }
-            else
-            {
-                if animationName == ["route3"]
-                {
-                    var transform: CGAffineTransform = CGAffineTransform.identity
-                    transform = CGAffineTransform.init(scaleX: -1, y: 1)
-                    fishView.transform = transform
-                    fishView.layer.removeAllAnimations()
-                    fishRunRoute4()
-                }
-                else
-                {
-                    if animationName == ["route4"]
-                    {
-                        var transform: CGAffineTransform = CGAffineTransform.identity
-                        transform = CGAffineTransform.init(scaleX: 1, y: 1)
-                        fishView.transform = transform
-                        fishView.layer.removeAllAnimations()
-                        fishRunRoute1()
-                    }
-                    else
-                    {
-                        if animationName == ["route5"]
-                        {
-                            print("动画结束时layer位置:\(fishView.layer.presentation()!.frame.origin.x)")
-                        }
-                    }
-                }
+        case ["route2"]:
+            do {
+                print("调用2")
+            var transform: CGAffineTransform = CGAffineTransform.identity
+            transform = CGAffineTransform.init(scaleX: 1, y: 1)
+            fishView.transform = transform
+            fishView.layer.removeAllAnimations()
+            fishRunRoute3()
+            break
             }
+        case ["route3"]:
+            do {
+                print("调用3")
+            var transform: CGAffineTransform = CGAffineTransform.identity
+            transform = CGAffineTransform.init(scaleX: -1, y: 1)
+            fishView.transform = transform
+            fishView.layer.removeAllAnimations()
+            fishRunRoute4()
+            break
+            }
+        case ["route4"]:
+            do {
+                print("调用4")
+            var transform: CGAffineTransform = CGAffineTransform.identity
+            transform = CGAffineTransform.init(scaleX: 1, y: 1)
+            fishView.transform = transform
+            fishView.layer.removeAllAnimations()
+            fishRunRoute1()
+            break
+            }
+        case ["route5"]:
+            print("调用5")
+            fishView.layer.position = fishView.layer.presentation()!.position
+            break
+        default:
+            print("调用6")
         }
     }
 }
