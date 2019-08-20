@@ -10,7 +10,7 @@ import UIKit
 
 class ScreenShotView: UIView
 {
-
+    private var fishTypeImageStr: String
     
     let contentBackgroundImage = UIImageView()
     let contentView = UIView()
@@ -20,8 +20,9 @@ class ScreenShotView: UIView
     let quitButton = UIButton()
     let fishProgressLabel = UILabel()
     
-    override init(frame: CGRect)
+    init(frame: CGRect, fishTypeImageStr: String)
     {
+        self.fishTypeImageStr = fishTypeImageStr
         super.init(frame: frame)
         self.frame = UIScreen.main.bounds
         setupUI()
@@ -46,6 +47,9 @@ extension ScreenShotView
         contentView.layer.cornerRadius = 12.0
         setupContentUI()
         self.addSubview(contentView)
+        fishImageView.frame = CGRect(x: 0.065*K_ScreenW, y: 0.2*K_ScreenH, width: 0.08*K_ScreenW, height: 0.65*0.08*K_ScreenW)
+        fishImageView.image = UIImage(named: fishTypeImageStr)
+        contentView.addSubview(fishImageView)
         //保存按钮
         saveButton.frame = CGRect(x: 0.28*K_ScreenW, y: 0.787*K_ScreenH, width: 0.2*K_ScreenW, height: 0.16*K_ScreenH)
         saveButton.setImage(UIImage(named: "保存图片"), for: .normal)
@@ -77,7 +81,7 @@ extension ScreenShotView
     {
         self.alpha = 0
         contentView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
-        UIView.animate(withDuration: 0.4) {
+        UIView.animate(withDuration: 0.2) {
             self.alpha = 1
             self.contentView.transform = CGAffineTransform.identity
         }
