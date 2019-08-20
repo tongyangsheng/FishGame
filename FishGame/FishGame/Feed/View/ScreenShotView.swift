@@ -57,6 +57,7 @@ extension ScreenShotView
         //分享按钮
         shareButton.frame = CGRect(x: K_ScreenW - 0.28*K_ScreenW - 0.2*K_ScreenW, y: 0.787*K_ScreenH, width: 0.2*K_ScreenW, height: 0.16*K_ScreenH)
         shareButton.setImage(UIImage(named: "分享"), for: .normal)
+        saveButton.addTarget(self, action: #selector(chageToImageAndSave), for: .touchUpInside)
         self.addSubview(shareButton)
         //关闭按钮
         quitButton.frame = CGRect(x: K_ScreenW - 0.057*K_ScreenW - 0.027*K_ScreenW , y: 0.04*K_ScreenH, width: 0.057*K_ScreenW, height: 0.057*K_ScreenW)
@@ -81,7 +82,7 @@ extension ScreenShotView
     {
         self.alpha = 0
         contentView.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
-        UIView.animate(withDuration: 0.2) {
+        UIView.animate(withDuration: 0.4) {
             self.alpha = 1
             self.contentView.transform = CGAffineTransform.identity
         }
@@ -93,6 +94,25 @@ extension ScreenShotView
     @objc public func dismiss()
     {
         self.removeFromSuperview()
+    }
+    
+    @objc public func chageToImageAndSave()
+    {
+        let saveImage: UIImage = getImageFromView(view: contentView)
+        UIImageWriteToSavedPhotosAlbum(saveImage, nil, nil, nil)
+    }
+}
+
+extension ScreenShotView
+{
+        func getImageFromView(view: UIView) -> UIImage {
+        // 下面方法，第一个参数表示区域大小。第二个参数表示是否是非透明的。如果需要显示半透明效果，需要传NO，否则传YES。第三个参数就是屏幕密度了
+        UIGraphicsBeginImageContextWithOptions(view.frame.size, false, UIScreen.main.scale)
+        let context = UIGraphicsGetCurrentContext()
+        view.layer.render(in: context!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return image!
     }
 }
 
