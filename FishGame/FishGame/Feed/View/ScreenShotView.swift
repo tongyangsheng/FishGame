@@ -17,6 +17,7 @@ class ScreenShotView: UIView
     let fishImageView = UIImageView()
     let saveButton = UIButton()
     let shareButton = UIButton()
+    let quitButton = UIButton()
     let fishProgressLabel = UILabel()
     
     override init(frame: CGRect)
@@ -53,7 +54,11 @@ extension ScreenShotView
         shareButton.frame = CGRect(x: K_ScreenW - 0.28*K_ScreenW - 0.2*K_ScreenW, y: 0.787*K_ScreenH, width: 0.2*K_ScreenW, height: 0.16*K_ScreenH)
         shareButton.setImage(UIImage(named: "分享"), for: .normal)
         self.addSubview(shareButton)
-        
+        //关闭按钮
+        quitButton.frame = CGRect(x: K_ScreenW - 0.057*K_ScreenW - 0.027*K_ScreenW , y: 0.04*K_ScreenH, width: 0.057*K_ScreenW, height: 0.057*K_ScreenW)
+        quitButton.setImage(UIImage(named: "关闭"), for: .normal)
+        quitButton.addTarget(self, action: #selector(dismiss), for: .touchUpInside)
+        self.addSubview(quitButton)
     }
     private func setupContentUI()
     {
@@ -81,8 +86,9 @@ extension ScreenShotView
             window.addSubview(self)
         }
     }
-    public func dismiss()
+    @objc public func dismiss()
     {
         self.removeFromSuperview()
     }
 }
+
