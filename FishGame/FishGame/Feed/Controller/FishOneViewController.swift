@@ -9,8 +9,7 @@
 import UIKit
 import Lottie
 import STKitSwift
-import CoreGraphics
-import QuartzCore
+import AudioToolbox
 
 class FishOneViewController: UIViewController
 {
@@ -326,6 +325,13 @@ extension FishOneViewController
     @objc func pressScreenshot(_ button: UIButton)
     {
         print("截图")
+        
+        var soundID: SystemSoundID = 0
+        let path = Bundle.main.path(forResource: "photoShutter", ofType: "caf")
+        let baseURL = NSURL(fileURLWithPath: path!)
+        AudioServicesCreateSystemSoundID(baseURL, &soundID)
+        AudioServicesPlaySystemSound(soundID)
+        
         let flashView = UIView()
         flashView.frame = CGRect(x: 0, y: 0, width: K_ScreenW, height: K_ScreenH)
         flashView.backgroundColor = .white

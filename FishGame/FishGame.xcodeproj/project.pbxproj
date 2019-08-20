@@ -20,9 +20,9 @@
 		EF0DD8112305412500F7E7CB /* FishOneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0DD8102305412500F7E7CB /* FishOneViewController.swift */; };
 		EF0DD8182305441700F7E7CB /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0DD8172305441700F7E7CB /* Common.swift */; };
 		EF0DD81C23054ED000F7E7CB /* UIDevice-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0DD81B23054ED000F7E7CB /* UIDevice-Extension.swift */; };
-		EF3B27FD230B7FC300E1EA79 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3B27FC230B7FC300E1EA79 /* QuartzCore.framework */; };
-		EF3B27FF230B815F00E1EA79 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3B27FE230B815E00E1EA79 /* CoreGraphics.framework */; };
 		EF3B2801230B869100E1EA79 /* ScreenShotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF3B2800230B869100E1EA79 /* ScreenShotView.swift */; };
+		EF3B2804230BC04B00E1EA79 /* photoShutter.caf in Resources */ = {isa = PBXBuildFile; fileRef = EF3B2803230BC04A00E1EA79 /* photoShutter.caf */; };
+		EF3B2806230BC0C900E1EA79 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3B2805230BC0C900E1EA79 /* AudioToolbox.framework */; };
 		EF9518DB2306348B00B676C9 /* FishTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9518DA2306348B00B676C9 /* FishTwoViewController.swift */; };
 		EF9518DD23067AA900B676C9 /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9518DC23067AA900B676C9 /* BubbleView.swift */; };
 		EF9518DF230683FA00B676C9 /* TYSTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9518DE230683FA00B676C9 /* TYSTimer.swift */; };
@@ -79,6 +79,8 @@
 		EF3B27FC230B7FC300E1EA79 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		EF3B27FE230B815E00E1EA79 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		EF3B2800230B869100E1EA79 /* ScreenShotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenShotView.swift; sourceTree = "<group>"; };
+		EF3B2803230BC04A00E1EA79 /* photoShutter.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = photoShutter.caf; sourceTree = "<group>"; };
+		EF3B2805230BC0C900E1EA79 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		EF9518DA2306348B00B676C9 /* FishTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishTwoViewController.swift; sourceTree = "<group>"; };
 		EF9518DC23067AA900B676C9 /* BubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleView.swift; sourceTree = "<group>"; };
 		EF9518DE230683FA00B676C9 /* TYSTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TYSTimer.swift; sourceTree = "<group>"; };
@@ -96,8 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF3B27FF230B815F00E1EA79 /* CoreGraphics.framework in Frameworks */,
-				EF3B27FD230B7FC300E1EA79 /* QuartzCore.framework in Frameworks */,
+				EF3B2806230BC0C900E1EA79 /* AudioToolbox.framework in Frameworks */,
 				5510D10BF76F3011A7295613 /* Pods_FishGame.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,6 +138,7 @@
 		6F5A20D8C468F0B7A68B2146 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EF3B2805230BC0C900E1EA79 /* AudioToolbox.framework */,
 				EF3B27FE230B815E00E1EA79 /* CoreGraphics.framework */,
 				EF3B27FC230B7FC300E1EA79 /* QuartzCore.framework */,
 				0E76174F6C464EFFDD847811 /* Pods_FishGame.framework */,
@@ -171,6 +173,7 @@
 		EF0DD7DC23053F5700F7E7CB /* FishGame */ = {
 			isa = PBXGroup;
 			children = (
+				EF3B2802230BBE7700E1EA79 /* Sound */,
 				EF9518E023068E9A00B676C9 /* AnimationJson */,
 				EF0DD8162305440700F7E7CB /* Tools */,
 				EF0DD8122305416100F7E7CB /* Feed */,
@@ -246,6 +249,14 @@
 				EF9518DE230683FA00B676C9 /* TYSTimer.swift */,
 			);
 			path = Tools;
+			sourceTree = "<group>";
+		};
+		EF3B2802230BBE7700E1EA79 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				EF3B2803230BC04A00E1EA79 /* photoShutter.caf */,
+			);
+			path = Sound;
 			sourceTree = "<group>";
 		};
 		EF9518E023068E9A00B676C9 /* AnimationJson */ = {
@@ -377,6 +388,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				EF9518EA23069AA400B676C9 /* 8194-sea-turtle.json in Resources */,
+				EF3B2804230BC04B00E1EA79 /* photoShutter.caf in Resources */,
 				EF9518E62306977400B676C9 /* fishJson.json in Resources */,
 				EF0DD7EB23053F5900F7E7CB /* LaunchScreen.storyboard in Resources */,
 				EF0DD7E823053F5900F7E7CB /* Assets.xcassets in Resources */,
