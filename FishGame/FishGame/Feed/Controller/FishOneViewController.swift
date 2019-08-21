@@ -265,38 +265,132 @@ extension FishOneViewController
     {
         let animation = CAKeyframeAnimation(keyPath: "position")
         
-        print("动画开始坐标：\(nowCenterPoint)")
-        let startValue: NSValue = NSValue(cgPoint: nowCenterPoint)
-        let endValue: NSValue = NSValue(cgPoint: CGPoint(x: 0.55*K_ScreenW, y: 0.4*K_ScreenH))
-        print("动画终点坐标应该是：\(0.55*K_ScreenW)")
-        
-        animation.values = [startValue,endValue]
-        
-        animation.autoreverses = false
-        animation.duration = 1
-        animation.isRemovedOnCompletion = false
-        animation.fillMode = CAMediaTimingFillMode.forwards
-        animation.delegate = self
-        fishView.layer.add(animation, forKey: "route5")
+        if nowCenterPoint.x < 0.55*K_ScreenW
+        {
+            var transform: CGAffineTransform = CGAffineTransform.identity
+            transform = CGAffineTransform.init(scaleX: -1, y: 1)
+            fishView.transform = transform
+            let startValue: NSValue = NSValue(cgPoint: nowCenterPoint)
+            let endValue: NSValue = NSValue(cgPoint: CGPoint(x: 0.43*K_ScreenW, y: 0.4*K_ScreenH))
+            
+            animation.values = [startValue,endValue]
+            
+            animation.autoreverses = false
+            animation.duration = 1
+            animation.isRemovedOnCompletion = false
+            animation.fillMode = CAMediaTimingFillMode.forwards
+            animation.delegate = self
+            fishView.layer.add(animation, forKey: "route5")
+            DispatchQueue.main.asyncAfter(deadline: .now()+5, execute:
+                {
+                    self.BaitAnimationView.removeFromSuperview()
+                    self.nowCenterPoint = self.fishView.layer.position
+                    self.fishView.layer.position = self.fishView.layer.presentation()!.position
+                    self.finishEatToRight()
+            })
+        }
+        else
+        {
+            let startValue: NSValue = NSValue(cgPoint: nowCenterPoint)
+            let endValue: NSValue = NSValue(cgPoint: CGPoint(x: 0.55*K_ScreenW, y: 0.4*K_ScreenH))
+            
+            animation.values = [startValue,endValue]
+            
+            animation.autoreverses = false
+            animation.duration = 1
+            animation.isRemovedOnCompletion = false
+            animation.fillMode = CAMediaTimingFillMode.forwards
+            animation.delegate = self
+            fishView.layer.add(animation, forKey: "route5")
+            DispatchQueue.main.asyncAfter(deadline: .now()+5, execute:
+                {
+                    self.BaitAnimationView.removeFromSuperview()
+                    self.nowCenterPoint = self.fishView.layer.position
+                    self.fishView.layer.position = self.fishView.layer.presentation()!.position
+                    self.finishEatToLeft()
+            })
+        }
     }
     
     @objc func fishGetFoodRouteLeftToRight()
     {
         let animation = CAKeyframeAnimation(keyPath: "position")
-        
-        print("动画开始坐标：\(nowCenterPoint)")
+        if nowCenterPoint.x > 0.55*K_ScreenW
+        {
+            var transform: CGAffineTransform = CGAffineTransform.identity
+            transform = CGAffineTransform.init(scaleX: 1, y: 1)
+            fishView.transform = transform
+            let startValue: NSValue = NSValue(cgPoint: nowCenterPoint)
+            let endValue: NSValue = NSValue(cgPoint: CGPoint(x: 0.55*K_ScreenW, y: 0.4*K_ScreenH))
+            animation.values = [startValue,endValue]
+            
+            animation.autoreverses = false
+            animation.duration = 1
+            animation.isRemovedOnCompletion = false
+            animation.fillMode = CAMediaTimingFillMode.forwards
+            animation.delegate = self
+            fishView.layer.add(animation, forKey: "route6")
+            DispatchQueue.main.asyncAfter(deadline: .now()+5, execute:
+                {
+                    self.BaitAnimationView.removeFromSuperview()
+                    self.nowCenterPoint = self.fishView.layer.position
+                    self.fishView.layer.position = self.fishView.layer.presentation()!.position
+                    self.finishEatToLeft()
+            })
+        }
+        else
+        {
+            let startValue: NSValue = NSValue(cgPoint: nowCenterPoint)
+            let endValue: NSValue = NSValue(cgPoint: CGPoint(x: 0.43*K_ScreenW, y: 0.4*K_ScreenH))
+            
+            animation.values = [startValue,endValue]
+            
+            animation.autoreverses = false
+            animation.duration = 1
+            animation.isRemovedOnCompletion = false
+            animation.fillMode = CAMediaTimingFillMode.forwards
+            animation.delegate = self
+            fishView.layer.add(animation, forKey: "route6")
+            DispatchQueue.main.asyncAfter(deadline: .now()+5, execute:
+                {
+                    self.BaitAnimationView.removeFromSuperview()
+                    self.nowCenterPoint = self.fishView.layer.position
+                    self.fishView.layer.position = self.fishView.layer.presentation()!.position
+                    self.finishEatToRight()
+            })
+        }
+    }
+    
+    @objc func finishEatToLeft()
+    {
+        let animation = CAKeyframeAnimation(keyPath: "position")
         let startValue: NSValue = NSValue(cgPoint: nowCenterPoint)
-        let endValue: NSValue = NSValue(cgPoint: CGPoint(x: 0.43*K_ScreenW, y: 0.4*K_ScreenH))
+        let endValue: NSValue = NSValue(cgPoint: CGPoint(x: -0.1*K_ScreenW, y: 0.8*K_ScreenH))
+        
+        animation.values = [startValue,endValue]
+        
+        animation.autoreverses = false
+        animation.duration = 3
+        animation.isRemovedOnCompletion = false
+        animation.fillMode = CAMediaTimingFillMode.forwards
+        animation.delegate = self
+        fishView.layer.add(animation, forKey: "route7")
+    }
+    @objc func finishEatToRight()
+    {
+        let animation = CAKeyframeAnimation(keyPath: "position")
+        let startValue: NSValue = NSValue(cgPoint: nowCenterPoint)
+        let endValue: NSValue = NSValue(cgPoint: CGPoint(x: 1.1*K_ScreenW, y: 0.8*K_ScreenH))
         print("动画终点坐标应该是：\(0.55*K_ScreenW)")
         
         animation.values = [startValue,endValue]
         
         animation.autoreverses = false
-        animation.duration = 1
+        animation.duration = 3
         animation.isRemovedOnCompletion = false
         animation.fillMode = CAMediaTimingFillMode.forwards
         animation.delegate = self
-        fishView.layer.add(animation, forKey: "route5")
+        fishView.layer.add(animation, forKey: "route8")
     }
     
     @objc func pushBait()
@@ -332,7 +426,7 @@ extension FishOneViewController
         else
         {
             guard let animationName = self.fishView.layer.animationKeys() else {  print("当前无动画"); return }
-            if animationName == ["route1"]||animationName == ["route1"]
+            if animationName == ["route1"]||animationName == ["route3"]
             {
                 fishView.layer.removeAllAnimations()
                 fishView.layer.position = fishView.layer.presentation()!.position
@@ -344,7 +438,9 @@ extension FishOneViewController
                 
                 nowCenterPoint = fishView.layer.position
                 
+                pushBait()
                 fishGetFoodRouteRightToLeft()
+                
             }
             else
             {
@@ -358,10 +454,10 @@ extension FishOneViewController
                 
                 nowCenterPoint = fishView.layer.position
                 
+                pushBait()
                 fishGetFoodRouteLeftToRight()
+                
             }
-            
-            pushBait()
             
             K_Bait = K_Bait - 10
             K_fishProgress = K_fishProgress + 10
@@ -459,8 +555,53 @@ extension FishOneViewController: CAAnimationDelegate
             print("调用5")
             fishView.layer.position = fishView.layer.presentation()!.position
             break
-        default:
+        case ["route6"]:
             print("调用6")
+            fishView.layer.position = fishView.layer.presentation()!.position
+            break
+        case ["route7","route5"]:
+            do {
+                print("调用7")
+                var transform: CGAffineTransform = CGAffineTransform.identity
+                transform = CGAffineTransform.init(scaleX: -1, y: 1)
+                fishView.transform = transform
+                fishView.layer.removeAllAnimations()
+                fishRunRoute2()
+                break
+            }
+        case ["route8","route6"]:
+            do {
+                print("调用8")
+                var transform: CGAffineTransform = CGAffineTransform.identity
+                transform = CGAffineTransform.init(scaleX: 1, y: 1)
+                fishView.transform = transform
+                fishView.layer.removeAllAnimations()
+                fishRunRoute1()
+                break
+            }
+        case ["route8","route5"]:
+            do {
+                print("调用9")
+                var transform: CGAffineTransform = CGAffineTransform.identity
+                transform = CGAffineTransform.init(scaleX: 1, y: 1)
+                fishView.transform = transform
+                fishView.layer.removeAllAnimations()
+                fishRunRoute1()
+                break
+            }
+        case ["route7","route6"]:
+            do {
+                print("调用10")
+                var transform: CGAffineTransform = CGAffineTransform.identity
+                transform = CGAffineTransform.init(scaleX: -1, y: 1)
+                fishView.transform = transform
+                fishView.layer.removeAllAnimations()
+                fishRunRoute2()
+                break
+            }
+        default:
+            print("调用默认参数")
+            print(animationName)
         }
     }
 }
@@ -472,6 +613,8 @@ extension FishOneViewController: UINavigationControllerDelegate
         navigationController.setNavigationBarHidden(true, animated: true)
     }
 }
+
+
 
 
 
