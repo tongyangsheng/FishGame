@@ -35,6 +35,7 @@ class FishOneViewController: UIViewController
     let progressBackImage = UIImageView()
     
     let BaitAnimationView = AnimationView()
+    let backgroudFish = AnimationView()
     
     var nowCenterPoint:CGPoint = CGPoint(x: 0, y: 0)
     
@@ -83,6 +84,16 @@ extension FishOneViewController
         fishBubble.isUserInteractionEnabled = true
         fishBubble.tag = 1000
         fishBubble.frame = CGRect(x: 0, y: -10, width: 0.092*K_ScreenW, height: 0.653*0.108*K_ScreenW)
+        
+        let animation1 = Animation.named("beijing")
+        backgroudFish.animation = animation1
+        backgroudFish.contentMode = .scaleAspectFit
+        backgroudFish.play()
+        backgroudFish.loopMode = .loop
+        backgroudFish.isUserInteractionEnabled = true
+        backgroudFish.tag = 1002
+        backgroudFish.frame = UIScreen.main.bounds
+        self.view.addSubview(backgroudFish)
         
         progressBackImage.image = UIImage(named: "进度条")
         progressBackImage.frame = CGRect(x: 0.11*K_ScreenW, y: 0.035*K_ScreenH, width: 0.29*K_ScreenW, height: 0.09*K_ScreenH)
@@ -133,6 +144,7 @@ extension FishOneViewController
         
         earnButton.frame = CGRect(x: K_ScreenW - 0.28*K_ScreenW - 0.2*K_ScreenW, y: 0.787*K_ScreenH, width: 0.2*K_ScreenW, height: 0.16*K_ScreenH)
         earnButton.setImage(UIImage(named: "赚取鱼食"), for: .normal)
+        earnButton.addTarget(self, action: #selector(pressEarn(_:)), for: .touchUpInside)
         self.view.addSubview(earnButton)
         
         offButton.frame = CGRect(x: K_ScreenW - 0.057*K_ScreenW - 0.027*K_ScreenW , y: 0.04*K_ScreenH, width: 0.057*K_ScreenW, height: 0.057*K_ScreenW)
@@ -490,6 +502,29 @@ extension FishOneViewController
         UIView.commitAnimations()
         let WarningView = ScreenShotView(frame: UIScreen.main.bounds, fishTypeImageStr: "鱼1")
         WarningView.show()
+    }
+    
+    @objc func pressEarn(_ button: UIButton)
+    {
+        print("赚取鱼食")
+        let countdownView = UIView()
+        countdownView.frame = UIScreen.main.bounds
+        countdownView.backgroundColor = UIColor(r: 236, g: 249, b: 255)
+        let countdownLabel = CountdownLabel()
+        countdownLabel.frame = CGRect(x: (K_ScreenW-200)/2, y: (K_ScreenH-20)/2, width: 200, height: 50)
+        countdownLabel.textAlignment = .center;
+        countdownLabel.textColor = UIColor(r: 0, g: 189, b: 255);
+        if K_ScreenW > 375
+        {
+            countdownLabel.font =  UIFont(name: "PingFang SC", size: 35);
+        }
+        else
+        {
+            countdownLabel.font =  UIFont(name: "PingFang SC", size: 22);
+        }
+        countdownView.addSubview(countdownLabel)
+        self.view.addSubview(countdownView)
+        countdownLabel.startCount()
     }
     
     private func ObserveBait()
