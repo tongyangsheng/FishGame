@@ -76,17 +76,24 @@ extension FishOneViewController
         
         fishView.frame = CGRect(x: 1.2*K_ScreenW, y: 100, width: 0.18*K_ScreenW, height: 0.653*0.108*K_ScreenW)
         
+
+        //指定加载的JSON文件
         let animation = Animation.named("fishJson")
+        //将动画添加到AnimationView
         fishBubble.animation = animation
+        //填充模式（拉伸模式）
         fishBubble.contentMode = .scaleAspectFit
+        //开启动画
         fishBubble.play()
+        //动画循环播放
         fishBubble.loopMode = .loop
-        fishBubble.isUserInteractionEnabled = true
-        fishBubble.tag = 1000
+        //动画位置
         fishBubble.frame = CGRect(x: 0, y: -10, width: 0.092*K_ScreenW, height: 0.653*0.108*K_ScreenW)
         
-        let animation1 = Animation.named("beijing")
+        let animation1 = Animation.named("beijing_x")
+        let imageProvider = BundleImageProvider(bundle: Bundle.main, searchPath: "img_0")
         backgroudFish.animation = animation1
+        backgroudFish.imageProvider = imageProvider
         backgroudFish.contentMode = .scaleAspectFit
         backgroudFish.play()
         backgroudFish.loopMode = .loop
@@ -522,9 +529,12 @@ extension FishOneViewController
         {
             countdownLabel.font =  UIFont(name: "PingFang SC", size: 22);
         }
+        countdownLabel.startCount()
         countdownView.addSubview(countdownLabel)
         self.view.addSubview(countdownView)
-        countdownLabel.startCount()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+               countdownView.removeFromSuperview()
+        }
     }
     
     private func ObserveBait()

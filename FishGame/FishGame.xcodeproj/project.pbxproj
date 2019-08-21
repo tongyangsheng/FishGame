@@ -26,6 +26,8 @@
 		EF3B2808230BD10300E1EA79 /* weishi.json in Resources */ = {isa = PBXBuildFile; fileRef = EF3B2807230BD10300E1EA79 /* weishi.json */; };
 		EF7DC196230CDB1A006FA3F8 /* beijing.json in Resources */ = {isa = PBXBuildFile; fileRef = EF7DC195230CDB1A006FA3F8 /* beijing.json */; };
 		EF7DC198230CE45D006FA3F8 /* CountdownLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7DC197230CE45D006FA3F8 /* CountdownLabel.swift */; };
+		EF7DC19B230D2D00006FA3F8 /* img_0.png in Resources */ = {isa = PBXBuildFile; fileRef = EF7DC19A230D2D00006FA3F8 /* img_0.png */; };
+		EF7DC19D230D3CEE006FA3F8 /* beijing_x.json in Resources */ = {isa = PBXBuildFile; fileRef = EF7DC19C230D3CEE006FA3F8 /* beijing_x.json */; };
 		EF9518DB2306348B00B676C9 /* FishTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9518DA2306348B00B676C9 /* FishTwoViewController.swift */; };
 		EF9518DD23067AA900B676C9 /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9518DC23067AA900B676C9 /* BubbleView.swift */; };
 		EF9518DF230683FA00B676C9 /* TYSTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9518DE230683FA00B676C9 /* TYSTimer.swift */; };
@@ -87,6 +89,8 @@
 		EF3B2807230BD10300E1EA79 /* weishi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weishi.json; sourceTree = "<group>"; };
 		EF7DC195230CDB1A006FA3F8 /* beijing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = beijing.json; sourceTree = "<group>"; };
 		EF7DC197230CE45D006FA3F8 /* CountdownLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownLabel.swift; sourceTree = "<group>"; };
+		EF7DC19A230D2D00006FA3F8 /* img_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_0.png; sourceTree = "<group>"; };
+		EF7DC19C230D3CEE006FA3F8 /* beijing_x.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = beijing_x.json; sourceTree = "<group>"; };
 		EF9518DA2306348B00B676C9 /* FishTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishTwoViewController.swift; sourceTree = "<group>"; };
 		EF9518DC23067AA900B676C9 /* BubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleView.swift; sourceTree = "<group>"; };
 		EF9518DE230683FA00B676C9 /* TYSTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TYSTimer.swift; sourceTree = "<group>"; };
@@ -179,6 +183,7 @@
 		EF0DD7DC23053F5700F7E7CB /* FishGame */ = {
 			isa = PBXGroup;
 			children = (
+				EF7DC199230D2D00006FA3F8 /* images */,
 				EF3B2802230BBE7700E1EA79 /* Sound */,
 				EF9518E023068E9A00B676C9 /* AnimationJson */,
 				EF0DD8162305440700F7E7CB /* Tools */,
@@ -266,6 +271,14 @@
 			path = Sound;
 			sourceTree = "<group>";
 		};
+		EF7DC199230D2D00006FA3F8 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				EF7DC19A230D2D00006FA3F8 /* img_0.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		EF9518E023068E9A00B676C9 /* AnimationJson */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,6 +287,7 @@
 				EF3B2807230BD10300E1EA79 /* weishi.json */,
 				EF9518E52306977400B676C9 /* fishJson.json */,
 				EF7DC195230CDB1A006FA3F8 /* beijing.json */,
+				EF7DC19C230D3CEE006FA3F8 /* beijing_x.json */,
 				EF9518E923069AA400B676C9 /* 8194-sea-turtle.json */,
 			);
 			path = AnimationJson;
@@ -398,8 +412,10 @@
 			files = (
 				EF9518EA23069AA400B676C9 /* 8194-sea-turtle.json in Resources */,
 				EF3B2804230BC04B00E1EA79 /* photoShutter.caf in Resources */,
+				EF7DC19B230D2D00006FA3F8 /* img_0.png in Resources */,
 				EF9518E62306977400B676C9 /* fishJson.json in Resources */,
 				EF0DD7EB23053F5900F7E7CB /* LaunchScreen.storyboard in Resources */,
+				EF7DC19D230D3CEE006FA3F8 /* beijing_x.json in Resources */,
 				EF3B2808230BD10300E1EA79 /* weishi.json in Resources */,
 				EF0DD7E823053F5900F7E7CB /* Assets.xcassets in Resources */,
 				EF9518E8230699D900B676C9 /* fishfish.json in Resources */,
