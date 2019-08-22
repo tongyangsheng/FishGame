@@ -24,19 +24,21 @@
 		EF3B2804230BC04B00E1EA79 /* photoShutter.caf in Resources */ = {isa = PBXBuildFile; fileRef = EF3B2803230BC04A00E1EA79 /* photoShutter.caf */; };
 		EF3B2806230BC0C900E1EA79 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3B2805230BC0C900E1EA79 /* AudioToolbox.framework */; };
 		EF3B2808230BD10300E1EA79 /* weishi.json in Resources */ = {isa = PBXBuildFile; fileRef = EF3B2807230BD10300E1EA79 /* weishi.json */; };
-		EF7DC196230CDB1A006FA3F8 /* beijing.json in Resources */ = {isa = PBXBuildFile; fileRef = EF7DC195230CDB1A006FA3F8 /* beijing.json */; };
 		EF7DC198230CE45D006FA3F8 /* CountdownLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7DC197230CE45D006FA3F8 /* CountdownLabel.swift */; };
-		EF7DC19B230D2D00006FA3F8 /* img_0.png in Resources */ = {isa = PBXBuildFile; fileRef = EF7DC19A230D2D00006FA3F8 /* img_0.png */; };
+		EF7DC19B230D2D00006FA3F8 /* img_4.png in Resources */ = {isa = PBXBuildFile; fileRef = EF7DC19A230D2D00006FA3F8 /* img_4.png */; };
 		EF7DC19D230D3CEE006FA3F8 /* beijing_x.json in Resources */ = {isa = PBXBuildFile; fileRef = EF7DC19C230D3CEE006FA3F8 /* beijing_x.json */; };
 		EF9518DB2306348B00B676C9 /* FishTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9518DA2306348B00B676C9 /* FishTwoViewController.swift */; };
 		EF9518DD23067AA900B676C9 /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9518DC23067AA900B676C9 /* BubbleView.swift */; };
 		EF9518DF230683FA00B676C9 /* TYSTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9518DE230683FA00B676C9 /* TYSTimer.swift */; };
-		EF9518E42306921A00B676C9 /* FishData.json in Resources */ = {isa = PBXBuildFile; fileRef = EF9518E32306921A00B676C9 /* FishData.json */; };
 		EF9518E62306977400B676C9 /* fishJson.json in Resources */ = {isa = PBXBuildFile; fileRef = EF9518E52306977400B676C9 /* fishJson.json */; };
-		EF9518E8230699D900B676C9 /* fishfish.json in Resources */ = {isa = PBXBuildFile; fileRef = EF9518E7230699D900B676C9 /* fishfish.json */; };
-		EF9518EA23069AA400B676C9 /* 8194-sea-turtle.json in Resources */ = {isa = PBXBuildFile; fileRef = EF9518E923069AA400B676C9 /* 8194-sea-turtle.json */; };
 		EF9D262F230A2E28007EECDB /* LowBaitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9D262E230A2E28007EECDB /* LowBaitView.swift */; };
 		EF9D2634230A35C9007EECDB /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9D2633230A35C9007EECDB /* UIColor-Extension.swift */; };
+		EFA8AA6F230E232700E11D6A /* MainGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA8AA6E230E232700E11D6A /* MainGameViewController.swift */; };
+		EFA8AA72230E263600E11D6A /* leidian_x.json in Resources */ = {isa = PBXBuildFile; fileRef = EFA8AA71230E263600E11D6A /* leidian_x.json */; };
+		EFA8AA79230E295C00E11D6A /* bolan_x.json in Resources */ = {isa = PBXBuildFile; fileRef = EFA8AA74230E295C00E11D6A /* bolan_x.json */; };
+		EFA8AA7A230E295C00E11D6A /* img_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EFA8AA76230E295C00E11D6A /* img_1.png */; };
+		EFA8AA7B230E295C00E11D6A /* img_0.png in Resources */ = {isa = PBXBuildFile; fileRef = EFA8AA77230E295C00E11D6A /* img_0.png */; };
+		EFA8AA7C230E295C00E11D6A /* img_2.png in Resources */ = {isa = PBXBuildFile; fileRef = EFA8AA78230E295C00E11D6A /* img_2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,19 +89,21 @@
 		EF3B2803230BC04A00E1EA79 /* photoShutter.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = photoShutter.caf; sourceTree = "<group>"; };
 		EF3B2805230BC0C900E1EA79 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		EF3B2807230BD10300E1EA79 /* weishi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weishi.json; sourceTree = "<group>"; };
-		EF7DC195230CDB1A006FA3F8 /* beijing.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = beijing.json; sourceTree = "<group>"; };
 		EF7DC197230CE45D006FA3F8 /* CountdownLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownLabel.swift; sourceTree = "<group>"; };
-		EF7DC19A230D2D00006FA3F8 /* img_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_0.png; sourceTree = "<group>"; };
+		EF7DC19A230D2D00006FA3F8 /* img_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_4.png; sourceTree = "<group>"; };
 		EF7DC19C230D3CEE006FA3F8 /* beijing_x.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = beijing_x.json; sourceTree = "<group>"; };
 		EF9518DA2306348B00B676C9 /* FishTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishTwoViewController.swift; sourceTree = "<group>"; };
 		EF9518DC23067AA900B676C9 /* BubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleView.swift; sourceTree = "<group>"; };
 		EF9518DE230683FA00B676C9 /* TYSTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TYSTimer.swift; sourceTree = "<group>"; };
-		EF9518E32306921A00B676C9 /* FishData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = FishData.json; path = ../../../../FishData.json; sourceTree = "<group>"; };
 		EF9518E52306977400B676C9 /* fishJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fishJson.json; sourceTree = "<group>"; };
-		EF9518E7230699D900B676C9 /* fishfish.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fishfish.json; sourceTree = "<group>"; };
-		EF9518E923069AA400B676C9 /* 8194-sea-turtle.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "8194-sea-turtle.json"; sourceTree = "<group>"; };
 		EF9D262E230A2E28007EECDB /* LowBaitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowBaitView.swift; sourceTree = "<group>"; };
 		EF9D2633230A35C9007EECDB /* UIColor-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
+		EFA8AA6E230E232700E11D6A /* MainGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGameViewController.swift; sourceTree = "<group>"; };
+		EFA8AA71230E263600E11D6A /* leidian_x.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = leidian_x.json; sourceTree = "<group>"; };
+		EFA8AA74230E295C00E11D6A /* bolan_x.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bolan_x.json; sourceTree = "<group>"; };
+		EFA8AA76230E295C00E11D6A /* img_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_1.png; sourceTree = "<group>"; };
+		EFA8AA77230E295C00E11D6A /* img_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_0.png; sourceTree = "<group>"; };
+		EFA8AA78230E295C00E11D6A /* img_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_2.png; sourceTree = "<group>"; };
 		F12964EABAE8A7EE12F1C357 /* Pods-FishGameUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FishGameUITests.debug.xcconfig"; path = "Target Support Files/Pods-FishGameUITests/Pods-FishGameUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -183,11 +187,11 @@
 		EF0DD7DC23053F5700F7E7CB /* FishGame */ = {
 			isa = PBXGroup;
 			children = (
-				EF7DC199230D2D00006FA3F8 /* images */,
 				EF3B2802230BBE7700E1EA79 /* Sound */,
 				EF9518E023068E9A00B676C9 /* AnimationJson */,
 				EF0DD8162305440700F7E7CB /* Tools */,
 				EF0DD8122305416100F7E7CB /* Feed */,
+				EFA8AA6A230E22DF00E11D6A /* Game */,
 				EF0DD7DD23053F5700F7E7CB /* AppDelegate.swift */,
 				EF0DD7E123053F5700F7E7CB /* Main.storyboard */,
 				EF0DD7E723053F5900F7E7CB /* Assets.xcassets */,
@@ -274,7 +278,7 @@
 		EF7DC199230D2D00006FA3F8 /* images */ = {
 			isa = PBXGroup;
 			children = (
-				EF7DC19A230D2D00006FA3F8 /* img_0.png */,
+				EF7DC19A230D2D00006FA3F8 /* img_4.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -282,13 +286,11 @@
 		EF9518E023068E9A00B676C9 /* AnimationJson */ = {
 			isa = PBXGroup;
 			children = (
-				EF9518E32306921A00B676C9 /* FishData.json */,
-				EF9518E7230699D900B676C9 /* fishfish.json */,
-				EF3B2807230BD10300E1EA79 /* weishi.json */,
-				EF9518E52306977400B676C9 /* fishJson.json */,
-				EF7DC195230CDB1A006FA3F8 /* beijing.json */,
-				EF7DC19C230D3CEE006FA3F8 /* beijing_x.json */,
-				EF9518E923069AA400B676C9 /* 8194-sea-turtle.json */,
+				EFA8AA7F230E337400E11D6A /* FishGroupAnimtion */,
+				EFA8AA7E230E336400E11D6A /* FeedAnimation */,
+				EFA8AA7D230E332100E11D6A /* FishAnimation */,
+				EFA8AA73230E295C00E11D6A /* WaveAnimation */,
+				EFA8AA70230E263600E11D6A /* DarkCloudAnimation */,
 			);
 			path = AnimationJson;
 			sourceTree = "<group>";
@@ -300,6 +302,90 @@
 				EF9D2633230A35C9007EECDB /* UIColor-Extension.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		EFA8AA6A230E22DF00E11D6A /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				EFA8AA6D230E22F900E11D6A /* Controller */,
+				EFA8AA6C230E22F300E11D6A /* View */,
+				EFA8AA6B230E22ED00E11D6A /* Model */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		EFA8AA6B230E22ED00E11D6A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EFA8AA6C230E22F300E11D6A /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		EFA8AA6D230E22F900E11D6A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				EFA8AA6E230E232700E11D6A /* MainGameViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		EFA8AA70230E263600E11D6A /* DarkCloudAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				EFA8AA71230E263600E11D6A /* leidian_x.json */,
+			);
+			path = DarkCloudAnimation;
+			sourceTree = "<group>";
+		};
+		EFA8AA73230E295C00E11D6A /* WaveAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				EFA8AA74230E295C00E11D6A /* bolan_x.json */,
+				EFA8AA75230E295C00E11D6A /* images */,
+			);
+			path = WaveAnimation;
+			sourceTree = "<group>";
+		};
+		EFA8AA75230E295C00E11D6A /* images */ = {
+			isa = PBXGroup;
+			children = (
+				EFA8AA76230E295C00E11D6A /* img_1.png */,
+				EFA8AA77230E295C00E11D6A /* img_0.png */,
+				EFA8AA78230E295C00E11D6A /* img_2.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		EFA8AA7D230E332100E11D6A /* FishAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				EF9518E52306977400B676C9 /* fishJson.json */,
+			);
+			path = FishAnimation;
+			sourceTree = "<group>";
+		};
+		EFA8AA7E230E336400E11D6A /* FeedAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				EF3B2807230BD10300E1EA79 /* weishi.json */,
+			);
+			path = FeedAnimation;
+			sourceTree = "<group>";
+		};
+		EFA8AA7F230E337400E11D6A /* FishGroupAnimtion */ = {
+			isa = PBXGroup;
+			children = (
+				EF7DC199230D2D00006FA3F8 /* images */,
+				EF7DC19C230D3CEE006FA3F8 /* beijing_x.json */,
+			);
+			path = FishGroupAnimtion;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -410,18 +496,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF9518EA23069AA400B676C9 /* 8194-sea-turtle.json in Resources */,
 				EF3B2804230BC04B00E1EA79 /* photoShutter.caf in Resources */,
-				EF7DC19B230D2D00006FA3F8 /* img_0.png in Resources */,
+				EFA8AA7A230E295C00E11D6A /* img_1.png in Resources */,
+				EF7DC19B230D2D00006FA3F8 /* img_4.png in Resources */,
 				EF9518E62306977400B676C9 /* fishJson.json in Resources */,
 				EF0DD7EB23053F5900F7E7CB /* LaunchScreen.storyboard in Resources */,
 				EF7DC19D230D3CEE006FA3F8 /* beijing_x.json in Resources */,
 				EF3B2808230BD10300E1EA79 /* weishi.json in Resources */,
 				EF0DD7E823053F5900F7E7CB /* Assets.xcassets in Resources */,
-				EF9518E8230699D900B676C9 /* fishfish.json in Resources */,
-				EF9518E42306921A00B676C9 /* FishData.json in Resources */,
-				EF7DC196230CDB1A006FA3F8 /* beijing.json in Resources */,
+				EFA8AA7B230E295C00E11D6A /* img_0.png in Resources */,
 				EF0DD7E323053F5700F7E7CB /* Main.storyboard in Resources */,
+				EFA8AA7C230E295C00E11D6A /* img_2.png in Resources */,
+				EFA8AA72230E263600E11D6A /* leidian_x.json in Resources */,
+				EFA8AA79230E295C00E11D6A /* bolan_x.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +621,7 @@
 			files = (
 				EF0DD8182305441700F7E7CB /* Common.swift in Sources */,
 				EF3B2801230B869100E1EA79 /* ScreenShotView.swift in Sources */,
+				EFA8AA6F230E232700E11D6A /* MainGameViewController.swift in Sources */,
 				EF9D2634230A35C9007EECDB /* UIColor-Extension.swift in Sources */,
 				EF9518DB2306348B00B676C9 /* FishTwoViewController.swift in Sources */,
 				EF7DC198230CE45D006FA3F8 /* CountdownLabel.swift in Sources */,
