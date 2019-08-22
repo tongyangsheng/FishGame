@@ -39,6 +39,8 @@
 		EFA8AA7A230E295C00E11D6A /* img_1.png in Resources */ = {isa = PBXBuildFile; fileRef = EFA8AA76230E295C00E11D6A /* img_1.png */; };
 		EFA8AA7B230E295C00E11D6A /* img_0.png in Resources */ = {isa = PBXBuildFile; fileRef = EFA8AA77230E295C00E11D6A /* img_0.png */; };
 		EFA8AA7C230E295C00E11D6A /* img_2.png in Resources */ = {isa = PBXBuildFile; fileRef = EFA8AA78230E295C00E11D6A /* img_2.png */; };
+		EFA8AA81230E676600E11D6A /* idiomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA8AA80230E676600E11D6A /* idiomView.swift */; };
+		EFA8AA83230E76D300E11D6A /* IdiomDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA8AA82230E76D300E11D6A /* IdiomDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +106,8 @@
 		EFA8AA76230E295C00E11D6A /* img_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_1.png; sourceTree = "<group>"; };
 		EFA8AA77230E295C00E11D6A /* img_0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_0.png; sourceTree = "<group>"; };
 		EFA8AA78230E295C00E11D6A /* img_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_2.png; sourceTree = "<group>"; };
+		EFA8AA80230E676600E11D6A /* idiomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = idiomView.swift; sourceTree = "<group>"; };
+		EFA8AA82230E76D300E11D6A /* IdiomDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdiomDetailView.swift; sourceTree = "<group>"; };
 		F12964EABAE8A7EE12F1C357 /* Pods-FishGameUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FishGameUITests.debug.xcconfig"; path = "Target Support Files/Pods-FishGameUITests/Pods-FishGameUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -324,6 +328,8 @@
 		EFA8AA6C230E22F300E11D6A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EFA8AA80230E676600E11D6A /* idiomView.swift */,
+				EFA8AA82230E76D300E11D6A /* IdiomDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -619,7 +625,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFA8AA83230E76D300E11D6A /* IdiomDetailView.swift in Sources */,
 				EF0DD8182305441700F7E7CB /* Common.swift in Sources */,
+				EFA8AA81230E676600E11D6A /* idiomView.swift in Sources */,
 				EF3B2801230B869100E1EA79 /* ScreenShotView.swift in Sources */,
 				EFA8AA6F230E232700E11D6A /* MainGameViewController.swift in Sources */,
 				EF9D2634230A35C9007EECDB /* UIColor-Extension.swift in Sources */,
