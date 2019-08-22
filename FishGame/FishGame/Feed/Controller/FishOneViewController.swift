@@ -400,7 +400,6 @@ extension FishOneViewController
         let animation = CAKeyframeAnimation(keyPath: "position")
         let startValue: NSValue = NSValue(cgPoint: nowCenterPoint)
         let endValue: NSValue = NSValue(cgPoint: CGPoint(x: 1.1*K_ScreenW, y: 0.8*K_ScreenH))
-        print("动画终点坐标应该是：\(0.55*K_ScreenW)")
         
         animation.values = [startValue,endValue]
         
@@ -489,8 +488,6 @@ extension FishOneViewController
     
     @objc func pressScreenshot(_ button: UIButton)
     {
-        print("截图")
-        
         var soundID: SystemSoundID = 0
         let path = Bundle.main.path(forResource: "photoShutter", ofType: "caf")
         let baseURL = NSURL(fileURLWithPath: path!)
@@ -513,7 +510,6 @@ extension FishOneViewController
     
     @objc func pressEarn(_ button: UIButton)
     {
-        print("赚取鱼食")
         let countdownView = UIView()
         countdownView.frame = UIScreen.main.bounds
         countdownView.backgroundColor = UIColor(r: 236, g: 249, b: 255)
@@ -535,7 +531,8 @@ extension FishOneViewController
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                countdownView.removeFromSuperview()
             let GameVC = MainGameViewController()
-            self.navigationController?.pushViewController(GameVC, animated: true)
+            self.fishView.layer.removeAllAnimations()
+            self.present(GameVC, animated: true, completion: nil)
         }
     }
     
