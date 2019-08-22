@@ -91,7 +91,7 @@ extension FishOneViewController
         fishBubble.frame = CGRect(x: 0, y: -10, width: 0.092*K_ScreenW, height: 0.653*0.108*K_ScreenW)
         
         let animation1 = Animation.named("beijing_x")
-        let imageProvider = BundleImageProvider(bundle: Bundle.main, searchPath: "img_0")
+        let imageProvider = BundleImageProvider(bundle: Bundle.main, searchPath: "img_4")
         backgroudFish.animation = animation1
         backgroudFish.imageProvider = imageProvider
         backgroudFish.contentMode = .scaleAspectFit
@@ -534,6 +534,8 @@ extension FishOneViewController
         self.view.addSubview(countdownView)
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
                countdownView.removeFromSuperview()
+            let GameVC = MainGameViewController()
+            self.navigationController?.pushViewController(GameVC, animated: true)
         }
     }
     
