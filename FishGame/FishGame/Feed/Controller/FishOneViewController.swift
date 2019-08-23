@@ -37,6 +37,8 @@ class FishOneViewController: UIViewController
     let BaitAnimationView = AnimationView()
     let backgroudFish = AnimationView()
     
+    let userdefault = UserDefaults.standard
+    
     var nowCenterPoint:CGPoint = CGPoint(x: 0, y: 0)
     
     
@@ -62,7 +64,6 @@ class FishOneViewController: UIViewController
         self.navigationController?.delegate = self
         self.edgesForExtendedLayout = UIRectEdge.init(rawValue: 0)
         setupUI()
-        fishRunRoute1()
     }
     override func viewWillAppear(_ animated: Bool)
     {
@@ -72,16 +73,10 @@ class FishOneViewController: UIViewController
         BaitAnimationView.loopMode = .loop
         backgroudFish.play()
         backgroudFish.loopMode = .loop
-        let userdefault = UserDefaults.standard
-        if !userdefault.bool(forKey: "isFirst")
-        {
-            userdefault.set(true, forKey: "isFirst")
-            print("第一次进入")
-        }
-        else
-        {
-            fishRunRoute1()
-        }
+        var transform: CGAffineTransform = CGAffineTransform.identity
+        transform = CGAffineTransform.init(scaleX: 1, y: 1)
+        fishView.transform = transform
+        fishRunRoute1()
     }
     override func viewWillDisappear(_ animated: Bool)
     {
