@@ -52,9 +52,8 @@ extension IdiomDetailView
         self.addSubview(idiomAnalysisLabel)
         let underLine = UIView()
         underLine.backgroundColor = UIColor(r: 255, g: 241, b: 255)
-        underLine.frame = CGRect(x: 0, y: 0.7*self.frame.height, width: self.frame.width, height: 2)
+        underLine.frame = CGRect(x: 0, y: 0.74*self.frame.height, width: self.frame.width, height: 2)
         self.addSubview(underLine)
-        
         
         let moreIcon = UIImageView()
         moreIcon.image = UIImage(named: "查看详情")
@@ -64,7 +63,7 @@ extension IdiomDetailView
         checkMoreButton.setTitle("查看详情", for: .normal)
         checkMoreButton.titleLabel?.font = UIFont.systemFont(ofSize: 13)
         checkMoreButton.setTitleColor(UIColor(r: 41, g: 171, b: 226), for: .normal)
-        checkMoreButton.frame = CGRect(x: 0.4*self.frame.width, y: 0.785*self.frame.height, width: 60, height: 15)
+        checkMoreButton.frame = CGRect(x: 0.4*self.frame.width, y: 0.79*self.frame.height, width: 60, height: 15)
         self.addSubview(checkMoreButton)
     }
 }
