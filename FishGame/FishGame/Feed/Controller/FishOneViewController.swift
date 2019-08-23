@@ -64,6 +64,15 @@ class FishOneViewController: UIViewController
         setupUI()
         fishRunRoute1()
     }
+    override func viewWillAppear(_ animated: Bool)
+    {
+        fishBubble.play()
+        fishBubble.loopMode = .loop
+        BaitAnimationView.play()
+        BaitAnimationView.loopMode = .loop
+        backgroudFish.play()
+        backgroudFish.loopMode = .loop
+    }
 }
 
 extension FishOneViewController
