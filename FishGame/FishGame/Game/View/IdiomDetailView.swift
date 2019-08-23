@@ -41,7 +41,7 @@ extension IdiomDetailView
         idiomFromLabel.textColor = UIColor(r: 41, g: 171, b: 226)
         idiomFromLabel.numberOfLines = 2
         idiomFromLabel.font = UIFont.systemFont(ofSize: 12)
-        idiomFromLabel.frame = CGRect(x: 0.05*self.frame.width, y: 0.08*self.frame.height, width: 0.9*self.frame.width, height: 0.3*self.frame.height)
+        idiomFromLabel.frame = CGRect(x: 0.05*self.frame.width, y: 0.08*self.frame.height, width: 0.9*self.frame.width, height: 0.32*self.frame.height)
         self.addSubview(idiomFromLabel)
         let idiomAnalysisLabel = UILabel()
         idiomAnalysisLabel.text = idiomAnalysis

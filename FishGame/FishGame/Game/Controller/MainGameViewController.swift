@@ -106,7 +106,7 @@ extension MainGameViewController
         BaitNumberView.addSubview(BaitNumberImage)
         self.view.addSubview(BaitNumberView)
         
-        let idiomFrame = CGRect(x: 0.355*K_ScreenW, y: 0.035*K_ScreenH, width: 0.29*K_ScreenW, height: 0.21*0.29*K_ScreenW)
+        let idiomFrame = CGRect(x: 0.355*K_ScreenW, y: 0.03*K_ScreenH, width: 0.29*K_ScreenW, height: 0.21*0.29*K_ScreenW)
         let showIdiomView = idiomView(frame: idiomFrame, idiomStr: "学富五车")
         self.view.addSubview(showIdiomView)
         
