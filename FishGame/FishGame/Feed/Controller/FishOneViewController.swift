@@ -72,6 +72,20 @@ class FishOneViewController: UIViewController
         BaitAnimationView.loopMode = .loop
         backgroudFish.play()
         backgroudFish.loopMode = .loop
+        let userdefault = UserDefaults.standard
+        if !userdefault.bool(forKey: "isFirst")
+        {
+            userdefault.set(true, forKey: "isFirst")
+            print("第一次进入")
+        }
+        else
+        {
+            fishRunRoute1()
+        }
+    }
+    override func viewWillDisappear(_ animated: Bool)
+    {
+        fishView.layer.removeAllAnimations()
     }
 }
 
