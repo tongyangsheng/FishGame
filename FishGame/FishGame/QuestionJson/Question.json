@@ -1,0 +1,26 @@
+{
+    "gameTest":
+    [
+        {
+            "question":"学___五车",
+            "questionAnwser":
+            [
+                {
+                    "anwser":"富"
+                },
+                {
+                    "anwser":"人"
+                },
+                {
+                    "anwser":"贫"
+                },
+                {
+                    "anwser":"福"
+                },
+                {
+                    "anwser":"习"
+                }
+            ]
+        }
+    ]
+}
