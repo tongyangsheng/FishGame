@@ -47,19 +47,15 @@ extension AnwserFish
         switch keyValue {
         case 1:
             anwserLabel.frame = CGRect(x: 0.35*self.frame.width, y: 0.15*self.frame.height, width: 0.32*self.frame.width, height: 0.2*self.frame.height)
-            print("第一种鱼")
             break
         case 2:
             anwserLabel.frame = CGRect(x: 0.45*self.frame.width, y: 0.15*self.frame.height, width: 0.32*self.frame.width, height: 0.2*self.frame.height)
-            print("第二种鱼")
             break
         case 3:
             anwserLabel.frame = CGRect(x: 0.55*self.frame.width, y: 0.15*self.frame.height, width: 0.32*self.frame.width, height: 0.2*self.frame.height)
-            print("第三种鱼")
             break
         case 4:
             anwserLabel.frame = CGRect(x: 0.35*self.frame.width, y: 0.15*self.frame.height, width: 0.32*self.frame.width, height: 0.2*self.frame.height)
-            print("第四种鱼")
             break
         default:
             anwserLabel.frame = CGRect(x: 0.35*self.frame.width, y: 0.15*self.frame.height, width: 0.32*self.frame.width, height: 0.2*self.frame.height)
