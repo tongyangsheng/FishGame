@@ -9,6 +9,7 @@ pod 'lottie-ios'
 pod 'STKitSwift'
 pod 'STKitSwift/STSegmentedControl'
 pod 'STKitSwift/STProgressView'
+pod 'SwiftyJSON', '~> 4.0'
 
   # Pods for FishGame
 
