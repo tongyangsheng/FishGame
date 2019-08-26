@@ -179,6 +179,10 @@ extension MainGameViewController
                 fishXpoint = -0.67*K_ScreenW
                 fishYpoint = 0.7*K_ScreenH
                 break
+            case 8:
+                fishXpoint = -0.78*K_ScreenW
+                fishYpoint = 0.45*K_ScreenH
+                break
             default:
                 fishXpoint = -0.2*K_ScreenW
                 fishYpoint = 0.5*K_ScreenH
@@ -187,8 +191,15 @@ extension MainGameViewController
             
             let fishFrame = CGRect(x: fishXpoint, y: fishYpoint, width: 0.07*K_ScreenW, height: 1.25*0.07*K_ScreenW)
             let anwserFish = AnwserFish(frame: fishFrame, anwserStr:subJson["anwser"].string! , backImageName: fishImageName, keyValue: keyValue)
-            anwserFish.tag = 100 + keyTag
-            
+            let result = subJson["result"].string!
+            if result == "true"
+            {
+                anwserFish.tag = 111
+            }
+            else
+            {
+                anwserFish.tag = 222
+            }
             self.view.addSubview(anwserFish)
             let animation = CAKeyframeAnimation(keyPath: "position")
             let startValue: NSValue = NSValue(cgPoint: anwserFish.layer.position)
@@ -196,10 +207,13 @@ extension MainGameViewController
             animation.values = [startValue,endValue]
             
             animation.autoreverses = false
-            animation.duration = 14
+            animation.duration = 18
             animation.isRemovedOnCompletion = false
             animation.fillMode = CAMediaTimingFillMode.forwards
             anwserFish.layer.add(animation, forKey: "route1")
+            
+            let tapGes = UITapGestureRecognizer(target: self, action: #selector(self.fishClick(tapGes:)))
+            self.view.addGestureRecognizer(tapGes)
         }
     }
 }
@@ -227,6 +241,21 @@ extension MainGameViewController
         {
             countdownLabel.text = "end"
             countdownTimer.invalidate()
+        }
+    }
+    @objc private func fishClick(tapGes: UITapGestureRecognizer)
+    {
+        let touchPoint = tapGes.location(in: self.view)
+        
+        for subView in self.view.subviews
+        {
+            if ((subView.layer.presentation()?.hitTest(touchPoint)) != nil)
+            {
+                if subView.tag >= 100
+                {
+                    print(subView.tag)
+                }
+            }
         }
     }
 }
