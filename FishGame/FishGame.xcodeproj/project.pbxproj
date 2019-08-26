@@ -27,12 +27,17 @@
 		EF7DC198230CE45D006FA3F8 /* CountdownLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7DC197230CE45D006FA3F8 /* CountdownLabel.swift */; };
 		EF7DC19B230D2D00006FA3F8 /* img_4.png in Resources */ = {isa = PBXBuildFile; fileRef = EF7DC19A230D2D00006FA3F8 /* img_4.png */; };
 		EF7DC19D230D3CEE006FA3F8 /* beijing_x.json in Resources */ = {isa = PBXBuildFile; fileRef = EF7DC19C230D3CEE006FA3F8 /* beijing_x.json */; };
+		EF904FAE23136AC700656987 /* Question.json in Resources */ = {isa = PBXBuildFile; fileRef = EF904FAD23136AC700656987 /* Question.json */; };
+		EF904FB0231375C000656987 /* AnwserFish.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF904FAF231375C000656987 /* AnwserFish.swift */; };
 		EF9518DB2306348B00B676C9 /* FishTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9518DA2306348B00B676C9 /* FishTwoViewController.swift */; };
 		EF9518DD23067AA900B676C9 /* BubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9518DC23067AA900B676C9 /* BubbleView.swift */; };
 		EF9518DF230683FA00B676C9 /* TYSTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9518DE230683FA00B676C9 /* TYSTimer.swift */; };
 		EF9518E62306977400B676C9 /* fishJson.json in Resources */ = {isa = PBXBuildFile; fileRef = EF9518E52306977400B676C9 /* fishJson.json */; };
 		EF9D262F230A2E28007EECDB /* LowBaitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9D262E230A2E28007EECDB /* LowBaitView.swift */; };
 		EF9D2634230A35C9007EECDB /* UIColor-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF9D2633230A35C9007EECDB /* UIColor-Extension.swift */; };
+		EFA4C356230FB7430069849E /* VolumeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA4C355230FB7430069849E /* VolumeView.swift */; };
+		EFA4C358230FC1C20069849E /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFA4C357230FC1C20069849E /* MessageUI.framework */; };
+		EFA4C35A230FD7DF0069849E /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EFA4C359230FD7DF0069849E /* MediaPlayer.framework */; };
 		EFA8AA6F230E232700E11D6A /* MainGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA8AA6E230E232700E11D6A /* MainGameViewController.swift */; };
 		EFA8AA72230E263600E11D6A /* leidian_x.json in Resources */ = {isa = PBXBuildFile; fileRef = EFA8AA71230E263600E11D6A /* leidian_x.json */; };
 		EFA8AA79230E295C00E11D6A /* bolan_x.json in Resources */ = {isa = PBXBuildFile; fileRef = EFA8AA74230E295C00E11D6A /* bolan_x.json */; };
@@ -94,12 +99,17 @@
 		EF7DC197230CE45D006FA3F8 /* CountdownLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownLabel.swift; sourceTree = "<group>"; };
 		EF7DC19A230D2D00006FA3F8 /* img_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_4.png; sourceTree = "<group>"; };
 		EF7DC19C230D3CEE006FA3F8 /* beijing_x.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = beijing_x.json; sourceTree = "<group>"; };
+		EF904FAD23136AC700656987 /* Question.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Question.json; sourceTree = "<group>"; };
+		EF904FAF231375C000656987 /* AnwserFish.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnwserFish.swift; sourceTree = "<group>"; };
 		EF9518DA2306348B00B676C9 /* FishTwoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FishTwoViewController.swift; sourceTree = "<group>"; };
 		EF9518DC23067AA900B676C9 /* BubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleView.swift; sourceTree = "<group>"; };
 		EF9518DE230683FA00B676C9 /* TYSTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TYSTimer.swift; sourceTree = "<group>"; };
 		EF9518E52306977400B676C9 /* fishJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = fishJson.json; sourceTree = "<group>"; };
 		EF9D262E230A2E28007EECDB /* LowBaitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowBaitView.swift; sourceTree = "<group>"; };
 		EF9D2633230A35C9007EECDB /* UIColor-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor-Extension.swift"; sourceTree = "<group>"; };
+		EFA4C355230FB7430069849E /* VolumeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VolumeView.swift; sourceTree = "<group>"; };
+		EFA4C357230FC1C20069849E /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		EFA4C359230FD7DF0069849E /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		EFA8AA6E230E232700E11D6A /* MainGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGameViewController.swift; sourceTree = "<group>"; };
 		EFA8AA71230E263600E11D6A /* leidian_x.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = leidian_x.json; sourceTree = "<group>"; };
 		EFA8AA74230E295C00E11D6A /* bolan_x.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = bolan_x.json; sourceTree = "<group>"; };
@@ -116,6 +126,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EFA4C35A230FD7DF0069849E /* MediaPlayer.framework in Frameworks */,
+				EFA4C358230FC1C20069849E /* MessageUI.framework in Frameworks */,
 				EF3B2806230BC0C900E1EA79 /* AudioToolbox.framework in Frameworks */,
 				5510D10BF76F3011A7295613 /* Pods_FishGame.framework in Frameworks */,
 			);
@@ -156,6 +168,8 @@
 		6F5A20D8C468F0B7A68B2146 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EFA4C359230FD7DF0069849E /* MediaPlayer.framework */,
+				EFA4C357230FC1C20069849E /* MessageUI.framework */,
 				EF3B2805230BC0C900E1EA79 /* AudioToolbox.framework */,
 				EF3B27FE230B815E00E1EA79 /* CoreGraphics.framework */,
 				EF3B27FC230B7FC300E1EA79 /* QuartzCore.framework */,
@@ -191,6 +205,7 @@
 		EF0DD7DC23053F5700F7E7CB /* FishGame */ = {
 			isa = PBXGroup;
 			children = (
+				EF904FAC23136AB000656987 /* QuestionJson */,
 				EF3B2802230BBE7700E1EA79 /* Sound */,
 				EF9518E023068E9A00B676C9 /* AnimationJson */,
 				EF0DD8162305440700F7E7CB /* Tools */,
@@ -287,6 +302,14 @@
 			path = images;
 			sourceTree = "<group>";
 		};
+		EF904FAC23136AB000656987 /* QuestionJson */ = {
+			isa = PBXGroup;
+			children = (
+				EF904FAD23136AC700656987 /* Question.json */,
+			);
+			path = QuestionJson;
+			sourceTree = "<group>";
+		};
 		EF9518E023068E9A00B676C9 /* AnimationJson */ = {
 			isa = PBXGroup;
 			children = (
@@ -328,8 +351,10 @@
 		EFA8AA6C230E22F300E11D6A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				EFA4C355230FB7430069849E /* VolumeView.swift */,
 				EFA8AA80230E676600E11D6A /* idiomView.swift */,
 				EFA8AA82230E76D300E11D6A /* IdiomDetailView.swift */,
+				EF904FAF231375C000656987 /* AnwserFish.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -515,6 +540,7 @@
 				EFA8AA7C230E295C00E11D6A /* img_2.png in Resources */,
 				EFA8AA72230E263600E11D6A /* leidian_x.json in Resources */,
 				EFA8AA79230E295C00E11D6A /* bolan_x.json in Resources */,
+				EF904FAE23136AC700656987 /* Question.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -639,7 +665,9 @@
 				EF9D262F230A2E28007EECDB /* LowBaitView.swift in Sources */,
 				EF0DD7DE23053F5700F7E7CB /* AppDelegate.swift in Sources */,
 				EF0DD81C23054ED000F7E7CB /* UIDevice-Extension.swift in Sources */,
+				EFA4C356230FB7430069849E /* VolumeView.swift in Sources */,
 				EF0DD8112305412500F7E7CB /* FishOneViewController.swift in Sources */,
+				EF904FB0231375C000656987 /* AnwserFish.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

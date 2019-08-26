@@ -9,6 +9,7 @@
 import UIKit
 import Lottie
 import STKitSwift
+import SwiftyJSON
 
 class MainGameViewController: UIViewController
 {
@@ -19,9 +20,16 @@ class MainGameViewController: UIViewController
     let settingButton = UIButton()
     let BaitNumberView = UIView()
     
+    let showIdiomView = idiomView(frame: CGRect(x: 0.355*K_ScreenW, y: 0.03*K_ScreenH, width: 0.29*K_ScreenW, height: 0.21*0.29*K_ScreenW), idiomStr: "学富五车")
+    
     var countdownTimer = Timer()
     var countdownSeconds: Double = 60
     var countdownLabel: UILabel = UILabel(frame: CGRect(x: 0.15*0.28*K_ScreenW, y: (0.128*0.28*K_ScreenW-20)/2, width: 30, height: 20))
+    
+    
+    lazy var path = Bundle.main.path(forResource: "Question", ofType: "json")
+    lazy var jsonData = NSData(contentsOfFile: path!)
+    lazy var json = JSON(jsonData!)
     
     private lazy var progressView: STProgressView = {
         let progressView = STProgressView()
@@ -30,32 +38,17 @@ class MainGameViewController: UIViewController
         
         progressView.endColor = UIColor.init(r: 255, g: 183, b: 39)
         
-        progressView.cornerRadius = 10
+        progressView.cornerRadius = 11
         progressView.progress = 1
         self.view.addSubview(progressView)
         return progressView
     }()
-
-    
-    @objc func CLOCK()
-    {
-        countdownSeconds -= 1
-        let countdownSecondsInt = Int(countdownSeconds)
-        countdownLabel.text = "\(String(countdownSecondsInt))S"
-        let progressNow = countdownSeconds/60.0
-        progressView.progress = CGFloat(progressNow)
-        if countdownSeconds == 0
-        {
-            countdownLabel.text = "end"
-            countdownTimer.invalidate()
-        }
-    }
-    
     override func viewDidLoad()
     {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         setupUI()
+        loadQuestion()
     }
 }
 
@@ -96,6 +89,7 @@ extension MainGameViewController
         
         settingButton.setImage(UIImage(named: "设置"), for: .normal)
         settingButton.frame = CGRect(x: backButton.frame.origin.x+0.05*K_ScreenW+0.0255*K_ScreenW, y: 0.035*K_ScreenH, width: 0.05*K_ScreenW, height: 0.05*K_ScreenW*1.09)
+        settingButton.addTarget(self, action: #selector(pressSetting(_:)), for: .touchUpInside)
         self.view.addSubview(settingButton)
         
         BaitNumberView.frame = CGRect(x: settingButton.frame.origin.x + 0.05*K_ScreenW + 0.0255*K_ScreenW, y: 0.035*K_ScreenH, width: 0.12*K_ScreenW, height: 0.4375*0.12*K_ScreenW)
@@ -107,7 +101,7 @@ extension MainGameViewController
         self.view.addSubview(BaitNumberView)
         
         let idiomFrame = CGRect(x: 0.355*K_ScreenW, y: 0.03*K_ScreenH, width: 0.29*K_ScreenW, height: 0.21*0.29*K_ScreenW)
-        let showIdiomView = idiomView(frame: idiomFrame, idiomStr: "学富五车")
+        showIdiomView.frame = idiomFrame
         self.view.addSubview(showIdiomView)
         
         let idiomDetailFrame = CGRect(x: K_ScreenW-0.28*K_ScreenW-0.0225*K_ScreenW, y: 0.15*K_ScreenH, width: 0.28*K_ScreenW, height: 0.4*0.28*K_ScreenW)
@@ -130,8 +124,109 @@ extension MainGameViewController
 
 extension MainGameViewController
 {
+    private func loadQuestion()
+    {
+        showIdiomView.setTitle(json["gameTest"][0]["question"].string!)
+        createFish()
+    }
+    private func createFish()
+    {
+        for (key,subJson):(String, JSON) in json["gameTest"][0]["questionAnwser"]
+        {
+            let keyTag = Int(key)! + 1
+            let keyValue: Int
+            if Int(key)! <= 3
+            {
+                keyValue = Int(key)! + 1
+            }
+            else
+            {
+                keyValue = Int(key)! - 4 + 1
+            }
+            let keyStr = String(keyValue)
+            let fishImageName = "文字鱼"+keyStr
+            
+            let fishXpoint: CGFloat
+            let fishYpoint: CGFloat
+            
+            switch keyTag
+            {
+            case 1:
+                fishXpoint = -0.2*K_ScreenW
+                fishYpoint = 0.5*K_ScreenH
+                break
+            case 2:
+                fishXpoint = -0.3*K_ScreenW
+                fishYpoint = 0.6*K_ScreenH
+                break
+            case 3:
+                fishXpoint = -0.35*K_ScreenW
+                fishYpoint = 0.7*K_ScreenH
+                break
+            case 4:
+                fishXpoint = -0.45*K_ScreenW
+                fishYpoint = 0.55*K_ScreenH
+                break
+            case 5:
+                fishXpoint = -0.5*K_ScreenW
+                fishYpoint = 0.7*K_ScreenH
+                break
+            case 6:
+                fishXpoint = -0.58*K_ScreenW
+                fishYpoint = 0.5*K_ScreenH
+                break
+            case 7:
+                fishXpoint = -0.67*K_ScreenW
+                fishYpoint = 0.7*K_ScreenH
+                break
+            default:
+                fishXpoint = -0.2*K_ScreenW
+                fishYpoint = 0.5*K_ScreenH
+                break
+            }
+            
+            let fishFrame = CGRect(x: fishXpoint, y: fishYpoint, width: 0.07*K_ScreenW, height: 1.25*0.07*K_ScreenW)
+            let anwserFish = AnwserFish(frame: fishFrame, anwserStr:subJson["anwser"].string! , backImageName: fishImageName, keyValue: keyValue)
+            anwserFish.tag = 100 + keyTag
+            
+            self.view.addSubview(anwserFish)
+            let animation = CAKeyframeAnimation(keyPath: "position")
+            let startValue: NSValue = NSValue(cgPoint: anwserFish.layer.position)
+            let endValue: NSValue = NSValue(cgPoint: CGPoint(x: anwserFish.layer.position.x + 1.8*K_ScreenW, y: anwserFish.layer.position.y))
+            animation.values = [startValue,endValue]
+            
+            animation.autoreverses = false
+            animation.duration = 14
+            animation.isRemovedOnCompletion = false
+            animation.fillMode = CAMediaTimingFillMode.forwards
+            anwserFish.layer.add(animation, forKey: "route1")
+        }
+    }
+}
+
+extension MainGameViewController
+{
     @objc func pressBack(_ button:UIButton)
     {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func pressSetting(_ button:UIButton)
+    {
+        let volumeView = VolumeView()
+        volumeView.show()
+    }
+    @objc func CLOCK()
+    {
+        countdownSeconds -= 1
+        let countdownSecondsInt = Int(countdownSeconds)
+        countdownLabel.text = "\(String(countdownSecondsInt))S"
+        let progressNow = countdownSeconds/60.0
+        progressView.progress = CGFloat(progressNow)
+        if countdownSeconds == 0
+        {
+            countdownLabel.text = "end"
+            countdownTimer.invalidate()
+        }
     }
 }
