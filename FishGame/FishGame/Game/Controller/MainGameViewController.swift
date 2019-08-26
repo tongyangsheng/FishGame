@@ -59,9 +59,10 @@ extension MainGameViewController
         let cloudAnimation = Animation.named("leidian_x")
         darkCloudView.animation = cloudAnimation
         darkCloudView.contentMode = .scaleToFill
-        darkCloudView.play()
+        darkCloudView.stop()
         darkCloudView.loopMode = .loop
         darkCloudView.frame = CGRect(x: 0, y: -10, width: K_ScreenW+10, height: K_ScreenH)
+        darkCloudView.alpha = 0.0
         
         let waveAnimation = Animation.named("bolan_x")
         let imageProvider1 = BundleImageProvider(bundle: Bundle.main, searchPath: "img_0")
@@ -198,7 +199,7 @@ extension MainGameViewController
             }
             else
             {
-                anwserFish.tag = 222
+                anwserFish.tag = 200 + keyTag
             }
             self.view.addSubview(anwserFish)
             let animation = CAKeyframeAnimation(keyPath: "position")
@@ -207,7 +208,7 @@ extension MainGameViewController
             animation.values = [startValue,endValue]
             
             animation.autoreverses = false
-            animation.duration = 18
+            animation.duration = 24
             animation.isRemovedOnCompletion = false
             animation.fillMode = CAMediaTimingFillMode.forwards
             anwserFish.layer.add(animation, forKey: "route1")
@@ -253,7 +254,28 @@ extension MainGameViewController
             {
                 if subView.tag >= 100
                 {
-                    print(subView.tag)
+                    if subView.tag == 111
+                    {
+                        subView.removeFromSuperview()
+                        for tagValue in 200...210
+                        {
+                        let falseView = self.view.viewWithTag(tagValue)
+                        falseView?.removeFromSuperview()
+                        }
+                        print("点击了正确答案！")
+                        
+                    }
+                    else
+                    {
+                        darkCloudView.play()
+                        darkCloudView.alpha = 1.0
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 2)
+                        {
+                            self.darkCloudView.alpha = 0.0
+                            self.darkCloudView.stop()
+                        }
+                        print("错误答案！")
+                    }
                 }
             }
         }
