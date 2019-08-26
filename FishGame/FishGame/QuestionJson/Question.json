@@ -6,19 +6,36 @@
             "questionAnwser":
             [
                 {
-                    "anwser":"富"
+                    "anwser":"富",
+                    "result":"true"
                 },
                 {
-                    "anwser":"人"
+                    "anwser":"人",
+                    "result":"false"
                 },
                 {
-                    "anwser":"贫"
+                    "anwser":"贫",
+                    "result":"false"
                 },
                 {
-                    "anwser":"福"
+                    "anwser":"福",
+                    "result":"false"
                 },
                 {
-                    "anwser":"习"
+                    "anwser":"习",
+                    "result":"false"
+                },
+                {
+                    "anwser":"资",
+                    "result":"false"
+                },
+                {
+                    "anwser":"海",
+                    "result":"false"
+                },
+                {
+                    "anwser":"富",
+                    "result":"true"
                 }
             ]
         }
