@@ -10,7 +10,7 @@ import UIKit
 
 class AnwserFish: UIView
 {
-    private var anwserStr: String
+    public var anwserStr: String
     private var backImageName: String
     private var keyValue: Int
     
@@ -34,12 +34,13 @@ extension AnwserFish
     private func setupUI()
     {
         self.frame = frame
-        let backgroundImage = UIImageView()
+        let backgroundButton = UIButton()
         let anwserLabel = UILabel()
         
-        backgroundImage.image = UIImage(named: backImageName)
-        backgroundImage.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
-        self.addSubview(backgroundImage)
+        backgroundButton.setBackgroundImage(UIImage(named: backImageName), for: .normal)
+        backgroundButton.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
+        backgroundButton.addTarget(self, action: #selector(fishClick), for: .touchUpInside)
+        self.addSubview(backgroundButton)
         
         anwserLabel.text = anwserStr
         anwserLabel.font = UIFont.systemFont(ofSize: 18)
@@ -67,5 +68,13 @@ extension AnwserFish
         anwserLabel.textAlignment = .center
         anwserLabel.textColor = .white
         self.addSubview(anwserLabel)
+    }
+}
+
+extension AnwserFish
+{
+    @objc func fishClick()
+    {
+        print("点击鱼")
     }
 }
