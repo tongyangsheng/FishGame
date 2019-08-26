@@ -10,7 +10,8 @@ import UIKit
 
 class idiomView: UIView
 {
-    private var idiomStr: String
+    public var idiomStr: String
+    let idiomLabel = UILabel()
     
     init(frame: CGRect, idiomStr: String)
     {
@@ -33,12 +34,16 @@ extension idiomView
         idiomBackground.image = UIImage(named: "横幅")
         idiomBackground.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: self.frame.height)
         self.addSubview(idiomBackground)
-        let idiomLabel = UILabel()
         idiomLabel.frame = CGRect(x: 0, y: 0, width: self.frame.width, height: 0.9*self.frame.height)
         idiomLabel.text = idiomStr
         idiomLabel.textAlignment = .center
         idiomLabel.textColor = .white
         idiomLabel.font = UIFont(name: "PingFang SC", size: 22)
         self.addSubview(idiomLabel)
+    }
+    
+    public func setTitle(_ idiomStr: String)
+    {
+        idiomLabel.text = idiomStr
     }
 }
