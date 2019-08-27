@@ -342,6 +342,44 @@
                     "result":"false"
                 }
             ]
+        },
+        {
+            "question":"沸反 __ 天 ",
+            "questionAnwser":
+            [
+                {
+                    "anwser":"晴",
+                    "result":"false"
+                },
+                {
+                    "anwser":"阴",
+                    "result":"false"
+                },
+                {
+                    "anwser":"雨",
+                    "result":"false"
+                },
+                {
+                    "anwser":"盈",
+                    "result":"true"
+                },
+                {
+                    "anwser":"满",
+                    "result":"false"
+                },
+                {
+                    "anwser":"迎",
+                    "result":"false"
+                },
+                {
+                    "anwser":"吟",
+                    "result":"false"
+                },
+                {
+                    "anwser":"萤",
+                    "result":"false"
+                }
+            ]
         }
     ]
 }
