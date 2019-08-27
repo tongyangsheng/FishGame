@@ -97,7 +97,7 @@ extension MainGameViewController
         let BaitNumberImage = UIImageView()
         BaitNumberImage.image = UIImage(named: "鱼食数目")
         BaitNumberImage.frame = CGRect(x: 0, y: 0, width: 0.12*K_ScreenW, height: 0.4375*0.12*K_ScreenW)
-
+        
         BaitNumberView.addSubview(BaitNumberImage)
         self.view.addSubview(BaitNumberView)
         
@@ -208,7 +208,36 @@ extension MainGameViewController
             animation.values = [startValue,endValue]
             
             animation.autoreverses = false
-            animation.duration = 24
+            switch keyTag
+            {
+            case 1:
+                animation.duration = 20
+                break
+            case 2:
+                animation.duration = 24
+                break
+            case 3:
+                animation.duration = 18
+                break
+            case 4:
+                animation.duration = 16
+                break
+            case 5:
+                animation.duration = 15
+                break
+            case 6:
+                animation.duration = 22
+                break
+            case 7:
+                animation.duration = 23
+                break
+            case 8:
+                animation.duration = 19
+                break
+            default:
+                animation.duration = 20
+                break
+            }
             animation.isRemovedOnCompletion = false
             animation.fillMode = CAMediaTimingFillMode.forwards
             anwserFish.layer.add(animation, forKey: "route1")
@@ -256,12 +285,17 @@ extension MainGameViewController
                 {
                     if subView.tag == 111
                     {
-                        subView.removeFromSuperview()
+                        subView.layer.removeAllAnimations()
+                        subView.frame = subView.layer.presentation()!.frame
                         for tagValue in 200...210
                         {
-                        let falseView = self.view.viewWithTag(tagValue)
-                        falseView?.removeFromSuperview()
+                            let falseView = self.view.viewWithTag(tagValue)
+                            falseView?.removeFromSuperview()
                         }
+                        UIView.animate(withDuration: 0.8, delay: 0, options: .curveEaseOut, animations: {
+                            subView.frame = CGRect(x: subView.frame.origin.x, y: subView.frame.origin.y - 0.4*K_ScreenH, width: subView.frame.size.width, height: subView.frame.size.height)
+                            subView.alpha = 0
+                        }, completion: nil)
                         print("点击了正确答案！")
                         
                     }
@@ -281,3 +315,5 @@ extension MainGameViewController
         }
     }
 }
+
+
