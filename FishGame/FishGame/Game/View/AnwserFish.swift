@@ -44,17 +44,17 @@ extension AnwserFish
         
         anwserLabel.text = anwserStr
         anwserLabel.font = UIFont.systemFont(ofSize: 18)
-        switch keyValue {
-        case 1:
+        switch backImageName {
+        case "文字鱼1":
             anwserLabel.frame = CGRect(x: 0.35*self.frame.width, y: 0.15*self.frame.height, width: 0.32*self.frame.width, height: 0.2*self.frame.height)
             break
-        case 2:
+        case "文字鱼2":
             anwserLabel.frame = CGRect(x: 0.45*self.frame.width, y: 0.15*self.frame.height, width: 0.32*self.frame.width, height: 0.2*self.frame.height)
             break
-        case 3:
+        case "文字鱼3":
             anwserLabel.frame = CGRect(x: 0.55*self.frame.width, y: 0.15*self.frame.height, width: 0.32*self.frame.width, height: 0.2*self.frame.height)
             break
-        case 4:
+        case "文字鱼4":
             anwserLabel.frame = CGRect(x: 0.35*self.frame.width, y: 0.15*self.frame.height, width: 0.32*self.frame.width, height: 0.2*self.frame.height)
             break
         default:
