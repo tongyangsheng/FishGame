@@ -31,7 +31,6 @@ extension CountdownLabel
         if count > 0
         {
             self.text = count.description
-            print(count.description)
             let animation = CAKeyframeAnimation(keyPath: "transform.scale")
             
             let value1 = NSNumber(value: 3.0)
