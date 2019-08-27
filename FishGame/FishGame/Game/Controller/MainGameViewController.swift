@@ -19,6 +19,7 @@ class MainGameViewController: UIViewController
     let backButton = UIButton()
     let settingButton = UIButton()
     let BaitNumberView = UIView()
+    let BaitNumberLabel = UILabel()
     
     let showIdiomView = idiomView(frame: CGRect(x: 0.355*K_ScreenW, y: 0.03*K_ScreenH, width: 0.29*K_ScreenW, height: 0.21*0.29*K_ScreenW), idiomStr: "学富五车")
     
@@ -30,6 +31,8 @@ class MainGameViewController: UIViewController
     lazy var path = Bundle.main.path(forResource: "Question", ofType: "json")
     lazy var jsonData = NSData(contentsOfFile: path!)
     lazy var json = JSON(jsonData!)
+    
+    lazy var earnBait: Int = 0
     
     private lazy var progressView: STProgressView = {
         let progressView = STProgressView()
@@ -97,8 +100,13 @@ extension MainGameViewController
         let BaitNumberImage = UIImageView()
         BaitNumberImage.image = UIImage(named: "鱼食数目")
         BaitNumberImage.frame = CGRect(x: 0, y: 0, width: 0.12*K_ScreenW, height: 0.4375*0.12*K_ScreenW)
-        
+        BaitNumberLabel.text = earnBait.description
+        BaitNumberLabel.font = UIFont.systemFont(ofSize: 26)
+        BaitNumberLabel.textColor = UIColor(r: 35, g: 162, b: 220)
+        BaitNumberLabel.textAlignment = .center
+        BaitNumberLabel.frame = CGRect(x: 0.6*BaitNumberView.frame.width, y: 0.12*BaitNumberView.frame.height, width: 0.3*BaitNumberView.frame.width, height: 0.8*BaitNumberView.frame.height)
         BaitNumberView.addSubview(BaitNumberImage)
+        BaitNumberView.addSubview(BaitNumberLabel)
         self.view.addSubview(BaitNumberView)
         
         let idiomFrame = CGRect(x: 0.355*K_ScreenW, y: 0.03*K_ScreenH, width: 0.29*K_ScreenW, height: 0.21*0.29*K_ScreenW)
@@ -240,7 +248,7 @@ extension MainGameViewController
             }
             animation.isRemovedOnCompletion = false
             animation.fillMode = CAMediaTimingFillMode.forwards
-            anwserFish.layer.add(animation, forKey: "route1")
+            anwserFish.layer.add(animation, forKey: "fishroute")
             
             let tapGes = UITapGestureRecognizer(target: self, action: #selector(self.fishClick(tapGes:)))
             self.view.addGestureRecognizer(tapGes)
@@ -275,6 +283,7 @@ extension MainGameViewController
     }
     @objc private func fishClick(tapGes: UITapGestureRecognizer)
     {
+        print("执行")
         let touchPoint = tapGes.location(in: self.view)
         
         for subView in self.view.subviews
@@ -296,8 +305,9 @@ extension MainGameViewController
                             subView.frame = CGRect(x: subView.frame.origin.x, y: subView.frame.origin.y - 0.4*K_ScreenH, width: subView.frame.size.width, height: subView.frame.size.height)
                             subView.alpha = 0
                         }, completion: nil)
+                        earnBait += 1
+                        BaitNumberLabel.text = earnBait.description
                         print("点击了正确答案！")
-                        
                     }
                     else
                     {
