@@ -33,6 +33,7 @@ class MainGameViewController: UIViewController
     lazy var json = JSON(jsonData!)
     
     lazy var earnBait: Int = 0
+    lazy var questionNumber: Int = 0
     
     private lazy var progressView: STProgressView = {
         let progressView = STProgressView()
@@ -135,12 +136,12 @@ extension MainGameViewController
 {
     private func loadQuestion()
     {
-        showIdiomView.setTitle(json["gameTest"][0]["question"].string!)
+        showIdiomView.setTitle(json["gameTest"][questionNumber]["question"].string!)
         createFish()
     }
     private func createFish()
     {
-        for (key,subJson):(String, JSON) in json["gameTest"][0]["questionAnwser"]
+        for (key,subJson):(String, JSON) in json["gameTest"][questionNumber]["questionAnwser"]
         {
             let keyTag = Int(key)! + 1
             let keyValue: Int
@@ -152,8 +153,13 @@ extension MainGameViewController
             {
                 keyValue = Int(key)! - 4 + 1
             }
-            let keyStr = String(keyValue)
-            let fishImageName = "文字鱼"+keyStr
+            
+            let min1: UInt32 = 1
+            let max1: UInt32 = 5
+            let randomFish = String(arc4random_uniform(max1 - min1) + min1)
+            let fishImageName = "文字鱼"+randomFish
+            
+            print(fishImageName)
             
             let fishXpoint: CGFloat
             let fishYpoint: CGFloat
@@ -216,36 +222,43 @@ extension MainGameViewController
             animation.values = [startValue,endValue]
             
             animation.autoreverses = false
-            switch keyTag
-            {
-            case 1:
-                animation.duration = 20
-                break
-            case 2:
-                animation.duration = 24
-                break
-            case 3:
-                animation.duration = 18
-                break
-            case 4:
-                animation.duration = 16
-                break
-            case 5:
-                animation.duration = 15
-                break
-            case 6:
-                animation.duration = 22
-                break
-            case 7:
-                animation.duration = 23
-                break
-            case 8:
-                animation.duration = 19
-                break
-            default:
-                animation.duration = 20
-                break
-            }
+            
+            let max2: UInt32 = 30
+            
+            let min2: UInt32 = 20
+            
+            animation.duration = CFTimeInterval(arc4random_uniform(max2 - min2) + min2)
+            
+//            switch keyTag
+//            {
+//            case 1:
+//                animation.duration = 20
+//                break
+//            case 2:
+//                animation.duration = 24
+//                break
+//            case 3:
+//                animation.duration = 18
+//                break
+//            case 4:
+//                animation.duration = 16
+//                break
+//            case 5:
+//                animation.duration = 15
+//                break
+//            case 6:
+//                animation.duration = 22
+//                break
+//            case 7:
+//                animation.duration = 23
+//                break
+//            case 8:
+//                animation.duration = 19
+//                break
+//            default:
+//                animation.duration = 20
+//                break
+//            }
             animation.isRemovedOnCompletion = false
             animation.fillMode = CAMediaTimingFillMode.forwards
             anwserFish.layer.add(animation, forKey: "fishroute")
@@ -307,6 +320,8 @@ extension MainGameViewController
                         }, completion: nil)
                         earnBait += 1
                         BaitNumberLabel.text = earnBait.description
+                        questionNumber += 1
+                        loadQuestion()
                         print("点击了正确答案！")
                     }
                     else
