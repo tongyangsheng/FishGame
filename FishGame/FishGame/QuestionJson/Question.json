@@ -2,12 +2,12 @@
     "gameTest":
     [
         {
-            "question":"学___五车",
+            "question":"学 __ 五车",
             "questionAnwser":
             [
                 {
-                    "anwser":"富",
-                    "result":"true"
+                    "anwser":"福",
+                    "result":"false"
                 },
                 {
                     "anwser":"人",
@@ -18,8 +18,8 @@
                     "result":"false"
                 },
                 {
-                    "anwser":"福",
-                    "result":"false"
+                    "anwser":"富",
+                    "result":"true"
                 },
                 {
                     "anwser":"习",
