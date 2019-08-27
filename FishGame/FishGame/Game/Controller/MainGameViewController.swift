@@ -261,13 +261,15 @@ extension MainGameViewController
         progressView.progress = CGFloat(progressNow)
         if countdownSeconds == 0
         {
-            countdownLabel.text = "end"
+            let alertView = ResultView(frame: UIScreen.main.bounds, BaitNumber: earnBait)
+            alertView.show()
+            countdownLabel.text = "END"
             countdownTimer.invalidate()
+            NotificationCenter.default.addObserver(self, selector: #selector(test), name: NSNotification.Name(rawValue:"finishEarn"), object: nil)
         }
     }
     @objc private func fishClick(tapGes: UITapGestureRecognizer)
     {
-        print("执行")
         let touchPoint = tapGes.location(in: self.view)
         
         for subView in self.view.subviews
