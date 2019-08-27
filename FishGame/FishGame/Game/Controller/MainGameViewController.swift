@@ -136,7 +136,8 @@ extension MainGameViewController
 {
     private func loadQuestion()
     {
-        showIdiomView.setTitle(json["gameTest"][questionNumber]["question"].string!)
+        guard let json = json["gameTest"][questionNumber]["question"].string else { print("已加载所有题目"); return }
+        showIdiomView.setTitle(json)
         createFish()
     }
     private func createFish()
