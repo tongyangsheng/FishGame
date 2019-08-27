@@ -24,6 +24,7 @@
 		EF3B2804230BC04B00E1EA79 /* photoShutter.caf in Resources */ = {isa = PBXBuildFile; fileRef = EF3B2803230BC04A00E1EA79 /* photoShutter.caf */; };
 		EF3B2806230BC0C900E1EA79 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3B2805230BC0C900E1EA79 /* AudioToolbox.framework */; };
 		EF3B2808230BD10300E1EA79 /* weishi.json in Resources */ = {isa = PBXBuildFile; fileRef = EF3B2807230BD10300E1EA79 /* weishi.json */; };
+		EF64A1062314D53100682684 /* BackAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF64A1052314D53100682684 /* BackAlertView.swift */; };
 		EF7DC198230CE45D006FA3F8 /* CountdownLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7DC197230CE45D006FA3F8 /* CountdownLabel.swift */; };
 		EF7DC19B230D2D00006FA3F8 /* img_4.png in Resources */ = {isa = PBXBuildFile; fileRef = EF7DC19A230D2D00006FA3F8 /* img_4.png */; };
 		EF7DC19D230D3CEE006FA3F8 /* beijing_x.json in Resources */ = {isa = PBXBuildFile; fileRef = EF7DC19C230D3CEE006FA3F8 /* beijing_x.json */; };
@@ -96,6 +97,7 @@
 		EF3B2803230BC04A00E1EA79 /* photoShutter.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = photoShutter.caf; sourceTree = "<group>"; };
 		EF3B2805230BC0C900E1EA79 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		EF3B2807230BD10300E1EA79 /* weishi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weishi.json; sourceTree = "<group>"; };
+		EF64A1052314D53100682684 /* BackAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackAlertView.swift; sourceTree = "<group>"; };
 		EF7DC197230CE45D006FA3F8 /* CountdownLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownLabel.swift; sourceTree = "<group>"; };
 		EF7DC19A230D2D00006FA3F8 /* img_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_4.png; sourceTree = "<group>"; };
 		EF7DC19C230D3CEE006FA3F8 /* beijing_x.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = beijing_x.json; sourceTree = "<group>"; };
@@ -355,6 +357,7 @@
 				EFA8AA80230E676600E11D6A /* idiomView.swift */,
 				EFA8AA82230E76D300E11D6A /* IdiomDetailView.swift */,
 				EF904FAF231375C000656987 /* AnwserFish.swift */,
+				EF64A1052314D53100682684 /* BackAlertView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -665,6 +668,7 @@
 				EF9D262F230A2E28007EECDB /* LowBaitView.swift in Sources */,
 				EF0DD7DE23053F5700F7E7CB /* AppDelegate.swift in Sources */,
 				EF0DD81C23054ED000F7E7CB /* UIDevice-Extension.swift in Sources */,
+				EF64A1062314D53100682684 /* BackAlertView.swift in Sources */,
 				EFA4C356230FB7430069849E /* VolumeView.swift in Sources */,
 				EF0DD8112305412500F7E7CB /* FishOneViewController.swift in Sources */,
 				EF904FB0231375C000656987 /* AnwserFish.swift in Sources */,

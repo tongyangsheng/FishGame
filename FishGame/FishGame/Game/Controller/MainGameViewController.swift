@@ -158,9 +158,7 @@ extension MainGameViewController
             let max1: UInt32 = 5
             let randomFish = String(arc4random_uniform(max1 - min1) + min1)
             let fishImageName = "文字鱼"+randomFish
-            
-            print(fishImageName)
-            
+
             let fishXpoint: CGFloat
             let fishYpoint: CGFloat
             
@@ -199,7 +197,7 @@ extension MainGameViewController
                 fishYpoint = 0.45*K_ScreenH
                 break
             default:
-                fishXpoint = -0.2*K_ScreenW
+                fishXpoint = -0.88*K_ScreenW
                 fishYpoint = 0.5*K_ScreenH
                 break
             }
@@ -228,37 +226,7 @@ extension MainGameViewController
             let min2: UInt32 = 20
             
             animation.duration = CFTimeInterval(arc4random_uniform(max2 - min2) + min2)
-            
-//            switch keyTag
-//            {
-//            case 1:
-//                animation.duration = 20
-//                break
-//            case 2:
-//                animation.duration = 24
-//                break
-//            case 3:
-//                animation.duration = 18
-//                break
-//            case 4:
-//                animation.duration = 16
-//                break
-//            case 5:
-//                animation.duration = 15
-//                break
-//            case 6:
-//                animation.duration = 22
-//                break
-//            case 7:
-//                animation.duration = 23
-//                break
-//            case 8:
-//                animation.duration = 19
-//                break
-//            default:
-//                animation.duration = 20
-//                break
-//            }
+
             animation.isRemovedOnCompletion = false
             animation.fillMode = CAMediaTimingFillMode.forwards
             anwserFish.layer.add(animation, forKey: "fishroute")
@@ -273,7 +241,9 @@ extension MainGameViewController
 {
     @objc func pressBack(_ button:UIButton)
     {
-        self.dismiss(animated: true, completion: nil)
+        let alertView = BackAlertView()
+        alertView.show()
+        NotificationCenter.default.addObserver(self, selector: #selector(test), name: NSNotification.Name(rawValue:"confirmQuit"), object: nil)
     }
     
     @objc func pressSetting(_ button:UIButton)
@@ -339,6 +309,15 @@ extension MainGameViewController
             }
         }
     }
+}
+
+extension MainGameViewController
+{
+        @objc func test(nofi : Notification)
+        {
+            self.dismiss(animated: true, completion: nil)
+            NotificationCenter.default.removeObserver(self)
+        }
 }
 
 
