@@ -244,7 +244,7 @@ extension MainGameViewController
     {
         let alertView = BackAlertView()
         alertView.show()
-        NotificationCenter.default.addObserver(self, selector: #selector(test), name: NSNotification.Name(rawValue:"confirmQuit"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(quitEarn), name: NSNotification.Name(rawValue:"confirmQuit"), object: nil)
     }
     
     @objc func pressSetting(_ button:UIButton)
@@ -264,8 +264,7 @@ extension MainGameViewController
             let alertView = ResultView(frame: UIScreen.main.bounds, BaitNumber: earnBait)
             alertView.show()
             countdownLabel.text = "END"
-            countdownTimer.invalidate()
-            NotificationCenter.default.addObserver(self, selector: #selector(test), name: NSNotification.Name(rawValue:"finishEarn"), object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(finishEarn), name: NSNotification.Name(rawValue:"finishEarn"), object: nil)
         }
     }
     @objc private func fishClick(tapGes: UITapGestureRecognizer)
@@ -316,11 +315,19 @@ extension MainGameViewController
 
 extension MainGameViewController
 {
-        @objc func test(nofi : Notification)
+        @objc func quitEarn(nofi : Notification)
         {
             self.dismiss(animated: true, completion: nil)
+            countdownTimer.invalidate()
             NotificationCenter.default.removeObserver(self)
         }
+    @objc func finishEarn(nofi : Notification)
+    {
+        K_Bait = K_Bait + earnBait
+        self.dismiss(animated: true, completion: nil)
+        countdownTimer.invalidate()
+        NotificationCenter.default.removeObserver(self)
+    }
 }
 
 
