@@ -36,8 +36,10 @@ extension BubbleView
         self.addSubview(BubbleImageView)
         
         let BubbleLabel = UILabel()
-        BubbleLabel.frame = CGRect(x: (0.135*K_ScreenW-100)/2, y: (0.72*0.135*K_ScreenW-5)/2 - 3, width: 100, height: 5)
+        BubbleLabel.frame = CGRect(x: (0.135*K_ScreenW-100)/2, y: (0.72*0.135*K_ScreenW-40)/2 - 3, width: 100, height: 40)
         BubbleLabel.text = idiom
+        BubbleLabel.numberOfLines = 2
+        BubbleLabel.lineBreakMode = .byWordWrapping
         BubbleLabel.textColor = .white
         BubbleLabel.font = UIFont.systemFont(ofSize: 16)
         BubbleLabel.textAlignment = .center
