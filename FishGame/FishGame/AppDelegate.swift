@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let FirstVC = FishOneViewController()
+        FirstVC.edgesForExtendedLayout = UIRectEdge(rawValue: 0)
         let nav = UINavigationController.init(rootViewController: FirstVC)
         self.window?.rootViewController = nav
         window?.makeKeyAndVisible()
