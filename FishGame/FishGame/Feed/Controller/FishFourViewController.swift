@@ -50,7 +50,7 @@ extension FishFourViewController
         maskView.addSubview(maskBackground)
         maskFish.image = UIImage(named: "鱼4")
         maskFish.frame = CGRect(x: 0.3*K_ScreenW, y: 0.25*K_ScreenH, width: 0.4*K_ScreenW, height: 0.3*K_ScreenH)
-        maskFish.contentMode = .scaleAspectFit
+        maskFish.contentMode = .center
         maskView.addSubview(maskFish)
         maskAllAlpha.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.4)
         maskAllAlpha.frame = CGRect(x: 0, y: 0, width: maskView.frame.width, height: maskView.frame.height)
