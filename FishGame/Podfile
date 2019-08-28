@@ -10,6 +10,7 @@ pod 'STKitSwift'
 pod 'STKitSwift/STSegmentedControl'
 pod 'STKitSwift/STProgressView'
 pod 'SwiftyJSON', '~> 4.0'
+pod 'Toast-Swift', '~> 5.0.0'
 
   # Pods for FishGame
 

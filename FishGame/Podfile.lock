@@ -11,6 +11,7 @@ PODS:
   - STKitSwift/STSegmentedControl (1.1):
     - SnapKit
   - SwiftyJSON (4.3.0)
+  - Toast-Swift (5.0.0)
 
 DEPENDENCIES:
   - lottie-ios
@@ -18,6 +19,7 @@ DEPENDENCIES:
   - STKitSwift/STProgressView
   - STKitSwift/STSegmentedControl
   - SwiftyJSON (~> 4.0)
+  - Toast-Swift (~> 5.0.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -25,13 +27,15 @@ SPEC REPOS:
     - SnapKit
     - STKitSwift
     - SwiftyJSON
+    - Toast-Swift
 
 SPEC CHECKSUMS:
   lottie-ios: 43a472d22b2dd2bed292cc4010c0b4d2e66d3ba8
   SnapKit: fd22d10eb9aff484d79a8724eab922c1ddf89bcf
   STKitSwift: 377793b3f8d259f4426fb1e9d2f9acc44756d8f3
   SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
+  Toast-Swift: 36f4720243c8582c2be243a60a51e193c761f541
 
-PODFILE CHECKSUM: b92c483660633b6392d27ad96b61f3085ac0c6da
+PODFILE CHECKSUM: 3ca9fadf975eb401550a4b5ece8f4a11b6cf3bc5
 
 COCOAPODS: 1.7.1
