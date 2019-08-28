@@ -10,6 +10,7 @@ import UIKit
 import Lottie
 import STKitSwift
 import AudioToolbox
+import Toast_Swift
 
 class FishOneViewController: UIViewController
 {
@@ -61,12 +62,15 @@ class FishOneViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        self.edgesForExtendedLayout = UIRectEdge(rawValue: 0)
         self.navigationController?.delegate = self
         self.edgesForExtendedLayout = UIRectEdge.init(rawValue: 0)
         setupUI()
     }
     override func viewWillAppear(_ animated: Bool)
     {
+        BaitStr.text = K_Bait.description
+        
         fishBubble.play()
         fishBubble.loopMode = .loop
         BaitAnimationView.play()
@@ -94,7 +98,7 @@ extension FishOneViewController
         
         fishView.frame = CGRect(x: 1.2*K_ScreenW, y: 100, width: 0.18*K_ScreenW, height: 0.653*0.108*K_ScreenW)
         
-
+        
         //指定加载的JSON文件
         let animation = Animation.named("fishJson")
         //将动画添加到AnimationView
@@ -453,54 +457,70 @@ extension FishOneViewController
     
     @objc func pressFeed(_ button: UIButton)
     {
-        if K_Bait <= 0
+        if fishView.layer.animationKeys() == ["route1"] || fishView.layer.animationKeys() == ["route2"] || fishView.layer.animationKeys() == ["route3"] || fishView.layer.animationKeys() == ["route4"]
         {
-            let WarningView = LowBaitView()
-            WarningView.show()
-            K_Bait = 0
-        }
-        else
-        {
-            guard let animationName = self.fishView.layer.animationKeys() else {  print("当前无动画"); return }
-            if animationName == ["route1"]||animationName == ["route3"]
+            if K_Bait <= 0
             {
-                fishView.layer.removeAllAnimations()
-                fishView.layer.position = fishView.layer.presentation()!.position
-                
-                Bubble1.alpha = 0
-                Bubble2.alpha = 0
-                Bubble1.layer.removeAllAnimations()
-                Bubble2.layer.removeAllAnimations()
-                
-                nowCenterPoint = fishView.layer.position
-                
-                pushBait()
-                fishGetFoodRouteRightToLeft()
-                
+                let WarningView = LowBaitView()
+                WarningView.show()
+                K_Bait = 0
             }
             else
             {
-                fishView.layer.removeAllAnimations()
-                fishView.layer.position = fishView.layer.presentation()!.position
+                guard let animationName = self.fishView.layer.animationKeys() else {  print("当前无动画"); return }
+                if animationName == ["route1"]||animationName == ["route3"]
+                {
+                    fishView.layer.removeAllAnimations()
+                    fishView.layer.position = fishView.layer.presentation()!.position
+                    
+                    Bubble1.alpha = 0
+                    Bubble2.alpha = 0
+                    Bubble1.layer.removeAllAnimations()
+                    Bubble2.layer.removeAllAnimations()
+                    
+                    nowCenterPoint = fishView.layer.position
+                    
+                    pushBait()
+                    fishGetFoodRouteRightToLeft()
+                    
+                }
+                else
+                {
+                    fishView.layer.removeAllAnimations()
+                    fishView.layer.position = fishView.layer.presentation()!.position
+                    
+                    Bubble1.alpha = 0
+                    Bubble2.alpha = 0
+                    Bubble1.layer.removeAllAnimations()
+                    Bubble2.layer.removeAllAnimations()
+                    
+                    nowCenterPoint = fishView.layer.position
+                    
+                    pushBait()
+                    fishGetFoodRouteLeftToRight()
+                    
+                }
                 
-                Bubble1.alpha = 0
-                Bubble2.alpha = 0
-                Bubble1.layer.removeAllAnimations()
-                Bubble2.layer.removeAllAnimations()
-                
-                nowCenterPoint = fishView.layer.position
-                
-                pushBait()
-                fishGetFoodRouteLeftToRight()
-                
+                K_Bait = K_Bait - 10
+                K_fishProgress = K_fishProgress + 10
+                ObserveBait()
+                ObserveProgress()
+                let progressNow = K_fishProgress / 100.0
+                progressView.progress = CGFloat(progressNow)
             }
-            
-            K_Bait = K_Bait - 10
-            K_fishProgress = K_fishProgress + 10
-            ObserveBait()
-            ObserveProgress()
-            let progressNow = K_fishProgress / 100.0
-            progressView.progress = CGFloat(progressNow)
+        }
+        else
+        {
+            if K_Bait <= 0
+            {
+                let WarningView = LowBaitView()
+                WarningView.show()
+                K_Bait = 0
+            }
+            else
+            {
+                self.view.makeToast("主人，我吃饱了，让我先游一会儿吧！", duration: 3.0, position: .bottom, title: "鱼儿：", image: UIImage(named: "鱼1"), style: ToastStyle(), completion: nil)
+            }
         }
     }
     
@@ -547,7 +567,7 @@ extension FishOneViewController
         countdownView.addSubview(countdownLabel)
         self.view.addSubview(countdownView)
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-               countdownView.removeFromSuperview()
+            countdownView.removeFromSuperview()
             let GameVC = MainGameViewController()
             self.fishView.layer.removeAllAnimations()
             self.present(GameVC, animated: true, completion: nil)
@@ -615,11 +635,11 @@ extension FishOneViewController: CAAnimationDelegate
             }
         case ["route5"]:
             print("调用5")
-            fishView.layer.position = fishView.layer.presentation()!.position
+//            fishView.layer.position = fishView.layer.presentation()!.position
             break
         case ["route6"]:
             print("调用6")
-            fishView.layer.position = fishView.layer.presentation()!.position
+//            fishView.layer.position = fishView.layer.presentation()!.position
             break
         case ["route7","route5"]:
             do {
@@ -675,6 +695,7 @@ extension FishOneViewController: UINavigationControllerDelegate
         navigationController.setNavigationBarHidden(true, animated: true)
     }
 }
+
 
 
 
