@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Toast_Swift
 
 class ScreenShotView: UIView
 {
@@ -100,6 +101,7 @@ extension ScreenShotView
     {
         let saveImage: UIImage = getImageFromView(view: contentView)
         UIImageWriteToSavedPhotosAlbum(saveImage, nil, nil, nil)
+        self.makeToast("图片已保存至相册")
     }
 }
 
