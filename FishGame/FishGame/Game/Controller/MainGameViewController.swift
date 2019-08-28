@@ -265,6 +265,7 @@ extension MainGameViewController
             alertView.show()
             countdownLabel.text = "END"
             NotificationCenter.default.addObserver(self, selector: #selector(finishEarn), name: NSNotification.Name(rawValue:"finishEarn"), object: nil)
+            countdownTimer.invalidate()
         }
     }
     @objc private func fishClick(tapGes: UITapGestureRecognizer)
