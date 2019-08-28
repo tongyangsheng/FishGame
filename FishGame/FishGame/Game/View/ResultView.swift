@@ -111,6 +111,6 @@ extension ResultView
     }
     @objc func pressNext(_ button: UIButton)
     {
-        dismiss()
+        
     }
 }
