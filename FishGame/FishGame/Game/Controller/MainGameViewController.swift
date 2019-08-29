@@ -10,6 +10,7 @@ import UIKit
 import Lottie
 import STKitSwift
 import SwiftyJSON
+import AVFoundation
 
 class MainGameViewController: UIViewController
 {
@@ -30,7 +31,6 @@ class MainGameViewController: UIViewController
     var countdownSeconds: Double = 60
     var countdownLabel: UILabel = UILabel(frame: CGRect(x: 0.15*0.28*K_ScreenW, y: (0.128*0.28*K_ScreenW-20)/2, width: 30, height: 20))
     
-    
     lazy var path = Bundle.main.path(forResource: "Question", ofType: "json")
     
     lazy var jsonData = NSData(contentsOfFile: path!)
@@ -41,6 +41,8 @@ class MainGameViewController: UIViewController
     
     lazy var earnBait: Int = 0
     lazy var questionNumber: Int = 0
+    
+    var AudioPlayer = AVAudioPlayer()
     
     private lazy var progressView: STProgressView = {
         let progressView = STProgressView()
@@ -59,7 +61,29 @@ class MainGameViewController: UIViewController
         super.viewDidLoad()
         self.view.backgroundColor = .white
         setupUI()
+        startMusic()
         loadQuestion()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool)
+    {
+        AudioPlayer.stop()
+    }
+    override func viewWillAppear(_ animated: Bool)
+    {
+        AudioPlayer.play()
+    }
+}
+
+extension MainGameViewController
+{
+    private func startMusic()
+    {
+        let AssortedMusics = NSURL(fileURLWithPath: Bundle.main.path(forResource: "gameMusic", ofType: "mp3")!)
+        AudioPlayer = try! AVAudioPlayer(contentsOf: AssortedMusics as URL)
+        AudioPlayer.prepareToPlay()
+        AudioPlayer.numberOfLoops = -1
+        AudioPlayer.play()
     }
 }
 
