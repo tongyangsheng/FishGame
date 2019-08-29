@@ -24,6 +24,7 @@ class MainGameViewController: UIViewController
     var anwserTimer = Timer()
 
     let showIdiomView = idiomView(frame: CGRect(x: 0.355*K_ScreenW, y: 0.03*K_ScreenH, width: 0.29*K_ScreenW, height: 0.21*0.29*K_ScreenW), idiomStr: "学富五车")
+    var idiomDetailView = IdiomDetailView(frame: CGRect(x: K_ScreenW-0.28*K_ScreenW-0.0225*K_ScreenW, y: 0.15*K_ScreenH, width: 0.28*K_ScreenW, height: 0.4*0.28*K_ScreenW), idiomFrom: "源自：《庄子·天下》：“惠施多方，其书五车。”", idiomAnalysis: "解析：五车：五车书。原指庄子形容惠施的学问有五车书那么多，现形容读书多，学识丰富。", idiomMore: "1")
     
     var countdownTimer = Timer()
     var countdownSeconds: Double = 60
@@ -120,8 +121,6 @@ extension MainGameViewController
         showIdiomView.frame = idiomFrame
         self.view.addSubview(showIdiomView)
         
-        let idiomDetailFrame = CGRect(x: K_ScreenW-0.28*K_ScreenW-0.0225*K_ScreenW, y: 0.15*K_ScreenH, width: 0.28*K_ScreenW, height: 0.4*0.28*K_ScreenW)
-        let idiomDetailView = IdiomDetailView(frame: idiomDetailFrame, idiomFrom: "源自：《庄子·天下》：“惠施多方，其书五车。”", idiomAnalysis: "解析：五车：五车书。原指庄子形容惠施的学问有五车书那么多，现形容读书多，学识丰富。", idiomMore: "1")
         self.view.addSubview(idiomDetailView)
         
         let countdownView: UIView = UIView(frame: CGRect(x: K_ScreenW-0.28*K_ScreenW-0.0225*K_ScreenW, y: 0.05*K_ScreenH, width: 0.28*K_ScreenW, height: 0.128*0.28*K_ScreenW))
@@ -143,8 +142,12 @@ extension MainGameViewController
     private func loadQuestion()
     {
         let progressStr = gameProgressNumber.description
-        guard let json = json[progressStr][questionNumber]["question"].string else { print("已加载所有题目"); return }
-        showIdiomView.setTitle(json)
+        guard let json1 = json[progressStr][questionNumber]["question"].string else { print("已加载所有题目"); return }
+        showIdiomView.setTitle(json1)
+        guard let json2 = json[progressStr][questionNumber]["idiomFrom"].string else { print("已加载所有题目"); return }
+        guard let json3 = json[progressStr][questionNumber]["idiomAnalysis"].string else { print("已加载所有题目"); return }
+        idiomDetailView.idiomFromLabel.text = json2
+        idiomDetailView.idiomAnalysisLabel.text = json3
         createFish()
         if anwserTimer.isValid
         {
