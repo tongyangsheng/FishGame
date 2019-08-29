@@ -19,18 +19,7 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="启动页" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ljE-pd-tf8">
-                                <rect key="frame" x="0.0" y="0.0" width="812" height="375"/>
-                            </imageView>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="ljE-pd-tf8" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="Qxh-rf-PBM"/>
-                            <constraint firstItem="ljE-pd-tf8" firstAttribute="height" secondItem="Ze5-6b-2t3" secondAttribute="height" id="cVc-D7-DPd"/>
-                            <constraint firstItem="ljE-pd-tf8" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="phX-NQ-xUI"/>
-                            <constraint firstItem="ljE-pd-tf8" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="qIo-Ao-Zrm"/>
-                        </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
                 </viewController>
@@ -39,7 +28,4 @@
             <point key="canvasLocation" x="-417.48768472906403" y="365.60000000000002"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="启动页" width="667" height="375"/>
-    </resources>
 </document>
