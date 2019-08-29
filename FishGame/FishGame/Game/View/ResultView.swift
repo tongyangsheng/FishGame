@@ -111,6 +111,7 @@ extension ResultView
     }
     @objc func pressNext(_ button: UIButton)
     {
-        
+        NotificationCenter.default.post(name: NSNotification.Name("continueEarn"), object: self, userInfo: ["post":"NewTest"])
+        dismiss()
     }
 }

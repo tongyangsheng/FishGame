@@ -24,7 +24,6 @@
 		EF3B2804230BC04B00E1EA79 /* photoShutter.caf in Resources */ = {isa = PBXBuildFile; fileRef = EF3B2803230BC04A00E1EA79 /* photoShutter.caf */; };
 		EF3B2806230BC0C900E1EA79 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3B2805230BC0C900E1EA79 /* AudioToolbox.framework */; };
 		EF3B2808230BD10300E1EA79 /* weishi.json in Resources */ = {isa = PBXBuildFile; fileRef = EF3B2807230BD10300E1EA79 /* weishi.json */; };
-		EF53C75323177B83004A4A65 /* Question2.json in Resources */ = {isa = PBXBuildFile; fileRef = EF53C75223177B83004A4A65 /* Question2.json */; };
 		EF64A1062314D53100682684 /* BackAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF64A1052314D53100682684 /* BackAlertView.swift */; };
 		EF64A1082315089D00682684 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF64A1072315089D00682684 /* ResultView.swift */; };
 		EF7DC198230CE45D006FA3F8 /* CountdownLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7DC197230CE45D006FA3F8 /* CountdownLabel.swift */; };
@@ -105,7 +104,6 @@
 		EF3B2803230BC04A00E1EA79 /* photoShutter.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = photoShutter.caf; sourceTree = "<group>"; };
 		EF3B2805230BC0C900E1EA79 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		EF3B2807230BD10300E1EA79 /* weishi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weishi.json; sourceTree = "<group>"; };
-		EF53C75223177B83004A4A65 /* Question2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Question2.json; sourceTree = "<group>"; };
 		EF64A1052314D53100682684 /* BackAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackAlertView.swift; sourceTree = "<group>"; };
 		EF64A1072315089D00682684 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		EF7DC197230CE45D006FA3F8 /* CountdownLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownLabel.swift; sourceTree = "<group>"; };
@@ -330,7 +328,6 @@
 			isa = PBXGroup;
 			children = (
 				EF904FAD23136AC700656987 /* Question.json */,
-				EF53C75223177B83004A4A65 /* Question2.json */,
 			);
 			path = QuestionJson;
 			sourceTree = "<group>";
@@ -559,7 +556,6 @@
 				EF7DC19B230D2D00006FA3F8 /* img_4.png in Resources */,
 				EF9518E62306977400B676C9 /* fishJson.json in Resources */,
 				EF0DD7EB23053F5900F7E7CB /* LaunchScreen.storyboard in Resources */,
-				EF53C75323177B83004A4A65 /* Question2.json in Resources */,
 				EF7DC19D230D3CEE006FA3F8 /* beijing_x.json in Resources */,
 				EF3B2808230BD10300E1EA79 /* weishi.json in Resources */,
 				EF0DD7E823053F5900F7E7CB /* Assets.xcassets in Resources */,

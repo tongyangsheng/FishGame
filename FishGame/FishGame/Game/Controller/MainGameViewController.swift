@@ -22,7 +22,7 @@ class MainGameViewController: UIViewController
     let BaitNumberLabel = UILabel()
     
     var anwserTimer = Timer()
-    
+
     let showIdiomView = idiomView(frame: CGRect(x: 0.355*K_ScreenW, y: 0.03*K_ScreenH, width: 0.29*K_ScreenW, height: 0.21*0.29*K_ScreenW), idiomStr: "学富五车")
     
     var countdownTimer = Timer()
@@ -31,8 +31,12 @@ class MainGameViewController: UIViewController
     
     
     lazy var path = Bundle.main.path(forResource: "Question", ofType: "json")
+    
     lazy var jsonData = NSData(contentsOfFile: path!)
+    
     lazy var json = JSON(jsonData!)
+    
+    lazy var gameProgressNumber: Int = 1
     
     lazy var earnBait: Int = 0
     lazy var questionNumber: Int = 0
@@ -138,10 +142,18 @@ extension MainGameViewController
 {
     private func loadQuestion()
     {
-        guard let json = json["gameTest"][questionNumber]["question"].string else { print("已加载所有题目"); return }
+        let progressStr = gameProgressNumber.description
+        guard let json = json[progressStr][questionNumber]["question"].string else { print("已加载所有题目"); return }
         showIdiomView.setTitle(json)
         createFish()
+        if anwserTimer.isValid
+        {
+            
+        }
+        else
+        {
         anwserTimer = Timer.scheduledTimer(timeInterval: 25, target: self, selector: #selector(finishThisQuestion), userInfo: nil, repeats: false)
+        }
     }
     @objc private func finishThisQuestion()
     {
@@ -157,7 +169,8 @@ extension MainGameViewController
     }
     private func createFish()
     {
-        for (key,subJson):(String, JSON) in json["gameTest"][questionNumber]["questionAnwser"]
+        let progressStr = gameProgressNumber.description
+        for (key,subJson):(String, JSON) in json[progressStr][questionNumber]["questionAnwser"]
         {
             let keyTag = Int(key)! + 1
             let keyValue: Int
@@ -279,6 +292,7 @@ extension MainGameViewController
             alertView.show()
             countdownLabel.text = "END"
             NotificationCenter.default.addObserver(self, selector: #selector(finishEarn), name: NSNotification.Name(rawValue:"finishEarn"), object: nil)
+            NotificationCenter.default.addObserver(self, selector: #selector(continueEarn), name: NSNotification.Name(rawValue:"continueEarn"), object: nil)
             countdownTimer.invalidate()
         }
     }
@@ -343,6 +357,24 @@ extension MainGameViewController
         self.dismiss(animated: true, completion: nil)
         countdownTimer.invalidate()
         NotificationCenter.default.removeObserver(self)
+    }
+    @objc func continueEarn(nofi: Notification)
+    {
+        for subView in self.view.subviews
+        {
+            if subView.tag >= 100
+            {
+                subView.removeFromSuperview()
+            }
+        }
+        countdownSeconds = 60.0
+        countdownTimer.invalidate()
+         countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(MainGameViewController.CLOCK), userInfo: nil, repeats: true)
+        anwserTimer.invalidate()
+        anwserTimer = Timer.scheduledTimer(timeInterval: 25, target: self, selector: #selector(finishThisQuestion), userInfo: nil, repeats: false)
+        questionNumber = 0
+        gameProgressNumber += 1
+        loadQuestion()
     }
 }
 
