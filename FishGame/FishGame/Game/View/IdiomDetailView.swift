@@ -10,9 +10,12 @@ import UIKit
 
 class IdiomDetailView: UIView
 {
-    private var idiomFrom: String
-    private var idiomAnalysis: String
-    private var idiomMore: String
+    var idiomFrom: String
+    var idiomAnalysis: String
+    var idiomMore: String
+    
+    let idiomFromLabel = UILabel()
+    let idiomAnalysisLabel = UILabel()
     
     init(frame: CGRect,idiomFrom: String,idiomAnalysis: String, idiomMore: String)
     {
@@ -36,14 +39,12 @@ extension IdiomDetailView
         self.frame = frame
         self.layer.cornerRadius = 7
         self.backgroundColor = .white
-        let idiomFromLabel = UILabel()
         idiomFromLabel.text = idiomFrom
         idiomFromLabel.textColor = UIColor(r: 41, g: 171, b: 226)
         idiomFromLabel.numberOfLines = 2
         idiomFromLabel.font = UIFont.systemFont(ofSize: 12)
         idiomFromLabel.frame = CGRect(x: 0.05*self.frame.width, y: 0.08*self.frame.height, width: 0.9*self.frame.width, height: 0.32*self.frame.height)
         self.addSubview(idiomFromLabel)
-        let idiomAnalysisLabel = UILabel()
         idiomAnalysisLabel.text = idiomAnalysis
         idiomAnalysisLabel.textColor = UIColor(r: 175, g: 168, b: 168)
         idiomAnalysisLabel.numberOfLines = 2
