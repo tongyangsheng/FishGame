@@ -24,6 +24,9 @@
 		EF3B2804230BC04B00E1EA79 /* photoShutter.caf in Resources */ = {isa = PBXBuildFile; fileRef = EF3B2803230BC04A00E1EA79 /* photoShutter.caf */; };
 		EF3B2806230BC0C900E1EA79 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3B2805230BC0C900E1EA79 /* AudioToolbox.framework */; };
 		EF3B2808230BD10300E1EA79 /* weishi.json in Resources */ = {isa = PBXBuildFile; fileRef = EF3B2807230BD10300E1EA79 /* weishi.json */; };
+		EF53C7572317B368004A4A65 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF53C7562317B368004A4A65 /* AVFoundation.framework */; };
+		EF53C75B2317C2C6004A4A65 /* backMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EF53C75A2317C2C6004A4A65 /* backMusic.mp3 */; };
+		EF53C75D2317C654004A4A65 /* gameMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EF53C75C2317C654004A4A65 /* gameMusic.mp3 */; };
 		EF64A1062314D53100682684 /* BackAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF64A1052314D53100682684 /* BackAlertView.swift */; };
 		EF64A1082315089D00682684 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF64A1072315089D00682684 /* ResultView.swift */; };
 		EF7DC198230CE45D006FA3F8 /* CountdownLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF7DC197230CE45D006FA3F8 /* CountdownLabel.swift */; };
@@ -104,6 +107,9 @@
 		EF3B2803230BC04A00E1EA79 /* photoShutter.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = photoShutter.caf; sourceTree = "<group>"; };
 		EF3B2805230BC0C900E1EA79 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		EF3B2807230BD10300E1EA79 /* weishi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weishi.json; sourceTree = "<group>"; };
+		EF53C7562317B368004A4A65 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		EF53C75A2317C2C6004A4A65 /* backMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backMusic.mp3; sourceTree = "<group>"; };
+		EF53C75C2317C654004A4A65 /* gameMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gameMusic.mp3; sourceTree = "<group>"; };
 		EF64A1052314D53100682684 /* BackAlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackAlertView.swift; sourceTree = "<group>"; };
 		EF64A1072315089D00682684 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		EF7DC197230CE45D006FA3F8 /* CountdownLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountdownLabel.swift; sourceTree = "<group>"; };
@@ -142,6 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF53C7572317B368004A4A65 /* AVFoundation.framework in Frameworks */,
 				EFA4C35A230FD7DF0069849E /* MediaPlayer.framework in Frameworks */,
 				EFA4C358230FC1C20069849E /* MessageUI.framework in Frameworks */,
 				EF3B2806230BC0C900E1EA79 /* AudioToolbox.framework in Frameworks */,
@@ -184,6 +191,7 @@
 		6F5A20D8C468F0B7A68B2146 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EF53C7562317B368004A4A65 /* AVFoundation.framework */,
 				EFA4C359230FD7DF0069849E /* MediaPlayer.framework */,
 				EFA4C357230FC1C20069849E /* MessageUI.framework */,
 				EF3B2805230BC0C900E1EA79 /* AudioToolbox.framework */,
@@ -312,6 +320,8 @@
 			isa = PBXGroup;
 			children = (
 				EF3B2803230BC04A00E1EA79 /* photoShutter.caf */,
+				EF53C75C2317C654004A4A65 /* gameMusic.mp3 */,
+				EF53C75A2317C2C6004A4A65 /* backMusic.mp3 */,
 			);
 			path = Sound;
 			sourceTree = "<group>";
@@ -557,12 +567,14 @@
 				EF9518E62306977400B676C9 /* fishJson.json in Resources */,
 				EF0DD7EB23053F5900F7E7CB /* LaunchScreen.storyboard in Resources */,
 				EF7DC19D230D3CEE006FA3F8 /* beijing_x.json in Resources */,
+				EF53C75D2317C654004A4A65 /* gameMusic.mp3 in Resources */,
 				EF3B2808230BD10300E1EA79 /* weishi.json in Resources */,
 				EF0DD7E823053F5900F7E7CB /* Assets.xcassets in Resources */,
 				EFA8AA7B230E295C00E11D6A /* img_0.png in Resources */,
 				EF0DD7E323053F5700F7E7CB /* Main.storyboard in Resources */,
 				EFA8AA7C230E295C00E11D6A /* img_2.png in Resources */,
 				EFA8AA72230E263600E11D6A /* leidian_x.json in Resources */,
+				EF53C75B2317C2C6004A4A65 /* backMusic.mp3 in Resources */,
 				EFA8AA79230E295C00E11D6A /* bolan_x.json in Resources */,
 				EF904FAE23136AC700656987 /* Question.json in Resources */,
 			);
