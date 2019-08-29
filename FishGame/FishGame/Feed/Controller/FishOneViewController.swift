@@ -11,6 +11,7 @@ import Lottie
 import STKitSwift
 import AudioToolbox
 import Toast_Swift
+import AVFoundation
 
 class FishOneViewController: UIViewController
 {
@@ -42,6 +43,7 @@ class FishOneViewController: UIViewController
     
     var nowCenterPoint:CGPoint = CGPoint(x: 0, y: 0)
     
+    var AudioPlayer = AVAudioPlayer()
     
     private lazy var progressView: STProgressView = {
         let progressView = STProgressView()
@@ -66,6 +68,7 @@ class FishOneViewController: UIViewController
         self.navigationController?.delegate = self
         self.edgesForExtendedLayout = UIRectEdge.init(rawValue: 0)
         setupUI()
+        startMusic()
     }
     override func viewWillAppear(_ animated: Bool)
     {
@@ -81,10 +84,24 @@ class FishOneViewController: UIViewController
         transform = CGAffineTransform.init(scaleX: 1, y: 1)
         fishView.transform = transform
         fishRunRoute1()
+        AudioPlayer.play()
     }
     override func viewWillDisappear(_ animated: Bool)
     {
         fishView.layer.removeAllAnimations()
+        AudioPlayer.stop()
+    }
+}
+
+extension FishOneViewController
+{
+    private func startMusic()
+    {
+        let AssortedMusics = NSURL(fileURLWithPath: Bundle.main.path(forResource: "backMusic", ofType: "mp3")!)
+        AudioPlayer = try! AVAudioPlayer(contentsOf: AssortedMusics as URL)
+        AudioPlayer.prepareToPlay()
+        AudioPlayer.numberOfLoops = -1
+        AudioPlayer.play()
     }
 }
 
