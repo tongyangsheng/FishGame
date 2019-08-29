@@ -2,83 +2,159 @@
     "gameTest":
     [
         {
-            "question":"学 __ 五车",
+            "question":" __ 鱼之肆",
             "questionAnwser":
             [
                 {
-                    "anwser":"福",
+                    "anwser":"鲤",
                     "result":"false"
                 },
                 {
-                    "anwser":"人",
+                    "anwser":"鲫",
                     "result":"false"
                 },
                 {
-                    "anwser":"贫",
+                    "anwser":"蛇",
                     "result":"false"
                 },
                 {
-                    "anwser":"富",
+                    "anwser":"螺",
+                    "result":"false"
+                },
+                {
+                    "anwser":"飞",
+                    "result":"false"
+                },
+                {
+                    "anwser":"鲍",
                     "result":"true"
                 },
                 {
-                    "anwser":"习",
+                    "anwser":"牛",
                     "result":"false"
                 },
                 {
-                    "anwser":"资",
-                    "result":"false"
-                },
-                {
-                    "anwser":"海",
-                    "result":"false"
-                },
-                {
-                    "anwser":"伸",
+                    "anwser":"金",
                     "result":"false"
                 }
             ]
         },
         {
-            "question":"车 __ 马龙",
+            "question":"枕 __ 待旦",
             "questionAnwser":
             [
                 {
-                    "anwser":"人",
+                    "anwser":"刀",
                     "result":"false"
                 },
                 {
-                    "anwser":"钱",
+                    "anwser":"叉",
                     "result":"false"
                 },
                 {
-                    "anwser":"辆",
-                    "result":"false"
-                },
-                {
-                    "anwser":"车",
+                    "anwser":"斧",
                     "result":"false"
                 },
                 {
                     "anwser":"水",
+                    "result":"false"
+                },
+                {
+                    "anwser":"戈",
                     "result":"true"
                 },
                 {
-                    "anwser":"河",
+                    "anwser":"地",
                     "result":"false"
                 },
                 {
-                    "anwser":"随",
+                    "anwser":"枕",
                     "result":"false"
                 },
                 {
-                    "anwser":"流",
+                    "anwser":"兵",
                     "result":"false"
                 }
             ]
         },
         {
-            "question":"画 __ 点睛",
+            "question":"按图索 __ ",
+            "questionAnwser":
+            [
+                {
+                    "anwser":"骑",
+                    "result":"false"
+                },
+                {
+                    "anwser":"冀",
+                    "result":"false"
+                },
+                {
+                    "anwser":"骥",
+                    "result":"true"
+                },
+                {
+                    "anwser":"及",
+                    "result":"false"
+                },
+                {
+                    "anwser":"提",
+                    "result":"false"
+                },
+                {
+                    "anwser":"引",
+                    "result":"false"
+                },
+                {
+                    "anwser":"球",
+                    "result":"false"
+                },
+                {
+                    "anwser":"图",
+                    "result":"false"
+                }
+            ]
+        },
+        {
+            "question":"一 __ 不变",
+            "questionAnwser":
+            [
+                {
+                    "anwser":"晨",
+                    "result":"false"
+                },
+                {
+                    "anwser":"尘",
+                    "result":"false"
+                },
+                {
+                    "anwser":"陈",
+                    "result":"false"
+                },
+                {
+                    "anwser":"成",
+                    "result":"true"
+                },
+                {
+                    "anwser":"似",
+                    "result":"false"
+                },
+                {
+                    "anwser":"称",
+                    "result":"false"
+                },
+                {
+                    "anwser":"撑",
+                    "result":"false"
+                },
+                {
+                    "anwser":"呈",
+                    "result":"false"
+                }
+            ]
+        },
+        {
+            "question":"指 __ 为马",
             "questionAnwser":
             [
                 {
@@ -90,6 +166,10 @@
                     "result":"false"
                 },
                 {
+                    "anwser":"鹿",
+                    "result":"true"
+                },
+                {
                     "anwser":"牛",
                     "result":"false"
                 },
@@ -98,75 +178,197 @@
                     "result":"false"
                 },
                 {
-                    "anwser":"虎",
-                    "result":"false"
-                },
-                {
                     "anwser":"龙",
-                    "result":"true"
-                },
-                {
-                    "anwser":"鹰",
                     "result":"false"
                 },
                 {
-                    "anwser":"狼",
-                    "result":"false"
-                }
-            ]
-        },
-        {
-            "question":"寿 __ 南山",
-            "questionAnwser":
-            [
-                {
-                    "anwser":"比",
-                    "result":"true"
-                },
-                {
-                    "anwser":"超",
+                    "anwser":"猫",
                     "result":"false"
                 },
                 {
-                    "anwser":"同",
-                    "result":"false"
-                },
-                {
-                    "anwser":"如",
-                    "result":"false"
-                },
-                {
-                    "anwser":"似",
-                    "result":"false"
-                },
-                {
-                    "anwser":"堪",
-                    "result":"false"
-                },
-                {
-                    "anwser":"是",
-                    "result":"false"
-                },
-                {
-                    "anwser":"等",
+                    "anwser":"驴",
                     "result":"false"
                 }
             ]
         },
         {
-            "question":"延 __ 益寿",
+            "question":"纵横 __ 阖",
             "questionAnwser":
             [
                 {
-                    "anwser":"贤",
+                    "anwser":"竖",
                     "result":"false"
                 },
                 {
-                    "anwser":"咸",
+                    "anwser":"百",
+                    "result":"false"
+                },
+                {
+                    "anwser":"离",
+                    "result":"false"
+                },
+                {
+                    "anwser":"融",
+                    "result":"false"
+                },
+                {
+                    "anwser":"千",
+                    "result":"false"
+                },
+                {
+                    "anwser":"貌",
+                    "result":"false"
+                },
+                {
+                    "anwser":"捭",
+                    "result":"true"
+                },
+                {
+                    "anwser":"附",
+                    "result":"false"
+                }
+            ]
+        },
+        {
+            "question":" __ 人听闻",
+            "questionAnwser":
+            [
+                {
+                    "anwser":"还",
+                    "result":"false"
+                },
+                {
+                    "anwser":"害",
+                    "result":"false"
+                },
+                {
+                    "anwser":"亥",
+                    "result":"false"
+                },
+                {
+                    "anwser":"该",
+                    "result":"false"
+                },
+                {
+                    "anwser":"骇",
+                    "result":"true"
+                },
+                {
+                    "anwser":"骸",
+                    "result":"false"
+                },
+                {
+                    "anwser":"海",
+                    "result":"false"
+                },
+                {
+                    "anwser":"辛",
+                    "result":"false"
+                }
+            ]
+        },
+        {
+            "question":"欲 __ 难填",
+            "questionAnwser":
+            [
+                {
+                    "anwser":"河",
+                    "result":"false"
+                },
+                {
+                    "anwser":"盒",
+                    "result":"false"
+                },
+                {
+                    "anwser":"望",
+                    "result":"false"
+                },
+                {
+                    "anwser":"壑",
+                    "result":"true"
+                },
+                {
+                    "anwser":"流",
+                    "result":"false"
+                },
+                {
+                    "anwser":"可",
+                    "result":"false"
+                },
+                {
+                    "anwser":"宇",
+                    "result":"false"
+                },
+                {
+                    "anwser":"心",
+                    "result":"false"
+                }
+            ]
+        },
+        {
+            "question":"积 __ 难返",
+            "questionAnwser":
+            [
+                {
+                    "anwser":"虫",
+                    "result":"false"
+                },
+                {
+                    "anwser":"众",
+                    "result":"false"
+                },
+                {
+                    "anwser":"长",
+                    "result":"false"
+                },
+                {
+                    "anwser":"电",
+                    "result":"false"
+                },
+                {
+                    "anwser":"木",
+                    "result":"false"
+                },
+                {
+                    "anwser":"累",
                     "result":"false"
                 },
                 {
                     "anwser":"天",
+                    "result":"false"
+                },
+                {
+                    "anwser":"重",
+                    "result":"true"
+                }
+            ]
+        },
+        {
+            "question":"一 __ 难扶",
+            "questionAnwser":
+            [
+                {
+                    "anwser":"花",
+                    "result":"false"
+                },
+                {
+                    "anwser":"草",
+                    "result":"false"
+                },
+                {
+                    "anwser":"树",
+                    "result":"false"
+                },
+                {
+                    "anwser":"木",
+                    "result":"true"
+                },
+                {
+                    "anwser":"云",
+                    "result":"false"
+                },
+                {
+                    "anwser":"根",
                     "result":"false"
                 },
                 {
@@ -174,209 +376,7 @@
                     "result":"false"
                 },
                 {
-                    "anwser":"年",
-                    "result":"true"
-                },
-                {
-                    "anwser":"念",
-                    "result":"false"
-                },
-                {
-                    "anwser":"延",
-                    "result":"false"
-                },
-                {
-                    "anwser":"艰",
-                    "result":"false"
-                }
-            ]
-        },
-        {
-            "question":"金科 __ 律",
-            "questionAnwser":
-            [
-                {
-                    "anwser":"碧",
-                    "result":"false"
-                },
-                {
-                    "anwser":"玉",
-                    "result":"true"
-                },
-                {
-                    "anwser":"金",
-                    "result":"false"
-                },
-                {
-                    "anwser":"听",
-                    "result":"false"
-                },
-                {
-                    "anwser":"渐",
-                    "result":"false"
-                },
-                {
-                    "anwser":"好",
-                    "result":"false"
-                },
-                {
-                    "anwser":"蓝",
-                    "result":"false"
-                },
-                {
-                    "anwser":"银",
-                    "result":"false"
-                }
-            ]
-        },
-        {
-            "question":"得 __ 望蜀",
-            "questionAnwser":
-            [
-                {
-                    "anwser":"龙",
-                    "result":"false"
-                },
-                {
-                    "anwser":"已",
-                    "result":"false"
-                },
-                {
-                    "anwser":"隆",
-                    "result":"false"
-                },
-                {
-                    "anwser":"陇",
-                    "result":"true"
-                },
-                {
-                    "anwser":"拢",
-                    "result":"false"
-                },
-                {
-                    "anwser":"棱",
-                    "result":"false"
-                },
-                {
-                    "anwser":"天",
-                    "result":"false"
-                },
-                {
-                    "anwser":"隆",
-                    "result":"false"
-                }
-            ]
-        },
-        {
-            "question":" __ 精竭虑",
-            "questionAnwser":
-            [
-                {
-                    "anwser":"但",
-                    "result":"false"
-                },
-                {
-                    "anwser":"担",
-                    "result":"false"
-                },
-                {
-                    "anwser":"殚",
-                    "result":"true"
-                },
-                {
-                    "anwser":"单",
-                    "result":"false"
-                },
-                {
-                    "anwser":"耽",
-                    "result":"false"
-                },
-                {
-                    "anwser":"淡",
-                    "result":"false"
-                },
-                {
-                    "anwser":"诞",
-                    "result":"false"
-                },
-                {
-                    "anwser":"残",
-                    "result":"false"
-                }
-            ]
-        },
-        {
-            "question":"方兴未 __ ",
-            "questionAnwser":
-            [
-                {
-                    "anwser":"爱",
-                    "result":"false"
-                },
-                {
-                    "anwser":"艾",
-                    "result":"true"
-                },
-                {
-                    "anwser":"埃",
-                    "result":"false"
-                },
-                {
-                    "anwser":"唉",
-                    "result":"false"
-                },
-                {
-                    "anwser":"哎",
-                    "result":"false"
-                },
-                {
-                    "anwser":"在",
-                    "result":"false"
-                },
-                {
-                    "anwser":"菜",
-                    "result":"false"
-                },
-                {
-                    "anwser":"奥",
-                    "result":"false"
-                }
-            ]
-        },
-        {
-            "question":"沸反 __ 天",
-            "questionAnwser":
-            [
-                {
-                    "anwser":"晴",
-                    "result":"false"
-                },
-                {
-                    "anwser":"阴",
-                    "result":"false"
-                },
-                {
-                    "anwser":"雨",
-                    "result":"false"
-                },
-                {
-                    "anwser":"盈",
-                    "result":"true"
-                },
-                {
-                    "anwser":"满",
-                    "result":"false"
-                },
-                {
-                    "anwser":"迎",
-                    "result":"false"
-                },
-                {
-                    "anwser":"吟",
-                    "result":"false"
-                },
-                {
-                    "anwser":"萤",
+                    "anwser":"石",
                     "result":"false"
                 }
             ]
