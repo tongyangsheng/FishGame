@@ -21,6 +21,8 @@ class MainGameViewController: UIViewController
     let BaitNumberView = UIView()
     let BaitNumberLabel = UILabel()
     
+    var anwserTimer = Timer()
+    
     let showIdiomView = idiomView(frame: CGRect(x: 0.355*K_ScreenW, y: 0.03*K_ScreenH, width: 0.29*K_ScreenW, height: 0.21*0.29*K_ScreenW), idiomStr: "学富五车")
     
     var countdownTimer = Timer()
@@ -139,6 +141,19 @@ extension MainGameViewController
         guard let json = json["gameTest"][questionNumber]["question"].string else { print("已加载所有题目"); return }
         showIdiomView.setTitle(json)
         createFish()
+        anwserTimer = Timer.scheduledTimer(timeInterval: 25, target: self, selector: #selector(finishThisQuestion), userInfo: nil, repeats: false)
+    }
+    @objc private func finishThisQuestion()
+    {
+        for subView in self.view.subviews
+        {
+            if subView.tag >= 100
+            {
+                subView.removeFromSuperview()
+            }
+        }
+        self.questionNumber += 1
+        self.loadQuestion()
     }
     private func createFish()
     {
@@ -159,7 +174,7 @@ extension MainGameViewController
             let max1: UInt32 = 5
             let randomFish = String(arc4random_uniform(max1 - min1) + min1)
             let fishImageName = "文字鱼"+randomFish
-
+            
             let fishXpoint: CGFloat
             let fishYpoint: CGFloat
             
@@ -227,7 +242,6 @@ extension MainGameViewController
             let min2: UInt32 = 20
             
             animation.duration = CFTimeInterval(arc4random_uniform(max2 - min2) + min2)
-
             animation.isRemovedOnCompletion = false
             animation.fillMode = CAMediaTimingFillMode.forwards
             anwserFish.layer.add(animation, forKey: "fishroute")
@@ -291,6 +305,7 @@ extension MainGameViewController
                             subView.frame = CGRect(x: subView.frame.origin.x, y: subView.frame.origin.y - 0.4*K_ScreenH, width: subView.frame.size.width, height: subView.frame.size.height)
                             subView.alpha = 0
                         }, completion: nil)
+                        anwserTimer.invalidate()
                         earnBait += 1
                         BaitNumberLabel.text = earnBait.description
                         questionNumber += 1
@@ -316,12 +331,12 @@ extension MainGameViewController
 
 extension MainGameViewController
 {
-        @objc func quitEarn(nofi : Notification)
-        {
-            self.dismiss(animated: true, completion: nil)
-            countdownTimer.invalidate()
-            NotificationCenter.default.removeObserver(self)
-        }
+    @objc func quitEarn(nofi : Notification)
+    {
+        self.dismiss(animated: true, completion: nil)
+        countdownTimer.invalidate()
+        NotificationCenter.default.removeObserver(self)
+    }
     @objc func finishEarn(nofi : Notification)
     {
         K_Bait = K_Bait + earnBait
@@ -330,5 +345,4 @@ extension MainGameViewController
         NotificationCenter.default.removeObserver(self)
     }
 }
-
 
