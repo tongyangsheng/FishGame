@@ -519,7 +519,32 @@ extension FishOneViewController
             }
             else
             {
-                self.view.makeToast("主人，我吃饱了，让我先游一会儿吧！", duration: 3.0, position: .bottom, title: "鱼儿：", image: UIImage(named: "鱼1"), style: ToastStyle(), completion: nil)
+                let min1: UInt32 = 1
+                let max1: UInt32 = 5
+                let randomFish = arc4random_uniform(max1 - min1) + min1
+                var fishMessage: String
+                switch randomFish
+                {
+                case 1:
+                    fishMessage = "主人，我吃饱了，让我先游一会儿吧！"
+                    break
+                case 2:
+                    fishMessage = "饭后运动，有益身心"
+                    break
+                case 3:
+                    fishMessage = "我还是先消化会儿吧，主人"
+                    break
+                case 4:
+                    fishMessage = "刚刚饱餐一顿，还是休息会儿吧"
+                    break
+                default:
+                    fishMessage = "刚刚饱餐一顿，还是休息会儿吧"
+                    break
+                }
+
+                
+                
+                self.view.makeToast(fishMessage, duration: 3.0, position: .bottom, title: "鱼儿：", image: UIImage(named: "鱼1"), style: ToastStyle(), completion: nil)
             }
         }
     }
