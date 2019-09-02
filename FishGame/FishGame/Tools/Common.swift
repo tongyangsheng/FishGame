@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 //底部的安全距离
 let bottomSafeAreaHeight = UIApplication.shared.windows.first?.safeAreaInsets.bottom ?? 0.0
@@ -32,4 +33,16 @@ let K_ScreenH = UIScreen.main.bounds.height
 var K_Bait = 100
 
 //游戏等级
-var K_GameProgress = 1
+var K_GameProgress = 2
+
+//全局背景音乐
+var K_AudioPlayer: AVAudioPlayer =
+{
+    let AssortedMusics = NSURL(fileURLWithPath: Bundle.main.path(forResource: "backMusic", ofType: "mp3")!)
+    let K_AudioPlayer = try! AVAudioPlayer(contentsOf: AssortedMusics as URL)
+    K_AudioPlayer.prepareToPlay()
+    K_AudioPlayer.numberOfLoops = -1
+    K_AudioPlayer.play()
+    return K_AudioPlayer
+}()
+
