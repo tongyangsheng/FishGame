@@ -172,9 +172,10 @@ extension FishTwoViewController
         feedButton.addTarget(self, action: #selector(pressFeed(_:)), for: .touchUpInside)
         self.view.addSubview(feedButton)
         
-        BaitStr.frame = CGRect(x: feedButton.frame.origin.x + 0.6*feedButton.frame.width, y: feedButton.frame.origin.y+0.32*feedButton.frame.height, width: 0.14*feedButton.frame.width, height: 0.6*0.14*feedButton.frame.width)
+        BaitStr.frame = CGRect(x: feedButton.frame.origin.x + 0.58*feedButton.frame.width, y: feedButton.frame.origin.y+0.32*feedButton.frame.height, width: 0.2*feedButton.frame.width, height: 0.6*0.14*feedButton.frame.width)
         BaitStr.textColor = .white
         BaitStr.textAlignment = .center
+        BaitStr.font = UIFont.systemFont(ofSize: 16)
         BaitStr.text = K_Bait.description
         self.view.addSubview(BaitStr)
         
