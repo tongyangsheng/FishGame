@@ -80,7 +80,34 @@ extension FishTwoViewController
         screenshotButton.frame = CGRect(x: offButton.frame.origin.x - 0.005*K_ScreenW - 0.057*K_ScreenW, y: 0.04*K_ScreenH, width: 0.057*K_ScreenW, height: 0.057*K_ScreenW)
         screenshotButton.setImage(UIImage(named: "拍照"), for: .normal)
         self.view.addSubview(screenshotButton)
+        if K_GameProgress < 2
+        {
+            setMask()
+        }
+        else
+        {
+            
+        }
         
+        turnrightButton.frame = CGRect(x: K_ScreenW - 0.03*K_ScreenW - 0.033*K_ScreenW, y: 0.437*K_ScreenH, width: 0.033*K_ScreenW, height: 0.128*K_ScreenH)
+        turnrightButton.setImage(UIImage(named: "右切换"), for: .normal)
+        turnrightButton.addTarget(self, action: #selector(pressNext(_:)), for: .touchUpInside)
+        self.view.addSubview(turnrightButton)
+        
+        if(UIDevice.current.isX())
+        {
+            turnleftButton.frame = CGRect(x: 0.055*K_ScreenW, y: 0.437*K_ScreenH, width: 0.033*K_ScreenW, height: 0.128*K_ScreenH)
+        }
+        else
+        {
+            turnleftButton.frame = CGRect(x: 0.03*K_ScreenW, y: 0.437*K_ScreenH, width: 0.033*K_ScreenW, height: 0.128*K_ScreenH)
+        }
+        turnleftButton.setImage(UIImage(named: "左切换"), for: .normal)
+        turnleftButton.addTarget(self, action: #selector(pressPrevious(_:)), for: .touchUpInside)
+        self.view.addSubview(turnleftButton)
+    }
+    @objc func setMask()
+    {
         maskView.frame = UIScreen.main.bounds
         maskBackground.image = UIImage(named: "背景图")
         maskBackground.frame = CGRect(x: 0, y: 0, width: maskView.frame.width, height: maskView.frame.height)
@@ -103,23 +130,6 @@ extension FishTwoViewController
         maskView.addSubview(maskLabel)
         
         self.view.addSubview(maskView)
-        
-        turnrightButton.frame = CGRect(x: K_ScreenW - 0.03*K_ScreenW - 0.033*K_ScreenW, y: 0.437*K_ScreenH, width: 0.033*K_ScreenW, height: 0.128*K_ScreenH)
-        turnrightButton.setImage(UIImage(named: "右切换"), for: .normal)
-        turnrightButton.addTarget(self, action: #selector(pressNext(_:)), for: .touchUpInside)
-        self.view.addSubview(turnrightButton)
-        
-        if(UIDevice.current.isX())
-        {
-            turnleftButton.frame = CGRect(x: 0.055*K_ScreenW, y: 0.437*K_ScreenH, width: 0.033*K_ScreenW, height: 0.128*K_ScreenH)
-        }
-        else
-        {
-            turnleftButton.frame = CGRect(x: 0.03*K_ScreenW, y: 0.437*K_ScreenH, width: 0.033*K_ScreenW, height: 0.128*K_ScreenH)
-        }
-        turnleftButton.setImage(UIImage(named: "左切换"), for: .normal)
-        turnleftButton.addTarget(self, action: #selector(pressPrevious(_:)), for: .touchUpInside)
-        self.view.addSubview(turnleftButton)
     }
     @objc func fishRun()
     {
