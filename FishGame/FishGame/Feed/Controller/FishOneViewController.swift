@@ -43,7 +43,6 @@ class FishOneViewController: UIViewController
     
     var nowCenterPoint:CGPoint = CGPoint(x: 0, y: 0)
     
-    var AudioPlayer = AVAudioPlayer()
     
     var fishProgressNow: Double = 0
     
@@ -86,12 +85,10 @@ class FishOneViewController: UIViewController
         transform = CGAffineTransform.init(scaleX: 1, y: 1)
         fishView.transform = transform
         fishRunRoute1()
-        AudioPlayer.play()
     }
     override func viewWillDisappear(_ animated: Bool)
     {
         fishView.layer.removeAllAnimations()
-        AudioPlayer.stop()
     }
 }
 
@@ -99,11 +96,7 @@ extension FishOneViewController
 {
     private func startMusic()
     {
-        let AssortedMusics = NSURL(fileURLWithPath: Bundle.main.path(forResource: "backMusic", ofType: "mp3")!)
-        AudioPlayer = try! AVAudioPlayer(contentsOf: AssortedMusics as URL)
-        AudioPlayer.prepareToPlay()
-        AudioPlayer.numberOfLoops = -1
-        AudioPlayer.play()
+        K_AudioPlayer.play()
     }
 }
 
@@ -594,6 +587,7 @@ extension FishOneViewController
     
     @objc func pressEarn(_ button: UIButton)
     {
+        K_AudioPlayer.stop()
         let countdownView = UIView()
         countdownView.frame = UIScreen.main.bounds
         countdownView.backgroundColor = UIColor(r: 236, g: 249, b: 255)
