@@ -1218,111 +1218,151 @@
             [
                 {
                     "anwser":"舔",
+                    "result":"false"
+                },
+                {
+                    "anwser":"甜",
+                    "result":"false"
+                },
+                {
+                    "anwser":"殄",
                     "result":"true"
                 },
                 {
-                    "anwser":"重",
+                    "anwser":"填",
                     "result":"false"
                 },
                 {
-                    "anwser":"众",
+                    "anwser":"乱",
                     "result":"false"
                 },
                 {
-                    "anwser":"种",
+                    "anwser":"吃",
                     "result":"false"
                 },
                 {
-                    "anwser":"肿",
+                    "anwser":"做",
                     "result":"false"
                 },
                 {
-                    "anwser":"冲",
-                    "result":"false"
-                },
-                {
-                    "anwser":"终",
-                    "result":"false"
-                },
-                {
-                    "anwser":"肿",
+                    "anwser":"用",
                     "result":"false"
                 }
             ]
         },
         {
-            "question":"螳臂 __ 车",
-            "idiomFrom":"【出自】：《庄子·人间世》：“汝不知夫螳螂乎；怒其臂以当车辙；不知其不胜任也。”",
-            "idiomAnalysis":"【解释】：比喻不正确估计自己的力量，去做办不到的事情，必然招致失败。",
+            "question":"飞扬跋 __ ",
+            "idiomFrom":"【出自】：《北齐书·神武纪下》：“（候）景专制河南十四年矣；常有飞扬跋扈志。”",
+            "idiomAnalysis":"【解释】：原指意态举 动放纵，不受约束。现多形容骄横放肆。",
             "questionAnwser":
             [
                 {
-                    "anwser":"党",
+                    "anwser":"户",
                     "result":"false"
                 },
                 {
-                    "anwser":"档",
+                    "anwser":"沪",
                     "result":"false"
                 },
                 {
-                    "anwser":"荡",
+                    "anwser":"虎",
                     "result":"false"
                 },
                 {
-                    "anwser":"汤",
+                    "anwser":"护",
                     "result":"false"
                 },
                 {
-                    "anwser":"当",
+                    "anwser":"扈",
                     "result":"true"
                 },
                 {
-                    "anwser":"铛",
+                    "anwser":"舞",
                     "result":"false"
                 },
                 {
-                    "anwser":"砀",
+                    "anwser":"吴",
                     "result":"false"
                 },
                 {
-                    "anwser":"宕",
+                    "anwser":"乎",
                     "result":"false"
                 }
             ]
         },
         {
-            "question":" __ 寡孤独",
-            "idiomFrom":"【出自】：《孟子·梁惠王下》：“老而无妻曰鳏；老而无夫曰寡；老而无子曰独；",
-            "idiomAnalysis":"【解释】：泛指失去依靠，需要照顾的人。寡：死了丈夫的妇女。",
+            "question":"风声鹤 __ ",
+            "idiomFrom":"【出自】：唐·房玄龄等《晋书·谢玄传》：“余众甲宵遁；闻风声鹤唳；皆以为王师已至。”",
+            "idiomAnalysis":"【解释】：用来形容人在非常害怕时听到一点声音，就十分恐慌紧张。。",
             "questionAnwser":
             [
                 {
-                    "anwser":"官",
-                    "result":"false"
-                },
-                {
-                    "anwser":"莞",
-                    "result":"false"
-                },
-                {
-                    "anwser":"妇",
-                    "result":"false"
-                },
-                {
-                    "anwser":"贯",
-                    "result":"false"
-                },
-                {
-                    "anwser":"鳏",
+                    "anwser":"唳",
                     "result":"true"
                 },
                 {
-                    "anwser":"冠",
+                    "anwser":"力",
                     "result":"false"
                 },
                 {
-                    "anwser":"观",
+                    "anwser":"立",
                     "result":"false"
+                },
+                {
+                    "anwser":"声",
+                    "result":"false"
+                },
+                {
+                    "anwser":"叫",
+                    "result":"true"
+                },
+                {
+                    "anwser":"音",
+                    "result":"false"
+                },
+                {
+                    "anwser":"鸣",
+                    "result":"false"
+                },
+                {
+                    "anwser":"雷",
+                    "result":"false"
+                }
+            ]
+        },
+        {
+            "question":"众口 __ 金",
+            "idiomFrom":"【出自】：《国语·周语下》：“众心成城；众口铄金。”",
+            "idiomAnalysis":"【解释】：大家都说同样的话，其力量足以能熔化金属。形容舆论力量的强大。 后也指人多口杂，能混淆是非。",
+            "questionAnwser":
+            [
+                {
+                    "anwser":"说",
+                    "result":"false"
+                },
+                {
+                    "anwser":"璃",
+                    "result":"false"
+                },
+                {
+                    "anwser":"发",
+                    "result":"false"
+                },
+                {
+                    "anwser":"朔",
+                    "result":"false"
+                },
+                {
+                    "anwser":"成",
+                    "result":"false"
+                },
+                {
+                    "anwser":"闪",
+                    "result":"false"
+                },
+                {
+                    "anwser":"烁",
+                    "result":"true"
                 },
                 {
                     "anwser":"金",
@@ -1331,273 +1371,181 @@
             ]
         },
         {
-            "question":"一 __ 而散",
-            "idiomFrom":"【出自】：明·凌濛初《初刻拍案惊奇》：“看的人见没得买了；一哄而散。”",
-            "idiomAnalysis":"【解释】：哄：吵闹。形容聚在一起的人一下子吵吵嚷嚷地走散了。",
+            "question":"乳 __ 未干",
+            "idiomFrom":"【出自】：明·凌濛初《二刻拍案惊奇》第二十卷：“虽有两个外甥；不是姐姐亲生；并且乳臭未干；谁人来稽查得他？”",
+            "idiomAnalysis":"【解释】：形容人幼稚不懂事理（含讥讽意），有时用来表示对年轻人的轻蔑或不信任。",
             "questionAnwser":
             [
                 {
-                    "anwser":"红",
+                    "anwser":"袖",
                     "result":"false"
                 },
                 {
-                    "anwser":"轰",
+                    "anwser":"锈",
                     "result":"false"
                 },
                 {
-                    "anwser":"洪",
-                    "result":"false"
-                },
-                {
-                    "anwser":"鸿",
-                    "result":"false"
-                },
-                {
-                    "anwser":"虹",
-                    "result":"false"
-                },
-                {
-                    "anwser":"乱",
-                    "result":"false"
-                },
-                {
-                    "anwser":"起",
-                    "result":"false"
-                },
-                {
-                    "anwser":"哄",
+                    "anwser":"臭",
                     "result":"true"
+                },
+                {
+                    "anwser":"奶",
+                    "result":"false"
+                },
+                {
+                    "anwser":"尤",
+                    "result":"false"
+                },
+                {
+                    "anwser":"秀",
+                    "result":"false"
+                },
+                {
+                    "anwser":"嗅",
+                    "result":"false"
+                },
+                {
+                    "anwser":"朽",
+                    "result":"false"
                 }
             ]
         },
         {
-            "question":"指 __ 为马",
-            "idiomFrom":"【出自】：《孟子·尽心下》：“有众逐虎；虎负嵎；莫之敢撄”",
-            "idiomAnalysis":"【解释】：依靠险要的地方顽固对抗：尽管敌人～，最终还是被我军全部歼灭。",
+            "question":"穷兵 __ 武",
+            "idiomFrom":"【出自】：三国·曹丕《车驾临江还诏三公》：“三世为将；道家所忌；穷兵黩武；古有成戒。”",
+            "idiomAnalysis":"【解释】：用尽全部兵力，任意发动战争。形容十分好战。",
             "questionAnwser":
             [
                 {
-                    "anwser":"鱼",
+                    "anwser":"读",
                     "result":"false"
                 },
                 {
-                    "anwser":"于",
+                    "anwser":"黩",
+                    "result":"true"
+                },
+                {
+                    "anwser":"度",
                     "result":"false"
                 },
                 {
-                    "anwser":"雨",
+                    "anwser":"笃",
                     "result":"false"
                 },
                 {
-                    "anwser":"逾",
+                    "anwser":"尽",
                     "result":"false"
                 },
                 {
-                    "anwser":"隅",
+                    "anwser":"穷",
+                    "result":"false"
+                },
+                {
+                    "anwser":"求",
                     "result":"true"
                 },
                 {
                     "anwser":"力",
                     "result":"false"
-                },
+                }
+            ]
+        },
+        {
+            "question":"前 __ 后恭",
+            "idiomFrom":"【出自】：明·吴承恩《西游记》：“行者道：‘不敢！不敢！不是甚前倨后恭；老孙于今是没棒弄了。’”",
+            "idiomAnalysis":"【解释】：以前傲慢，后来恭顺。",
+            "questionAnwser":
+            [
                 {
-                    "anwser":"利",
+                    "anwser":"拒",
                     "result":"false"
                 },
                 {
-                    "anwser":"李",
+                    "anwser":"鞠",
+                    "result":"false"
+                },
+                {
+                    "anwser":"卑",
+                    "result":"false"
+                },
+                {
+                    "anwser":"躺",
+                    "result":"false"
+                },
+                {
+                    "anwser":"剧",
+                    "result":"false"
+                },
+                {
+                    "anwser":"倨",
+                    "result":"false"
+                },
+                {
+                    "anwser":"居",
+                    "result":"true"
+                },
+                {
+                    "anwser":"聚",
                     "result":"false"
                 }
             ]
         },
         {
-            "question":"刚 __ 自用",
-            "idiomFrom":"【出自】：《左传·宣公十二年》：“其佐先縠，刚愎不仁，未肯用命。”",
-            "idiomAnalysis":"【解释】：意思是一个人过分自信，完全听取不了别人的意见，不愿意讨论，十分固执。",
+            "question":"缠绵 __ 恻",
+            "idiomFrom":"【出自】：晋·潘岳《寡妇赋》：“思缠绵以瞀乱兮；心摧伤以怆恻。”",
+            "idiomAnalysis":"【解释】：形容内心悲苦难以排遣。",
             "questionAnwser":
             [
                 {
-                    "anwser":"复",
-                    "result":"false"
-                },
-                {
-                    "anwser":"比",
-                    "result":"false"
-                },
-                {
-                    "anwser":"愎",
+                    "anwser":"悱",
                     "result":"true"
                 },
                 {
-                    "anwser":"必",
+                    "anwser":"非",
                     "result":"false"
                 },
                 {
-                    "anwser":"鼻",
+                    "anwser":"反",
                     "result":"false"
                 },
                 {
-                    "anwser":"于",
-                    "result":"false"
-                },
-                {
-                    "anwser":"披",
+                    "anwser":"转",
                     "result":"true"
                 },
                 {
-                    "anwser":"脾",
+                    "anwser":"菲",
+                    "result":"false"
+                },
+                {
+                    "anwser":"啡",
+                    "result":"false"
+                },
+                {
+                    "anwser":"隐",
+                    "result":"false"
+                },
+                {
+                    "anwser":"棉",
                     "result":"false"
                 }
             ]
         },
         {
-            "question":"沆 __ 一气",
-            "idiomFrom":"【出自】：宋·钱易《南部新书》：“乾符二年；崔沆放崔瀣榜；谈者称‘座主门生；沆瀣一气。’””",
-            "idiomAnalysis":"【解释】：“座主门生，沆瀣一气。” 后用来比喻臭味相投的人勾结在一起。",
+            "question":"不 __ 而走",
+            "idiomFrom":"【出自】：北齐·刘昼《新论·荐贤》：“玉无翼而飞；珠无胫而行。”",
+            "idiomAnalysis":"【解释】：现多用以形容作品、消息等迅速传开。胫：小腿。",
             "questionAnwser":
             [
                 {
-                    "anwser":"蟹",
+                    "anwser":"净",
                     "result":"false"
                 },
                 {
-                    "anwser":"斜",
+                    "anwser":"靖",
                     "result":"false"
                 },
                 {
-                    "anwser":"懈",
-                    "result":"false"
-                },
-                {
-                    "anwser":"携",
-                    "result":"false"
-                },
-                {
-                    "anwser":"泄",
-                    "result":"false"
-                },
-                {
-                    "anwser":"楔",
-                    "result":"false"
-                },
-                {
-                    "anwser":"瀣",
-                    "result":"true"
-                },
-                {
-                    "anwser":"血",
-                    "result":"false"
-                }
-            ]
-        },
-        {
-            "question":" __ 马厉兵",
-            "idiomFrom":"【出自】：《左传·僖公三十三年》:“郑穆公使视客馆，则束载厉兵秣马矣。”",
-            "idiomAnalysis":"【解释】：喂饱战马，磨快武器，准备战斗。也泛指事前积极的准备工作。",
-            "questionAnwser":
-            [
-                {
-                    "anwser":"喂",
-                    "result":"false"
-                },
-                {
-                    "anwser":"饱",
-                    "result":"false"
-                },
-                {
-                    "anwser":"抹",
-                    "result":"false"
-                },
-                {
-                    "anwser":"秣",
-                    "result":"true"
-                },
-                {
-                    "anwser":"莫",
-                    "result":"false"
-                },
-                {
-                    "anwser":"带",
-                    "result":"false"
-                },
-                {
-                    "anwser":"拉",
-                    "result":"false"
-                },
-                {
-                    "anwser":"骑",
-                    "result":"false"
-                }
-            ]
-        },
-        {
-            "question":"越 __ 代庖",
-            "idiomFrom":"【出自】：先秦·庄周《庄子·逍遥游》：“庖人虽不治庖，尸、祝不越樽俎而代之矣。”",
-            "idiomAnalysis":"【解释】：意思是厨师不做饭，掌管祭祀的人（尸、祝）也不能放下祭器代他下厨房。后比喻越权办事或包办代替。",
-            "questionAnwser":
-            [
-                {
-                    "anwser":"组",
-                    "result":"false"
-                },
-                {
-                    "anwser":"租",
-                    "result":"false"
-                },
-                {
-                    "anwser":"阻",
-                    "result":"false"
-                },
-                {
-                    "anwser":"族",
-                    "result":"false"
-                },
-                {
-                    "anwser":"俎",
-                    "result":"true"
-                },
-                {
-                    "anwser":"卒",
-                    "result":"false"
-                },
-                {
-                    "anwser":"过",
-                    "result":"false"
-                },
-                {
-                    "anwser":"位",
-                    "result":"false"
-                }
-            ]
-        },
-        {
-            "question":"以 __ 效尤",
-            "idiomFrom":"【出自】：清·李绿园《歧路灯》：“自宜按律究办；以儆效尤。”",
-            "idiomAnalysis":"【解释】：严肃处理一件事，用来警醒那些仿效做坏事的人。儆（jǐng）：使人警醒。",
-            "questionAnwser":
-            [
-                {
-                    "anwser":"镜",
-                    "result":"false"
-                },
-                {
-                    "anwser":"径",
-                    "result":"false"
-                },
-                {
-                    "anwser":"儆",
-                    "result":"true"
-                },
-                {
-                    "anwser":"京",
-                    "result":"false"
-                },
-                {
-                    "anwser":"敬",
-                    "result":"false"
-                },
-                {
-                    "anwser":"精",
+                    "anwser":"进",
                     "result":"false"
                 },
                 {
@@ -1605,8 +1553,60 @@
                     "result":"false"
                 },
                 {
-                    "anwser":"景",
+                    "anwser":"胫",
+                    "result":"true"
+                },
+                {
+                    "anwser":"劲",
                     "result":"false"
+                },
+                {
+                    "anwser":"禁",
+                    "result":"false"
+                },
+                {
+                    "anwser":"精",
+                    "result":"false"
+                }
+            ]
+        },
+        {
+            "question":"汗流 __ 背",
+            "idiomFrom":"【出自】：《后汉书·献帝伏皇后纪》：“（曹）操出；顾左右；汗流浃背；自后不敢复朝请。”",
+            "idiomAnalysis":"【解释】：原形容极度惶恐或惭愧。现常用来形容满身大汗。",
+            "questionAnwser":
+            [
+                {
+                    "anwser":"湿",
+                    "result":"false"
+                },
+                {
+                    "anwser":"紧",
+                    "result":"false"
+                },
+                {
+                    "anwser":"全",
+                    "result":"false"
+                },
+                {
+                    "anwser":"瑕",
+                    "result":"false"
+                },
+                {
+                    "anwser":"加",
+                    "result":"false"
+                },
+                {
+                    "anwser":"颊",
+                    "result":"false"
+                },
+                {
+                    "anwser":"透",
+                    "result":"false"
+                },
+                {
+                    "anwser":"浃",
+                    "result":"true"
                 }
             ]
         }
