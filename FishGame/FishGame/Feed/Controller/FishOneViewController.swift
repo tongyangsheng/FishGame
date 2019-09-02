@@ -45,6 +45,8 @@ class FishOneViewController: UIViewController
     
     var AudioPlayer = AVAudioPlayer()
     
+    var fishProgressNow: Double = 0
+    
     private lazy var progressView: STProgressView = {
         let progressView = STProgressView()
         progressView.backgroundColor = UIColor.init(r: 204, g: 204, b: 204)
@@ -156,7 +158,7 @@ extension FishOneViewController
         progressLabel.textAlignment = .center
         progressLabel.textColor = .white
         progressLabel.font = UIFont(name: "PingFang SC", size: 12)
-        let progressInt = Int(K_fishProgress)
+        let progressInt = Int(fishProgressNow)
         progressLabel.text = "\(progressInt)/100"
         self.view.addSubview(progressLabel)
         
@@ -476,11 +478,10 @@ extension FishOneViewController
     {
         if fishView.layer.animationKeys() == ["route1"] || fishView.layer.animationKeys() == ["route2"] || fishView.layer.animationKeys() == ["route3"] || fishView.layer.animationKeys() == ["route4"]
         {
-            if K_Bait <= 0
+            if K_Bait < 10
             {
                 let WarningView = LowBaitView()
                 WarningView.show()
-                K_Bait = 0
             }
             else
             {
@@ -519,10 +520,16 @@ extension FishOneViewController
                 }
                 
                 K_Bait = K_Bait - 10
-                K_fishProgress = K_fishProgress + 10
+                fishProgressNow = fishProgressNow + 10
                 ObserveBait()
                 ObserveProgress()
-                let progressNow = K_fishProgress / 100.0
+                var progressNow = fishProgressNow / 100.0
+                if progressNow >= 1
+                {
+                    progressNow = 1
+                    K_GameProgress = 2
+                    print("进入第二关！")
+                }
                 progressView.progress = CGFloat(progressNow)
             }
         }
@@ -619,7 +626,7 @@ extension FishOneViewController
     }
     private func ObserveProgress()
     {
-        let progressInt = Int(K_fishProgress)
+        let progressInt = Int(fishProgressNow)
         progressLabel.text = "\(progressInt)/100"
     }
 }
@@ -718,6 +725,26 @@ extension FishOneViewController: CAAnimationDelegate
                 fishView.transform = transform
                 fishView.layer.removeAllAnimations()
                 fishRunRoute2()
+                break
+            }
+        case ["route7","route1"]:
+            do {
+                print("调用11")
+                var transform: CGAffineTransform = CGAffineTransform.identity
+                transform = CGAffineTransform.init(scaleX: -1, y: 1)
+                fishView.transform = transform
+                fishView.layer.removeAllAnimations()
+                fishRunRoute2()
+                break
+            }
+        case ["route1","route8"]:
+            do {
+                print("调用12")
+                var transform: CGAffineTransform = CGAffineTransform.identity
+                transform = CGAffineTransform.init(scaleX: 1, y: 1)
+                fishView.transform = transform
+                fishView.layer.removeAllAnimations()
+                fishRunRoute1()
                 break
             }
         default:
