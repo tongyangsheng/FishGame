@@ -385,12 +385,14 @@ extension MainGameViewController
 {
     @objc func quitEarn(nofi : Notification)
     {
+        K_AudioPlayer.play()
         self.dismiss(animated: true, completion: nil)
         countdownTimer.invalidate()
         NotificationCenter.default.removeObserver(self)
     }
     @objc func finishEarn(nofi : Notification)
     {
+        K_AudioPlayer.play()
         K_Bait = K_Bait + earnBait
         self.dismiss(animated: true, completion: nil)
         countdownTimer.invalidate()
