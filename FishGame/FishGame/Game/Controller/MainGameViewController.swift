@@ -43,6 +43,7 @@ class MainGameViewController: UIViewController
     lazy var questionNumber: Int = 0
     
     var AudioPlayer = AVAudioPlayer()
+    var AudioThunder = AVAudioPlayer()
     
     private lazy var progressView: STProgressView = {
         let progressView = STProgressView()
@@ -84,6 +85,14 @@ extension MainGameViewController
         AudioPlayer.prepareToPlay()
         AudioPlayer.numberOfLoops = -1
         AudioPlayer.play()
+    }
+    private func startThunder()
+    {
+        let ThunderMusic = NSURL(fileURLWithPath: Bundle.main.path(forResource: "thunder", ofType: "mp3")!)
+        AudioThunder = try! AVAudioPlayer(contentsOf: ThunderMusic as URL)
+        AudioThunder.prepareToPlay()
+        AudioThunder.numberOfLoops = -1
+        AudioThunder.play()
     }
 }
 
@@ -357,10 +366,12 @@ extension MainGameViewController
                     {
                         darkCloudView.play()
                         darkCloudView.alpha = 1.0
+                        startThunder()
                         DispatchQueue.main.asyncAfter(deadline: .now() + 2)
                         {
                             self.darkCloudView.alpha = 0.0
                             self.darkCloudView.stop()
+                            self.AudioThunder.stop()
                         }
                         print("错误答案！")
                     }

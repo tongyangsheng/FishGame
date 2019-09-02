@@ -57,6 +57,7 @@
 		EFA8AA7C230E295C00E11D6A /* img_2.png in Resources */ = {isa = PBXBuildFile; fileRef = EFA8AA78230E295C00E11D6A /* img_2.png */; };
 		EFA8AA81230E676600E11D6A /* idiomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA8AA80230E676600E11D6A /* idiomView.swift */; };
 		EFA8AA83230E76D300E11D6A /* IdiomDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFA8AA82230E76D300E11D6A /* IdiomDetailView.swift */; };
+		EFF25086231CA48F004CBACB /* thunder.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EFF25085231CA48F004CBACB /* thunder.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,7 @@
 		EFA8AA78230E295C00E11D6A /* img_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = img_2.png; sourceTree = "<group>"; };
 		EFA8AA80230E676600E11D6A /* idiomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = idiomView.swift; sourceTree = "<group>"; };
 		EFA8AA82230E76D300E11D6A /* IdiomDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdiomDetailView.swift; sourceTree = "<group>"; };
+		EFF25085231CA48F004CBACB /* thunder.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = thunder.mp3; sourceTree = "<group>"; };
 		F12964EABAE8A7EE12F1C357 /* Pods-FishGameUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FishGameUITests.debug.xcconfig"; path = "Target Support Files/Pods-FishGameUITests/Pods-FishGameUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -322,6 +324,7 @@
 				EF3B2803230BC04A00E1EA79 /* photoShutter.caf */,
 				EF53C75C2317C654004A4A65 /* gameMusic.mp3 */,
 				EF53C75A2317C2C6004A4A65 /* backMusic.mp3 */,
+				EFF25085231CA48F004CBACB /* thunder.mp3 */,
 			);
 			path = Sound;
 			sourceTree = "<group>";
@@ -576,6 +579,7 @@
 				EFA8AA72230E263600E11D6A /* leidian_x.json in Resources */,
 				EF53C75B2317C2C6004A4A65 /* backMusic.mp3 in Resources */,
 				EFA8AA79230E295C00E11D6A /* bolan_x.json in Resources */,
+				EFF25086231CA48F004CBACB /* thunder.mp3 in Resources */,
 				EF904FAE23136AC700656987 /* Question.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

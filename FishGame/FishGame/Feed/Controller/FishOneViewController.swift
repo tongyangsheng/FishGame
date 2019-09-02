@@ -558,9 +558,6 @@ extension FishOneViewController
                     fishMessage = "刚刚饱餐一顿，还是休息会儿吧"
                     break
                 }
-
-                
-                
                 self.view.makeToast(fishMessage, duration: 3.0, position: .bottom, title: "鱼儿：", image: UIImage(named: "鱼1"), style: ToastStyle(), completion: nil)
             }
         }
@@ -677,11 +674,11 @@ extension FishOneViewController: CAAnimationDelegate
             }
         case ["route5"]:
             print("调用5")
-//            fishView.layer.position = fishView.layer.presentation()!.position
+            //            fishView.layer.position = fishView.layer.presentation()!.position
             break
         case ["route6"]:
             print("调用6")
-//            fishView.layer.position = fishView.layer.presentation()!.position
+            //            fishView.layer.position = fishView.layer.presentation()!.position
             break
         case ["route7","route5"]:
             do {
@@ -737,6 +734,7 @@ extension FishOneViewController: UINavigationControllerDelegate
         navigationController.setNavigationBarHidden(true, animated: true)
     }
 }
+
 
 
 
