@@ -29,7 +29,7 @@ let K_ScreenW = UIScreen.main.bounds.width
 let K_ScreenH = UIScreen.main.bounds.height
 
 //鱼食数量
-var K_Bait = 80
+var K_Bait = 100
 
-var K_fishProgress: Double = 0
-
+//游戏等级
+var K_GameProgress = 1
