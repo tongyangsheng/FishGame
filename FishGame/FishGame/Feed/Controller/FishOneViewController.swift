@@ -175,20 +175,23 @@ extension FishOneViewController
         feedButton.frame = CGRect(x: 0.28*K_ScreenW, y: 0.787*K_ScreenH, width: 0.2*K_ScreenW, height: 0.16*K_ScreenH)
         feedButton.setImage(UIImage(named: "喂食"), for: .normal)
         feedButton.addTarget(self, action: #selector(pressFeed(_:)), for: .touchUpInside)
-        self.view.addSubview(feedButton)
+        
         
         BaitStr.frame = CGRect(x: feedButton.frame.origin.x + 0.58*feedButton.frame.width, y: feedButton.frame.origin.y+0.32*feedButton.frame.height, width: 0.2*feedButton.frame.width, height: 0.6*0.14*feedButton.frame.width)
         BaitStr.textColor = .white
         BaitStr.textAlignment = .center
         BaitStr.font = UIFont.systemFont(ofSize: 16)
         BaitStr.text = K_Bait.description
-        self.view.addSubview(BaitStr)
         
         earnButton.frame = CGRect(x: K_ScreenW - 0.28*K_ScreenW - 0.2*K_ScreenW, y: 0.787*K_ScreenH, width: 0.2*K_ScreenW, height: 0.16*K_ScreenH)
         earnButton.setImage(UIImage(named: "赚取鱼食"), for: .normal)
         earnButton.addTarget(self, action: #selector(pressEarn(_:)), for: .touchUpInside)
-        self.view.addSubview(earnButton)
-        
+        if K_GameProgress == 1
+        {
+            self.view.addSubview(feedButton)
+            self.view.addSubview(BaitStr)
+            self.view.addSubview(earnButton)
+        }
         offButton.frame = CGRect(x: K_ScreenW - 0.057*K_ScreenW - 0.027*K_ScreenW , y: 0.04*K_ScreenH, width: 0.057*K_ScreenW, height: 0.057*K_ScreenW)
         offButton.setImage(UIImage(named: "关闭"), for: .normal)
         self.view.addSubview(offButton)
@@ -523,6 +526,9 @@ extension FishOneViewController
                     progressNow = 1
                     K_GameProgress = 2
                     print("进入第二关！")
+                    feedButton.removeFromSuperview()
+                    BaitStr.removeFromSuperview()
+                    earnButton.removeFromSuperview()
                 }
                 progressView.progress = CGFloat(progressNow)
             }
@@ -756,6 +762,7 @@ extension FishOneViewController: UINavigationControllerDelegate
         navigationController.setNavigationBarHidden(true, animated: true)
     }
 }
+
 
 
 
