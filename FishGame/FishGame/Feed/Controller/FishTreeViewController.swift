@@ -72,6 +72,8 @@ class FishTreeViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        self.navigationController?.delegate = self
+        self.edgesForExtendedLayout = UIRectEdge.init(rawValue: 0)
         setupUI()
     }
     override func viewWillAppear(_ animated: Bool)
@@ -562,7 +564,10 @@ extension FishTreeViewController
                 {
                     progressNow = 1
                     K_GameProgress = 3
-                    print("进入第三关！")
+                    print("进入第四关！")
+                    feedButton.removeFromSuperview()
+                    BaitStr.removeFromSuperview()
+                    earnButton.removeFromSuperview()
                 }
                 progressView.progress = CGFloat(progressNow)
             }
