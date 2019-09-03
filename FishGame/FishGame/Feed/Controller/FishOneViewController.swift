@@ -161,6 +161,7 @@ extension FishOneViewController
         fishView.addSubview(fishBubble)
         
         fishView.addSubview(fishImage)
+
         
         self.view.addSubview(fishView)
         //        第一个界面没有更小的鱼

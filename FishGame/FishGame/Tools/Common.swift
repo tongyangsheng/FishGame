@@ -29,11 +29,11 @@ let tabBarHeight = (bottomSafeAreaHeight + 49)
 let K_ScreenW = UIScreen.main.bounds.width
 let K_ScreenH = UIScreen.main.bounds.height
 
-//鱼食数量
+//初始鱼食数量
 var K_Bait = 100
 
 //游戏等级
-var K_GameProgress = 1
+var K_GameProgress = 3
 
 //全局背景音乐
 var K_AudioPlayer: AVAudioPlayer =
