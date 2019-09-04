@@ -2823,25 +2823,13 @@
     "8":
     [
         {
-            "question":" __ 鱼之肆",
-            "idiomFrom":"【出自】：北齐·颜之推《颜氏家训·慕贤》：“与善人居，如入芝兰之室，久而自芳也；与恶人居，如入鲍鱼之肆，久而自臭也。”",
-            "idiomAnalysis":"【解释】：卖渍鱼的店铺叫鲍鱼之肆，比喻小人集聚的地方。",
+            "question":"心 __ 意马",
+            "idiomFrom":"【出自】：《敦煌变文集·维摩诘经讲经文》：“卓定深沉莫测量；心猿意马罢颠狂。”",
+            "idiomAnalysis":"【解释】：形容心思不定，好像猴子跳、马奔跑一样难以控制。",
             "questionAnwser":
             [
                 {
-                    "anwser":"鲤",
-                    "result":"false"
-                },
-                {
-                    "anwser":"鲫",
-                    "result":"false"
-                },
-                {
-                    "anwser":"蛇",
-                    "result":"false"
-                },
-                {
-                    "anwser":"螺",
+                    "anwser":"远",
                     "result":"false"
                 },
                 {
@@ -2849,323 +2837,99 @@
                     "result":"false"
                 },
                 {
-                    "anwser":"鲍",
+                    "anwser":"乱",
+                    "result":"false"
+                },
+                {
+                    "anwser":"元",
+                    "result":"false"
+                },
+                {
+                    "anwser":"愿",
+                    "result":"false"
+                },
+                {
+                    "anwser":"猿",
                     "result":"true"
-                },
-                {
-                    "anwser":"牛",
-                    "result":"false"
-                },
-                {
-                    "anwser":"金",
-                    "result":"false"
-                }
-            ]
-        },
-        {
-            "question":"枕 __ 待旦",
-            "idiomFrom":"【出自】：《晋书·刘琨传》：“吾枕戈待旦，志枭逆虏。”",
-            "idiomAnalysis":"【解释】：指时刻警惕，准备作战，连睡觉时也不放松戒备，随时准备着杀敌。",
-            "questionAnwser":
-            [
-                {
-                    "anwser":"刀",
-                    "result":"false"
-                },
-                {
-                    "anwser":"叉",
-                    "result":"false"
-                },
-                {
-                    "anwser":"斧",
-                    "result":"false"
-                },
-                {
-                    "anwser":"水",
-                    "result":"false"
-                },
-                {
-                    "anwser":"戈",
-                    "result":"true"
-                },
-                {
-                    "anwser":"地",
-                    "result":"false"
-                },
-                {
-                    "anwser":"枕",
-                    "result":"false"
-                },
-                {
-                    "anwser":"兵",
-                    "result":"false"
-                }
-            ]
-        },
-        {
-            "question":"按图索 __ ",
-            "idiomFrom":"【出自】：《后南柯·访旧》：南之裸将，刻舟求剑，按图索骥，是求材必视乎门荫",
-            "idiomAnalysis":"【解释】：指按照图上画的样子去寻找好马。原比喻办事拘泥于教条，现在指按照线索去寻找事物，易于获得。",
-            "questionAnwser":
-            [
-                {
-                    "anwser":"骑",
-                    "result":"false"
-                },
-                {
-                    "anwser":"冀",
-                    "result":"false"
-                },
-                {
-                    "anwser":"骥",
-                    "result":"true"
-                },
-                {
-                    "anwser":"及",
-                    "result":"false"
-                },
-                {
-                    "anwser":"提",
-                    "result":"false"
-                },
-                {
-                    "anwser":"引",
-                    "result":"false"
-                },
-                {
-                    "anwser":"球",
-                    "result":"false"
-                },
-                {
-                    "anwser":"图",
-                    "result":"false"
-                }
-            ]
-        },
-        {
-            "question":"一 __ 不变",
-            "idiomFrom":"【出自】：《礼记·王制》：“刑者，侀也。侀者，成也。一成而不可变，故君子尽心焉。",
-            "idiomAnalysis":"【解释】：指守旧不变或固守陈法。形容连一点变化都没有。",
-            "questionAnwser":
-            [
-                {
-                    "anwser":"晨",
-                    "result":"false"
-                },
-                {
-                    "anwser":"尘",
-                    "result":"false"
-                },
-                {
-                    "anwser":"陈",
-                    "result":"false"
-                },
-                {
-                    "anwser":"成",
-                    "result":"true"
-                },
-                {
-                    "anwser":"似",
-                    "result":"false"
-                },
-                {
-                    "anwser":"称",
-                    "result":"false"
-                },
-                {
-                    "anwser":"撑",
-                    "result":"false"
-                },
-                {
-                    "anwser":"呈",
-                    "result":"false"
-                }
-            ]
-        },
-        {
-            "question":"指 __ 为马",
-            "idiomFrom":"【出自】：《史记·秦始皇本纪》：“二世笑曰：丞相误邪；谓鹿为马。”",
-            "idiomAnalysis":"【解释】：指着鹿，说是马。比喻故意颠倒黑白，混淆是非。",
-            "questionAnwser":
-            [
-                {
-                    "anwser":"蛇",
-                    "result":"false"
-                },
-                {
-                    "anwser":"鼠",
-                    "result":"false"
-                },
-                {
-                    "anwser":"鹿",
-                    "result":"true"
-                },
-                {
-                    "anwser":"牛",
-                    "result":"false"
-                },
-                {
-                    "anwser":"羊",
-                    "result":"false"
-                },
-                {
-                    "anwser":"龙",
-                    "result":"false"
-                },
-                {
-                    "anwser":"猫",
-                    "result":"false"
-                },
-                {
-                    "anwser":"驴",
-                    "result":"false"
-                }
-            ]
-        },
-        {
-            "question":"纵横 __ 阖",
-            "idiomFrom":"【出自】：汉·刘向《战国策序》：“苏秦为纵，张仪为横，横则秦帝，纵则楚王，所在国重，所去国轻。”",
-            "idiomAnalysis":"【解释】：原指战国时策士游说的一种方法。后意为以辞令测探、打动别人，在政治和外交上运用联合或分化的手段。",
-            "questionAnwser":
-            [
-                {
-                    "anwser":"竖",
-                    "result":"false"
-                },
-                {
-                    "anwser":"百",
-                    "result":"false"
-                },
-                {
-                    "anwser":"离",
-                    "result":"false"
-                },
-                {
-                    "anwser":"融",
-                    "result":"false"
-                },
-                {
-                    "anwser":"千",
-                    "result":"false"
-                },
-                {
-                    "anwser":"貌",
-                    "result":"false"
-                },
-                {
-                    "anwser":"捭",
-                    "result":"true"
-                },
-                {
-                    "anwser":"附",
-                    "result":"false"
-                }
-            ]
-        },
-        {
-            "question":" __ 人听闻",
-            "idiomFrom":"【出自】：宋·朱熹《朱文公文集·答詹师书》：“浙中近年怪论百出，骇人听闻，坏人心术。”",
-            "idiomAnalysis":"【解释】：使人听了某事后感到很惊讶，恐惧。多指社会上发生的坏事。",
-            "questionAnwser":
-            [
-                {
-                    "anwser":"还",
-                    "result":"false"
-                },
-                {
-                    "anwser":"害",
-                    "result":"false"
-                },
-                {
-                    "anwser":"亥",
-                    "result":"false"
-                },
-                {
-                    "anwser":"该",
-                    "result":"false"
-                },
-                {
-                    "anwser":"骇",
-                    "result":"true"
-                },
-                {
-                    "anwser":"骸",
-                    "result":"false"
-                },
-                {
-                    "anwser":"海",
-                    "result":"false"
-                },
-                {
-                    "anwser":"辛",
-                    "result":"false"
-                }
-            ]
-        },
-        {
-            "question":"欲 __ 难填",
-            "idiomFrom":"【出自】：《国语·晋语八》：“叔鱼生；其母视之；曰：‘是虎目而豕喙；鸢肩而牛腹；溪壑可盈；是不可餍也。”",
-            "idiomAnalysis":"【解释】：贪欲的沟壑难以填满。形容贪得的欲望极大，很难满足。壑（hè）：深谷。",
-            "questionAnwser":
-            [
-                {
-                    "anwser":"河",
-                    "result":"false"
-                },
-                {
-                    "anwser":"盒",
-                    "result":"false"
-                },
-                {
-                    "anwser":"望",
-                    "result":"false"
-                },
-                {
-                    "anwser":"壑",
-                    "result":"true"
-                },
-                {
-                    "anwser":"流",
-                    "result":"false"
-                },
-                {
-                    "anwser":"可",
-                    "result":"false"
-                },
-                {
-                    "anwser":"宇",
-                    "result":"false"
                 },
                 {
                     "anwser":"心",
                     "result":"false"
+                },
+                {
+                    "anwser":"里",
+                    "result":"false"
                 }
             ]
         },
         {
-            "question":"积 __ 难返",
-            "idiomFrom":"【出自】：明·沈德符《万历野获编·一三·旧制一废难复》：“此又皆势处极重之难返者。”",
-            "idiomAnalysis":"【解释】：长期形成的不良的风俗、习惯不易改变。也指长期积累的问题不易解决。",
+            "question":"别具 __ 心",
+            "idiomFrom":"【出自】：唐·王士源《孟浩然集序》：“文不按古；匠心独妙。”",
+            "idiomAnalysis":"【解释】：具有与众不同的巧妙的构思。常指文学艺术方面创造性的构思。",
             "questionAnwser":
             [
                 {
-                    "anwser":"虫",
+                    "anwser":"专",
                     "result":"false"
                 },
                 {
-                    "anwser":"众",
+                    "anwser":"爱",
                     "result":"false"
                 },
                 {
-                    "anwser":"长",
+                    "anwser":"新",
                     "result":"false"
                 },
                 {
-                    "anwser":"电",
+                    "anwser":"重",
                     "result":"false"
                 },
                 {
-                    "anwser":"木",
+                    "anwser":"匠",
+                    "result":"true"
+                },
+                {
+                    "anwser":"好",
+                    "result":"false"
+                },
+                {
+                    "anwser":"自",
+                    "result":"false"
+                },
+                {
+                    "anwser":"伤",
+                    "result":"false"
+                }
+            ]
+        },
+        {
+            "question":" __ 路蓝缕",
+            "idiomFrom":"【出自】：《左传·宣公十二年》：“筚路蓝缕；以启山林。”",
+            "idiomAnalysis":"【解释】：形容创业的艰苦。也作荜路蓝缕。",
+            "questionAnwser":
+            [
+                {
+                    "anwser":"山",
+                    "result":"false"
+                },
+                {
+                    "anwser":"创",
+                    "result":"false"
+                },
+                {
+                    "anwser":"筚",
+                    "result":"true"
+                },
+                {
+                    "anwser":"车",
+                    "result":"false"
+                },
+                {
+                    "anwser":"花",
+                    "result":"false"
+                },
+                {
+                    "anwser":"苦",
                     "result":"false"
                 },
                 {
@@ -3173,27 +2937,195 @@
                     "result":"false"
                 },
                 {
-                    "anwser":"天",
+                    "anwser":"满",
                     "result":"false"
-                },
-                {
-                    "anwser":"重",
-                    "result":"true"
                 }
             ]
         },
         {
-            "question":"一 __ 难扶",
-            "idiomFrom":"【出自】：南朝·宋·刘义庆《世说新语·任诞》：“元裒如北夏门，拉攞自欲坏，非一木所能支。”",
-            "idiomAnalysis":"【解释】：大楼将要倒塌，不是一根木头能够支撑得住的。比喻一个人的力量单薄，维持不住全局。",
+            "question":"纨 __ 子弟",
+            "idiomFrom":"【出自】：《宋史·鲁宗道传》：“馆阁育天下英才；岂纨绔子弟得以恩泽处耶？”",
+            "idiomAnalysis":"【解释】：指衣着华丽，游手好闲，什么事也不能干的富贵人家子弟。",
             "questionAnwser":
             [
                 {
-                    "anwser":"花",
+                    "anwser":"巾",
                     "result":"false"
                 },
                 {
-                    "anwser":"草",
+                    "anwser":"乐",
+                    "result":"false"
+                },
+                {
+                    "anwser":"l酷",
+                    "result":"false"
+                },
+                {
+                    "anwser":"绔",
+                    "result":"true"
+                },
+                {
+                    "anwser":"跨",
+                    "result":"false"
+                },
+                {
+                    "anwser":"皮",
+                    "result":"false"
+                },
+                {
+                    "anwser":"耍",
+                    "result":"false"
+                },
+                {
+                    "anwser":"乐",
+                    "result":"false"
+                }
+            ]
+        },
+        {
+            "question":"入木 __ 分",
+            "idiomFrom":"【出自】：唐·张怀瓘《书断》：“晋帝时祭北郊；更祝版；工人削之；笔入木三分。”",
+            "idiomAnalysis":"【解释】：后用来形容书法笔力强劲。也用来比喻分析问题深刻。",
+            "questionAnwser":
+            [
+                {
+                    "anwser":"一",
+                    "result":"false"
+                },
+                {
+                    "anwser":"二",
+                    "result":"false"
+                },
+                {
+                    "anwser":"三",
+                    "result":"true"
+                },
+                {
+                    "anwser":"四",
+                    "result":"false"
+                },
+                {
+                    "anwser":"五",
+                    "result":"false"
+                },
+                {
+                    "anwser":"六",
+                    "result":"false"
+                },
+                {
+                    "anwser":"七",
+                    "result":"false"
+                },
+                {
+                    "anwser":"八",
+                    "result":"false"
+                }
+            ]
+        },
+        {
+            "question":"处心 __ 虑",
+            "idiomFrom":"【出自】：《谷粱传·隐公元年》：“何甚于郑伯乎！甚郑伯之处心积虑；成于杀也。”",
+            "idiomAnalysis":"【解释】：长期谋划要干某件事（多含贬义）。",
+            "questionAnwser":
+            [
+                {
+                    "anwser":"垒",
+                    "result":"false"
+                },
+                {
+                    "anwser":"处",
+                    "result":"false"
+                },
+                {
+                    "anwser":"考",
+                    "result":"false"
+                },
+                {
+                    "anwser":"忧",
+                    "result":"false"
+                },
+                {
+                    "anwser":"即",
+                    "result":"false"
+                },
+                {
+                    "anwser":"初",
+                    "result":"false"
+                },
+                {
+                    "anwser":"积",
+                    "result":"true"
+                },
+                {
+                    "anwser":"基",
+                    "result":"false"
+                }
+            ]
+        },
+        {
+            "question":"火树 __ 花",
+            "idiomFrom":"【出自】：唐·苏味道《正月十五夜》诗：“火树银花合，尽桥铁锁开。”",
+            "idiomAnalysis":"【解释】：形容灯光和烟火灿烂绚丽。多用于节日夜晚。",
+            "questionAnwser":
+            [
+                {
+                    "anwser":"金",
+                    "result":"false"
+                },
+                {
+                    "anwser":"铜",
+                    "result":"false"
+                },
+                {
+                    "anwser":"开",
+                    "result":"false"
+                },
+                {
+                    "anwser":"菊",
+                    "result":"false"
+                },
+                {
+                    "anwser":"银",
+                    "result":"true"
+                },
+                {
+                    "anwser":"撒",
+                    "result":"false"
+                },
+                {
+                    "anwser":"散",
+                    "result":"false"
+                },
+                {
+                    "anwser":"出",
+                    "result":"false"
+                }
+            ]
+        },
+        {
+            "question":" __ 土之滨",
+            "idiomFrom":"【出自】：《诗经·小雅·北山》：“普天之下，莫非王土，率土之滨，莫非王臣。”",
+            "idiomAnalysis":"【解释】：沿着王土的边涯。犹言普天之下，四海之内。",
+            "questionAnwser":
+            [
+                {
+                    "anwser":"满",
+                    "result":"false"
+                },
+                {
+                    "anwser":"各",
+                    "result":"false"
+                },
+                {
+                    "anwser":"全",
+                    "result":"false"
+                },
+                {
+                    "anwser":"率",
+                    "result":"true"
+                },
+                {
+                    "anwser":"王",
                     "result":"false"
                 },
                 {
@@ -3201,23 +3133,91 @@
                     "result":"false"
                 },
                 {
-                    "anwser":"木",
+                    "anwser":"君",
+                    "result":"false"
+                },
+                {
+                    "anwser":"有",
+                    "result":"false"
+                }
+            ]
+        },
+        {
+            "question":"问羊知 __ ",
+            "idiomFrom":"【出自】：《汉书·赵广汉传》:“钩距者，设欲知马贾（价），则先问狗，已问羊，又问牛，然后及马。”",
+            "idiomAnalysis":"【解释】：比喻从旁推究，弄清楚事情真相。",
+            "questionAnwser":
+            [
+                {
+                    "anwser":"牛",
+                    "result":"false"
+                },
+                {
+                    "anwser":"树",
+                    "result":"false"
+                },
+                {
+                    "anwser":"草",
+                    "result":"false"
+                },
+                {
+                    "anwser":"鼠",
+                    "result":"false"
+                },
+                {
+                    "anwser":"兔",
+                    "result":"false"
+                },
+                {
+                    "anwser":"鱼",
+                    "result":"false"
+                },
+                {
+                    "anwser":"土",
+                    "result":"false"
+                },
+                {
+                    "anwser":"马",
+                    "result":"true"
+                }
+            ]
+        },
+        {
+            "question":"不存不 __ ",
+            "idiomFrom":"【出自】：金·董解元《西厢记诸宫调》卷七:“不存不济，香肌瘦损，教俺萦方寸。”",
+            "idiomAnalysis":"【解释】：指支持不住，受不住。",
+            "questionAnwser":
+            [
+                {
+                    "anwser":"花",
+                    "result":"false"
+                },
+                {
+                    "anwser":"用",
+                    "result":"false"
+                },
+                {
+                    "anwser":"累",
+                    "result":"false"
+                },
+                {
+                    "anwser":"济",
                     "result":"true"
                 },
                 {
-                    "anwser":"云",
+                    "anwser":"齐",
                     "result":"false"
                 },
                 {
-                    "anwser":"根",
+                    "anwser":"漏",
                     "result":"false"
                 },
                 {
-                    "anwser":"见",
+                    "anwser":"寄",
                     "result":"false"
                 },
                 {
-                    "anwser":"石",
+                    "anwser":"养",
                     "result":"false"
                 }
             ]
