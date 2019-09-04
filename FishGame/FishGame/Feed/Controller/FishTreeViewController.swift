@@ -60,14 +60,14 @@ class FishTreeViewController: UIViewController
         
         progressView.endColor = UIColor.init(r: 255, g: 183, b: 39)
         
-        progressView.cornerRadius = 12
+        progressView.cornerRadius = 11
         progressView.progress = 0
         self.view.addSubview(progressView)
         return progressView
     }()
     
-    let Bubble1 = BubbleView(frame: CGRect(x: 0.45*K_ScreenW, y: 0.1*K_ScreenH, width: 0.135*K_ScreenW, height: 0.72*0.135*K_ScreenW), idiom: "纵横捭阖")
-    let Bubble2 = BubbleView(frame: CGRect(x: 0.1*K_ScreenW, y: 0.45*K_ScreenH, width: 0.135*K_ScreenW, height: 0.72*0.135*K_ScreenW), idiom: "九牛一毛")
+    let Bubble1 = BubbleView(frame: CGRect(x: 0.45*K_ScreenW, y: 0.1*K_ScreenH, width: 0.135*K_ScreenW, height: 0.72*0.135*K_ScreenW), idiom: "栉风沐雨")
+    let Bubble2 = BubbleView(frame: CGRect(x: 0.1*K_ScreenW, y: 0.45*K_ScreenH, width: 0.135*K_ScreenW, height: 0.72*0.135*K_ScreenW), idiom: "在所难免")
     
     override func viewDidLoad()
     {
@@ -90,6 +90,21 @@ class FishTreeViewController: UIViewController
         transform = CGAffineTransform.init(scaleX: 1, y: 1)
         fishView.transform = transform
         fishRunRoute1()
+        
+        if K_GameProgress > 3
+        {
+            progressView.progress = 1
+            fishProgressNow = 100
+            let progressInt = Int(fishProgressNow)
+            progressLabel.text = "\(progressInt)/100"
+        }
+        else
+        {
+            let progressInt = Int(fishProgressNow)
+            progressLabel.text = "\(progressInt)/100"
+            let progressNow = fishProgressNow / 100.0
+            progressView.progress = CGFloat(progressNow)
+        }
     }
     override func viewWillDisappear(_ animated: Bool)
     {
@@ -137,8 +152,8 @@ extension FishTreeViewController
         self.view.addSubview(progressBackImage)
         
         progressView.snp.makeConstraints { (maker) in
-            maker.left.equalTo(0.12*K_ScreenW)
-            maker.width.equalTo(0.27*K_ScreenW)
+            maker.left.equalTo(0.117*K_ScreenW)
+            maker.width.equalTo(0.277*K_ScreenW)
             maker.top.equalTo(0.053*K_ScreenH)
             maker.height.equalTo(0.053*K_ScreenH)
         }
@@ -160,11 +175,11 @@ extension FishTreeViewController
         
         self.view.addSubview(fishView)
         
-        barLeftFish.frame = CGRect(x: 0.0255*K_ScreenW, y: 0.035*K_ScreenH, width: 0.078*K_ScreenW, height: 0.63*0.078*K_ScreenW)
+        barLeftFish.frame = CGRect(x: 0.03*K_ScreenW, y: 0.037*K_ScreenH, width: 0.06*K_ScreenW, height: 0.775*0.06*K_ScreenW)
         barLeftFish.image = UIImage(named: "小鱼2")
         self.view.addSubview(barLeftFish)
         
-        barRightFish.frame = CGRect(x: 0.11*K_ScreenW + 0.29*K_ScreenW + 0.018*K_ScreenW, y: 0.035*K_ScreenH, width: 0.06*K_ScreenW, height: 0.63*0.06*K_ScreenW)
+        barRightFish.frame = CGRect(x: 0.11*K_ScreenW + 0.29*K_ScreenW + 0.018*K_ScreenW, y: 0.035*K_ScreenH, width: 0.06*K_ScreenW, height: 0.8*0.06*K_ScreenW)
         barRightFish.image = UIImage(named: "小鱼4")
         self.view.addSubview(barRightFish)
         
