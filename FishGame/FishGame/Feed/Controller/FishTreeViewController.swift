@@ -175,11 +175,11 @@ extension FishTreeViewController
         
         self.view.addSubview(fishView)
         
-        barLeftFish.frame = CGRect(x: 0.03*K_ScreenW, y: 0.037*K_ScreenH, width: 0.06*K_ScreenW, height: 0.775*0.06*K_ScreenW)
+        barLeftFish.frame = CGRect(x: 0.03*K_ScreenW, y: 0.03*K_ScreenH, width: 0.06*K_ScreenW, height: 0.775*0.06*K_ScreenW)
         barLeftFish.image = UIImage(named: "小鱼2")
         self.view.addSubview(barLeftFish)
         
-        barRightFish.frame = CGRect(x: 0.11*K_ScreenW + 0.29*K_ScreenW + 0.018*K_ScreenW, y: 0.035*K_ScreenH, width: 0.06*K_ScreenW, height: 0.8*0.06*K_ScreenW)
+        barRightFish.frame = CGRect(x: 0.11*K_ScreenW + 0.29*K_ScreenW + 0.018*K_ScreenW, y: 0.032*K_ScreenH, width: 0.06*K_ScreenW, height: 0.8*0.06*K_ScreenW)
         barRightFish.image = UIImage(named: "小鱼4")
         self.view.addSubview(barRightFish)
         
