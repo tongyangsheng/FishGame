@@ -53,7 +53,7 @@ class FishOneViewController: UIViewController
         
         progressView.endColor = UIColor.init(r: 255, g: 183, b: 39)
         
-        progressView.cornerRadius = 12
+        progressView.cornerRadius = 11
         progressView.progress = 0
         self.view.addSubview(progressView)
         return progressView
@@ -92,6 +92,13 @@ class FishOneViewController: UIViewController
             fishProgressNow = 100
             let progressInt = Int(fishProgressNow)
             progressLabel.text = "\(progressInt)/100"
+        }
+        else
+        {
+            let progressInt = Int(fishProgressNow)
+            progressLabel.text = "\(progressInt)/100"
+            let progressNow = fishProgressNow / 100.0
+            progressView.progress = CGFloat(progressNow)
         }
     }
     override func viewWillDisappear(_ animated: Bool)
@@ -149,8 +156,8 @@ extension FishOneViewController
         self.view.addSubview(progressBackImage)
         
         progressView.snp.makeConstraints { (maker) in
-            maker.left.equalTo(0.12*K_ScreenW)
-            maker.width.equalTo(0.27*K_ScreenW)
+            maker.left.equalTo(0.117*K_ScreenW)
+            maker.width.equalTo(0.277*K_ScreenW)
             maker.top.equalTo(0.053*K_ScreenH)
             maker.height.equalTo(0.053*K_ScreenH)
         }
