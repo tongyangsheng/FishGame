@@ -90,6 +90,21 @@ class FishFourViewController: UIViewController
         transform = CGAffineTransform.init(scaleX: 1, y: 1)
         fishView.transform = transform
         fishRunRoute1()
+        
+        if K_GameProgress > 4
+        {
+            progressView.progress = 1
+            fishProgressNow = 100
+            let progressInt = Int(fishProgressNow)
+            progressLabel.text = "\(progressInt)/100"
+        }
+        else
+        {
+            let progressInt = Int(fishProgressNow)
+            progressLabel.text = "\(progressInt)/100"
+            let progressNow = fishProgressNow / 100.0
+            progressView.progress = CGFloat(progressNow)
+        }
     }
     override func viewWillDisappear(_ animated: Bool)
     {
