@@ -59,7 +59,7 @@ class FishFourViewController: UIViewController
         
         progressView.endColor = UIColor.init(r: 255, g: 183, b: 39)
         
-        progressView.cornerRadius = 12
+        progressView.cornerRadius = 11
         progressView.progress = 0
         self.view.addSubview(progressView)
         return progressView
@@ -105,7 +105,7 @@ extension FishFourViewController
         backgroundView.image = UIImage(named: "背景图")
         self.view.addSubview(backgroundView)
         
-        fishView.frame = CGRect(x: 1.2*K_ScreenW, y: 100, width: 0.18*K_ScreenW, height: 0.653*0.108*K_ScreenW)
+        fishView.frame = CGRect(x: 1.2*K_ScreenW, y: 100, width: 0.18*K_ScreenW, height: 0.8*0.108*K_ScreenW)
         
         //指定加载的JSON文件
         let animation = Animation.named("fishJson")
@@ -118,7 +118,7 @@ extension FishFourViewController
         //动画循环播放
         fishBubble.loopMode = .loop
         //动画位置
-        fishBubble.frame = CGRect(x: 0, y: -10, width: 0.092*K_ScreenW, height: 0.653*0.108*K_ScreenW)
+        fishBubble.frame = CGRect(x: 0, y: -10, width: 0.092*K_ScreenW, height: 0.8*0.108*K_ScreenW)
         
         let animation1 = Animation.named("beijing_x")
         let imageProvider = BundleImageProvider(bundle: Bundle.main, searchPath: "img_4")
@@ -137,8 +137,8 @@ extension FishFourViewController
         self.view.addSubview(progressBackImage)
         
         progressView.snp.makeConstraints { (maker) in
-            maker.left.equalTo(0.12*K_ScreenW)
-            maker.width.equalTo(0.27*K_ScreenW)
+            maker.left.equalTo(0.117*K_ScreenW)
+            maker.width.equalTo(0.277*K_ScreenW)
             maker.top.equalTo(0.053*K_ScreenH)
             maker.height.equalTo(0.053*K_ScreenH)
         }
@@ -152,7 +152,7 @@ extension FishFourViewController
         self.view.addSubview(progressLabel)
         
         fishImage.image = UIImage(named: "鱼4")
-        fishImage.frame = CGRect(x: 0.03*K_ScreenW, y: 0, width: 0.108*K_ScreenW, height: 0.653*0.108*K_ScreenW)
+        fishImage.frame = CGRect(x: 0.03*K_ScreenW, y: 0, width: 0.108*K_ScreenW, height: 0.8*0.108*K_ScreenW)
         
         fishView.addSubview(fishBubble)
         
@@ -160,11 +160,11 @@ extension FishFourViewController
         
         self.view.addSubview(fishView)
         
-        barLeftFish.frame = CGRect(x: 0.0255*K_ScreenW, y: 0.035*K_ScreenH, width: 0.078*K_ScreenW, height: 0.63*0.078*K_ScreenW)
+        barLeftFish.frame = CGRect(x: 0.0255*K_ScreenW, y: 0.035*K_ScreenH, width: 0.07*K_ScreenW, height: 0.652*0.07*K_ScreenW)
         barLeftFish.image = UIImage(named: "小鱼3")
         self.view.addSubview(barLeftFish)
         
-        barRightFish.frame = CGRect(x: 0.11*K_ScreenW + 0.29*K_ScreenW + 0.018*K_ScreenW, y: 0.035*K_ScreenH, width: 0.06*K_ScreenW, height: 0.63*0.06*K_ScreenW)
+        barRightFish.frame = CGRect(x: 0.11*K_ScreenW + 0.29*K_ScreenW + 0.018*K_ScreenW, y: 0.03*K_ScreenH, width: 0.07*K_ScreenW, height: 0.695*0.07*K_ScreenW)
         barRightFish.image = UIImage(named: "小鱼5")
         self.view.addSubview(barRightFish)
         
