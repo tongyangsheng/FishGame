@@ -50,7 +50,7 @@ class FishTwoViewController: UIViewController
     
     var nowCenterPoint:CGPoint = CGPoint(x: 0, y: 0)
     
-    var fishProgressNow: Double = 0
+    var fishProgressNow: Double = 90
     
     private lazy var progressView: STProgressView = {
         let progressView = STProgressView()
@@ -59,7 +59,7 @@ class FishTwoViewController: UIViewController
         
         progressView.endColor = UIColor.init(r: 255, g: 183, b: 39)
         
-        progressView.cornerRadius = 12
+        progressView.cornerRadius = 11
         progressView.progress = 0
         self.view.addSubview(progressView)
         return progressView
@@ -89,6 +89,21 @@ class FishTwoViewController: UIViewController
         transform = CGAffineTransform.init(scaleX: 1, y: 1)
         fishView.transform = transform
         fishRunRoute1()
+        
+        if K_GameProgress > 2
+        {
+            progressView.progress = 1
+            fishProgressNow = 100
+            let progressInt = Int(fishProgressNow)
+            progressLabel.text = "\(progressInt)/100"
+        }
+        else
+        {
+            let progressInt = Int(fishProgressNow)
+            progressLabel.text = "\(progressInt)/100"
+            let progressNow = fishProgressNow / 100.0
+            progressView.progress = CGFloat(progressNow)
+        }
     }
     override func viewWillDisappear(_ animated: Bool)
     {
@@ -104,7 +119,7 @@ extension FishTwoViewController
         backgroundView.image = UIImage(named: "背景图")
         self.view.addSubview(backgroundView)
         
-        fishView.frame = CGRect(x: 1.2*K_ScreenW, y: 100, width: 0.18*K_ScreenW, height: 0.653*0.108*K_ScreenW)
+        fishView.frame = CGRect(x: 1.2*K_ScreenW, y: 100, width: 0.18*K_ScreenW, height: 0.775*0.108*K_ScreenW)
     
         //指定加载的JSON文件
         let animation = Animation.named("fishJson")
@@ -136,8 +151,8 @@ extension FishTwoViewController
         self.view.addSubview(progressBackImage)
         
         progressView.snp.makeConstraints { (maker) in
-            maker.left.equalTo(0.12*K_ScreenW)
-            maker.width.equalTo(0.27*K_ScreenW)
+            maker.left.equalTo(0.117*K_ScreenW)
+            maker.width.equalTo(0.277*K_ScreenW)
             maker.top.equalTo(0.053*K_ScreenH)
             maker.height.equalTo(0.053*K_ScreenH)
         }
@@ -151,7 +166,7 @@ extension FishTwoViewController
         self.view.addSubview(progressLabel)
         
         fishImage.image = UIImage(named: "鱼2")
-        fishImage.frame = CGRect(x: 0.03*K_ScreenW, y: 0, width: 0.108*K_ScreenW, height: 0.653*0.108*K_ScreenW)
+        fishImage.frame = CGRect(x: 0.03*K_ScreenW, y: 0, width: 0.108*K_ScreenW, height: 0.775*0.108*K_ScreenW)
         
         fishView.addSubview(fishBubble)
         
@@ -159,11 +174,11 @@ extension FishTwoViewController
         
         self.view.addSubview(fishView)
         
-        barLeftFish.frame = CGRect(x: 0.0255*K_ScreenW, y: 0.035*K_ScreenH, width: 0.078*K_ScreenW, height: 0.63*0.078*K_ScreenW)
+        barLeftFish.frame = CGRect(x: 0.0255*K_ScreenW, y: 0.035*K_ScreenH, width: 0.078*K_ScreenW, height: 0.644*0.078*K_ScreenW)
         barLeftFish.image = UIImage(named: "小鱼1")
         self.view.addSubview(barLeftFish)
         
-        barRightFish.frame = CGRect(x: 0.11*K_ScreenW + 0.29*K_ScreenW + 0.018*K_ScreenW, y: 0.035*K_ScreenH, width: 0.06*K_ScreenW, height: 0.63*0.06*K_ScreenW)
+        barRightFish.frame = CGRect(x: 0.11*K_ScreenW + 0.29*K_ScreenW + 0.018*K_ScreenW, y: 0.03*K_ScreenH, width: 0.08*K_ScreenW, height: 0.652*0.08*K_ScreenW)
         barRightFish.image = UIImage(named: "小鱼3")
         self.view.addSubview(barRightFish)
         
