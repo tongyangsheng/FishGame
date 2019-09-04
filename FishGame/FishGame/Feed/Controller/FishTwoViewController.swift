@@ -50,7 +50,7 @@ class FishTwoViewController: UIViewController
     
     var nowCenterPoint:CGPoint = CGPoint(x: 0, y: 0)
     
-    var fishProgressNow: Double = 90
+    var fishProgressNow: Double = 0
     
     private lazy var progressView: STProgressView = {
         let progressView = STProgressView()
