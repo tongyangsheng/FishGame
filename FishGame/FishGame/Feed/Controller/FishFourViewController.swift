@@ -65,8 +65,8 @@ class FishFourViewController: UIViewController
         return progressView
     }()
     
-    let Bubble1 = BubbleView(frame: CGRect(x: 0.45*K_ScreenW, y: 0.1*K_ScreenH, width: 0.135*K_ScreenW, height: 0.72*0.135*K_ScreenW), idiom: "纵横捭阖")
-    let Bubble2 = BubbleView(frame: CGRect(x: 0.1*K_ScreenW, y: 0.45*K_ScreenH, width: 0.135*K_ScreenW, height: 0.72*0.135*K_ScreenW), idiom: "九牛一毛")
+    let Bubble1 = BubbleView(frame: CGRect(x: 0.45*K_ScreenW, y: 0.1*K_ScreenH, width: 0.135*K_ScreenW, height: 0.72*0.135*K_ScreenW), idiom: "前倨后恭")
+    let Bubble2 = BubbleView(frame: CGRect(x: 0.1*K_ScreenW, y: 0.45*K_ScreenH, width: 0.135*K_ScreenW, height: 0.72*0.135*K_ScreenW), idiom: "缠绵悱恻")
     
     override func viewDidLoad()
     {
@@ -195,6 +195,7 @@ extension FishFourViewController
         
         earnButton.frame = CGRect(x: K_ScreenW - 0.28*K_ScreenW - 0.2*K_ScreenW, y: 0.787*K_ScreenH, width: 0.2*K_ScreenW, height: 0.16*K_ScreenH)
         earnButton.setImage(UIImage(named: "赚取鱼食"), for: .normal)
+        earnButton.addTarget(self, action: #selector(pressEarn(_:)), for: .touchUpInside)
         
         if K_GameProgress == 4
         {
