@@ -111,7 +111,8 @@ extension ResultView
     }
     @objc func pressNext(_ button: UIButton)
     {
-        NotificationCenter.default.post(name: NSNotification.Name("continueEarn"), object: self, userInfo: ["post":"NewTest"])
+        print(K_idiomProgress)
+        NotificationCenter.default.post(name: NSNotification.Name("continueEarn\(K_idiomProgress)"), object: self, userInfo: ["post":"NewTest"])
         dismiss()
     }
 }

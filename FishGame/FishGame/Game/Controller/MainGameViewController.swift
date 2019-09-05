@@ -322,12 +322,13 @@ extension MainGameViewController
         progressView.progress = CGFloat(progressNow)
         if countdownSeconds == 0
         {
+            print("释放倒计时Timer")
             let alertView = ResultView(frame: UIScreen.main.bounds, BaitNumber: earnBait)
             alertView.show()
             countdownLabel.text = "END"
             NotificationCenter.default.addObserver(self, selector: #selector(finishEarn), name: NSNotification.Name(rawValue:"finishEarn"), object: nil)
-            NotificationCenter.default.addObserver(self, selector: #selector(continueEarn), name: NSNotification.Name(rawValue:"continueEarn"), object: nil)
-            countdownTimer.invalidate()
+            print(K_idiomProgress)
+            NotificationCenter.default.addObserver(self, selector: #selector(continueEarn), name: NSNotification.Name(rawValue:"continueEarn\(K_idiomProgress)"), object: nil)
         }
     }
     @objc private func fishClick(tapGes: UITapGestureRecognizer)
@@ -407,13 +408,13 @@ extension MainGameViewController
             }
         }
         countdownSeconds = 60.0
-        countdownTimer.invalidate()
-         countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(MainGameViewController.CLOCK), userInfo: nil, repeats: true)
+        
         anwserTimer.invalidate()
         anwserTimer = Timer.scheduledTimer(timeInterval: 25, target: self, selector: #selector(finishThisQuestion), userInfo: nil, repeats: false)
         questionNumber = 0
         K_idiomProgress += 1
         loadQuestion()
+        print("第\(K_idiomProgress)关")
     }
 }
 
