@@ -37,8 +37,6 @@ class MainGameViewController: UIViewController
     
     lazy var json = JSON(jsonData!)
     
-    lazy var gameProgressNumber: Int = 1
-    
     lazy var earnBait: Int = 0
     lazy var questionNumber: Int = 0
     
@@ -174,7 +172,7 @@ extension MainGameViewController
 {
     private func loadQuestion()
     {
-        let progressStr = gameProgressNumber.description
+        let progressStr = K_idiomProgress.description
         guard let json1 = json[progressStr][questionNumber]["question"].string else { print("已加载所有题目"); return }
         showIdiomView.setTitle(json1)
         guard let json2 = json[progressStr][questionNumber]["idiomFrom"].string else { print("已加载所有题目"); return }
@@ -205,7 +203,7 @@ extension MainGameViewController
     }
     private func createFish()
     {
-        let progressStr = gameProgressNumber.description
+        let progressStr = K_idiomProgress.description
         for (key,subJson):(String, JSON) in json[progressStr][questionNumber]["questionAnwser"]
         {
             let keyTag = Int(key)! + 1
@@ -394,6 +392,7 @@ extension MainGameViewController
     {
         K_AudioPlayer.play()
         K_Bait = K_Bait + earnBait
+        K_idiomProgress += 1
         self.dismiss(animated: true, completion: nil)
         countdownTimer.invalidate()
         NotificationCenter.default.removeObserver(self)
@@ -413,7 +412,7 @@ extension MainGameViewController
         anwserTimer.invalidate()
         anwserTimer = Timer.scheduledTimer(timeInterval: 25, target: self, selector: #selector(finishThisQuestion), userInfo: nil, repeats: false)
         questionNumber = 0
-        gameProgressNumber += 1
+        K_idiomProgress += 1
         loadQuestion()
     }
 }

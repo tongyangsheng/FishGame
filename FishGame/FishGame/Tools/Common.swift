@@ -33,7 +33,10 @@ let K_ScreenH = UIScreen.main.bounds.height
 var K_Bait = 100
 
 //游戏等级
-var K_GameProgress = 8
+var K_GameProgress = 1
+
+//成语关卡
+var K_idiomProgress: Int = 1
 
 //全局背景音乐
 var K_AudioPlayer: AVAudioPlayer =
