@@ -66,8 +66,8 @@ class FishSixViewController: UIViewController
         return progressView
     }()
     
-    let Bubble1 = BubbleView(frame: CGRect(x: 0.45*K_ScreenW, y: 0.1*K_ScreenH, width: 0.135*K_ScreenW, height: 0.72*0.135*K_ScreenW), idiom: "纵横捭阖")
-    let Bubble2 = BubbleView(frame: CGRect(x: 0.1*K_ScreenW, y: 0.45*K_ScreenH, width: 0.135*K_ScreenW, height: 0.72*0.135*K_ScreenW), idiom: "九牛一毛")
+    let Bubble1 = BubbleView(frame: CGRect(x: 0.45*K_ScreenW, y: 0.1*K_ScreenH, width: 0.135*K_ScreenW, height: 0.72*0.135*K_ScreenW), idiom: "东施效颦")
+    let Bubble2 = BubbleView(frame: CGRect(x: 0.1*K_ScreenW, y: 0.45*K_ScreenH, width: 0.135*K_ScreenW, height: 0.72*0.135*K_ScreenW), idiom: "不求甚解")
     
     override func viewDidLoad()
     {
@@ -90,6 +90,21 @@ class FishSixViewController: UIViewController
         transform = CGAffineTransform.init(scaleX: 1, y: 1)
         fishView.transform = transform
         fishRunRoute1()
+        
+        if K_GameProgress > 6
+        {
+            progressView.progress = 1
+            fishProgressNow = 100
+            let progressInt = Int(fishProgressNow)
+            progressLabel.text = "\(progressInt)/100"
+        }
+        else
+        {
+            let progressInt = Int(fishProgressNow)
+            progressLabel.text = "\(progressInt)/100"
+            let progressNow = fishProgressNow / 100.0
+            progressView.progress = CGFloat(progressNow)
+        }
     }
     override func viewWillDisappear(_ animated: Bool)
     {
@@ -105,7 +120,7 @@ extension FishSixViewController
         backgroundView.image = UIImage(named: "背景图")
         self.view.addSubview(backgroundView)
         
-        fishView.frame = CGRect(x: 1.2*K_ScreenW, y: 100, width: 0.18*K_ScreenW, height: 0.653*0.108*K_ScreenW)
+        fishView.frame = CGRect(x: 1.2*K_ScreenW, y: 100, width: 0.18*K_ScreenW, height: 0.108*K_ScreenW)
         
         //指定加载的JSON文件
         let animation = Animation.named("fishJson")
@@ -118,7 +133,7 @@ extension FishSixViewController
         //动画循环播放
         fishBubble.loopMode = .loop
         //动画位置
-        fishBubble.frame = CGRect(x: 0, y: -10, width: 0.092*K_ScreenW, height: 0.653*0.108*K_ScreenW)
+        fishBubble.frame = CGRect(x: 0, y: -10, width: 0.092*K_ScreenW, height: 0.108*K_ScreenW)
         
         let animation1 = Animation.named("beijing_x")
         let imageProvider = BundleImageProvider(bundle: Bundle.main, searchPath: "img_4")
@@ -152,7 +167,7 @@ extension FishSixViewController
         self.view.addSubview(progressLabel)
         
         fishImage.image = UIImage(named: "鱼6")
-        fishImage.frame = CGRect(x: 0.03*K_ScreenW, y: 0, width: 0.108*K_ScreenW, height: 0.653*0.108*K_ScreenW)
+        fishImage.frame = CGRect(x: 0.03*K_ScreenW, y: 0, width: 0.108*K_ScreenW, height: 0.108*K_ScreenW)
         
         fishView.addSubview(fishBubble)
         
@@ -160,11 +175,11 @@ extension FishSixViewController
         
         self.view.addSubview(fishView)
         
-        barLeftFish.frame = CGRect(x: 0.0255*K_ScreenW, y: 0.035*K_ScreenH, width: 0.078*K_ScreenW, height: 0.63*0.078*K_ScreenW)
+        barLeftFish.frame = CGRect(x: 0.03*K_ScreenW, y: 0.035*K_ScreenH, width: 0.06*K_ScreenW, height: 0.695*0.06*K_ScreenW)
         barLeftFish.image = UIImage(named: "小鱼5")
         self.view.addSubview(barLeftFish)
         
-        barRightFish.frame = CGRect(x: 0.11*K_ScreenW + 0.29*K_ScreenW + 0.018*K_ScreenW, y: 0.035*K_ScreenH, width: 0.06*K_ScreenW, height: 0.63*0.06*K_ScreenW)
+        barRightFish.frame = CGRect(x: 0.11*K_ScreenW + 0.29*K_ScreenW + 0.018*K_ScreenW, y: 0.035*K_ScreenH, width: 0.07*K_ScreenW, height: 0.56*0.07*K_ScreenW)
         barRightFish.image = UIImage(named: "小鱼7")
         self.view.addSubview(barRightFish)
         
