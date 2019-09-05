@@ -551,7 +551,7 @@ extension FishOneViewController
         }
         else
         {
-            if K_Bait <= 0
+            if K_Bait < 10
             {
                 let WarningView = LowBaitView()
                 WarningView.show()
