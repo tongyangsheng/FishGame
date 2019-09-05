@@ -194,6 +194,7 @@ extension FishTwoViewController
         
         earnButton.frame = CGRect(x: K_ScreenW - 0.28*K_ScreenW - 0.2*K_ScreenW, y: 0.787*K_ScreenH, width: 0.2*K_ScreenW, height: 0.16*K_ScreenH)
         earnButton.setImage(UIImage(named: "赚取鱼食"), for: .normal)
+        earnButton.addTarget(self, action: #selector(pressEarn(_:)), for: .touchUpInside)
         
         if K_GameProgress == 2
         {
