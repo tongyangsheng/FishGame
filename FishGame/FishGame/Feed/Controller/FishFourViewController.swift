@@ -579,8 +579,8 @@ extension FishFourViewController
                 if progressNow >= 1
                 {
                     progressNow = 1
-                    K_GameProgress = 3
-                    print("进入第四关！")
+                    K_GameProgress = 5
+                    print("进入第五关！")
                     feedButton.removeFromSuperview()
                     BaitStr.removeFromSuperview()
                     earnButton.removeFromSuperview()
@@ -590,7 +590,7 @@ extension FishFourViewController
         }
         else
         {
-            if K_Bait <= 0
+            if K_Bait < 10
             {
                 let WarningView = LowBaitView()
                 WarningView.show()
