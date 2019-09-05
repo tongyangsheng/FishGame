@@ -579,7 +579,7 @@ extension FishTreeViewController
                 if progressNow >= 1
                 {
                     progressNow = 1
-                    K_GameProgress = 3
+                    K_GameProgress = 4
                     print("进入第四关！")
                     feedButton.removeFromSuperview()
                     BaitStr.removeFromSuperview()
@@ -590,7 +590,7 @@ extension FishTreeViewController
         }
         else
         {
-            if K_Bait <= 0
+            if K_Bait < 10
             {
                 let WarningView = LowBaitView()
                 WarningView.show()
