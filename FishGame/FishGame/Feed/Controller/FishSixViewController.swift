@@ -195,6 +195,7 @@ extension FishSixViewController
         
         earnButton.frame = CGRect(x: K_ScreenW - 0.28*K_ScreenW - 0.2*K_ScreenW, y: 0.787*K_ScreenH, width: 0.2*K_ScreenW, height: 0.16*K_ScreenH)
         earnButton.setImage(UIImage(named: "赚取鱼食"), for: .normal)
+        earnButton.addTarget(self, action: #selector(pressEarn(_:)), for: .touchUpInside)
         
         if K_GameProgress == 6
         {
@@ -578,8 +579,8 @@ extension FishSixViewController
                 if progressNow >= 1
                 {
                     progressNow = 1
-                    K_GameProgress = 3
-                    print("进入第四关！")
+                    K_GameProgress = 7
+                    print("进入第七关！")
                     feedButton.removeFromSuperview()
                     BaitStr.removeFromSuperview()
                     earnButton.removeFromSuperview()
@@ -589,7 +590,7 @@ extension FishSixViewController
         }
         else
         {
-            if K_Bait <= 0
+            if K_Bait < 10
             {
                 let WarningView = LowBaitView()
                 WarningView.show()
