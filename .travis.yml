@@ -1,7 +1,7 @@
 language: objective-c
 osx_image: xcode10.2.1
-xcode_workspace: FishGame.xcworkspace
-xcode_scheme: FishGame
+xcode_workspace:FishGame/FishGame.xcworkspace
+xcode_scheme: FishGame/FishGame
 xcode_destination: platform=iOS Simulator,OS=12.4,name=iPhone X
 before_install:
 - cd FishGame
