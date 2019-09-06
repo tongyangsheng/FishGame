@@ -1,4 +1,0 @@
-language: objective-c
-xcode_project:FishGame/FishGame.xcworkspace
-xcode_scheme: FishGameTests
-xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone Xs Max
