@@ -1,4 +1,8 @@
 language: objective-c
-xcode_project: FishGame # path to your xcodeproj folder
+osx_image: xcode10.2.1
+xcode_workspace: FishGame.xcworkspace
 xcode_scheme: FishGame
-xcode_destination: platform=iOS Simulator,OS=12.4,name=iPhone Xs Max
+xcode_destination: platform=iOS Simulator,OS=12.4,name=iPhone X
+before_install:
+- cd FishGame
+- pod install
