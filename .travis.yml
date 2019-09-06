@@ -1,7 +1,4 @@
-language:
-  - swift
-osx_image: xcode10.2.1
-script:
- - xcodebuild -scheme FishGame/FishGame -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone Xs Max,OS=12.4.1' build test
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
+language: objective-c
+xcode_project:FishGame/FishGame.xcworkspace # path to your xcodeproj folder
+xcode_scheme: FishGameTests
+xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone Xs Max
