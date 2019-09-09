@@ -8,8 +8,10 @@
 <a href="https://www.npmjs.com/package/drone"><img src=https://img.shields.io/badge/FishGame-v1.0.0-success></a>
 </p>
 This is a puzzle game for teenagers and children. The main purpose of the game is to consolidate the foundation of children's idioms and strengthen their language literacy. The game is rich and meaningful.</br></br>
+
 <p align="center">
 <img src=https://github.com/tongyangsheng/FishGame/blob/master/show_img/startup.png>
 </p><br/>
-The game is divided into two parts: aquaculture and fishing. In the aquaculture part, you can feed your own fry by earning fish food, so that they can grow up, and thus get the right to feed other fry.
-> - At present, we have opened eight different fry farms to meet your different needs.
+The game is divided into two parts: aquaculture and fishing. In the aquaculture part, you can feed your own fry by earning fish food, so that they can grow up, and thus get the right to feed other fry.<br/><br/>
+
+- At present, we have opened eight different fry farms to meet your different needs.
