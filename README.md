@@ -15,3 +15,6 @@ This is a puzzle game for teenagers and children. The main purpose of the game i
 The game is divided into two parts: aquaculture and fishing. In the aquaculture part, you can feed your own fry by earning fish food, so that they can grow up, and thus get the right to feed other fry.<br/><br/>
 
 - At present, we have opened eight different fry farms to meet your different needs.
+<p align="center">
+<img src=https://github.com/tongyangsheng/FishGame/blob/master/show_img/iPhone%206-7-8%20–%201.jpg>
+</p><br/>
