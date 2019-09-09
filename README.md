@@ -7,4 +7,5 @@
 <a href="https://www.npmjs.com/package/drone"><img src=https://img.shields.io/badge/Cocoapods-v1.7.5-informational></a>
 <a href="https://www.npmjs.com/package/drone"><img src=https://img.shields.io/badge/FishGame-v1.0.0-success></a>
 </p>
-This is a puzzle game for teenagers and children. The main purpose of the game is to consolidate the foundation of children's idioms and strengthen their language literacy. The game is rich and meaningful.
+This is a puzzle game for teenagers and children. The main purpose of the game is to consolidate the foundation of children's idioms and strengthen their language literacy. The game is rich and meaningful.<br/>
+![Image text](https://github.com/tongyangsheng/DataStructureForSwift/blob/master/show-img/show1.jpg)<br/>
