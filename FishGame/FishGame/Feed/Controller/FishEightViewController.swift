@@ -202,6 +202,7 @@ extension FishEightViewController
         }
         
         offButton.frame = CGRect(x: K_ScreenW - 0.057*K_ScreenW - 0.027*K_ScreenW , y: 0.04*K_ScreenH, width: 0.057*K_ScreenW, height: 0.057*K_ScreenW)
+        offButton.addTarget(self, action: #selector(quitApp(_:)), for: .touchUpInside)
         offButton.setImage(UIImage(named: "关闭"), for: .normal)
         self.view.addSubview(offButton)
         
@@ -510,6 +511,11 @@ extension FishEightViewController
     @objc func pressPrevious(_ button: UIButton)
     {
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @objc func quitApp(_ button: UIButton)
+    {
+        exit(0)
     }
     
     @objc func pressNext(_ button: UIButton)

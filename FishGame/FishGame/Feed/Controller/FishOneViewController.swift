@@ -484,7 +484,7 @@ extension FishOneViewController
 {
     @objc func quitApp(_ button: UIButton)
     {
-        UIControl().sendAction(#selector(NSXPCConnection.suspend), to: UIApplication.shared, for: nil)
+        exit(0)
     }
     @objc func pressNext(_ button: UIButton)
     {
