@@ -209,6 +209,7 @@ extension FishOneViewController
             self.view.addSubview(earnButton)
         }
         offButton.frame = CGRect(x: K_ScreenW - 0.057*K_ScreenW - 0.027*K_ScreenW , y: 0.04*K_ScreenH, width: 0.057*K_ScreenW, height: 0.057*K_ScreenW)
+        offButton.addTarget(self, action: #selector(quitApp(_:)), for: .touchUpInside)
         offButton.setImage(UIImage(named: "关闭"), for: .normal)
         self.view.addSubview(offButton)
         
@@ -481,6 +482,10 @@ extension FishOneViewController
 
 extension FishOneViewController
 {
+    @objc func quitApp(_ button: UIButton)
+    {
+        UIControl().sendAction(#selector(NSXPCConnection.suspend), to: UIApplication.shared, for: nil)
+    }
     @objc func pressNext(_ button: UIButton)
     {
         let SecondVC = FishTwoViewController()
