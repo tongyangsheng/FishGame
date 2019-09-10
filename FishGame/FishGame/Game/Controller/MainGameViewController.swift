@@ -23,6 +23,8 @@ class MainGameViewController: UIViewController
     let BaitNumberLabel = UILabel()
     
     var anwserTimer = Timer()
+    
+    lazy var rightAnwser: String = "学富五车"
 
     let showIdiomView = idiomView(frame: CGRect(x: 0.355*K_ScreenW, y: 0.03*K_ScreenH, width: 0.29*K_ScreenW, height: 0.21*0.29*K_ScreenW), idiomStr: "学富五车")
     var idiomDetailView = IdiomDetailView(frame: CGRect(x: K_ScreenW-0.28*K_ScreenW-0.0225*K_ScreenW, y: 0.15*K_ScreenH, width: 0.28*K_ScreenW, height: 0.4*0.28*K_ScreenW), idiomFrom: "源自：《庄子·天下》：“惠施多方，其书五车。”", idiomAnalysis: "解析：五车：五车书。原指庄子形容惠施的学问有五车书那么多，现形容读书多，学识丰富。", idiomMore: "1")
@@ -177,6 +179,7 @@ extension MainGameViewController
         showIdiomView.setTitle(json1)
         guard let json2 = json[progressStr][questionNumber]["idiomFrom"].string else { print("已加载所有题目"); return }
         guard let json3 = json[progressStr][questionNumber]["idiomAnalysis"].string else { print("已加载所有题目"); return }
+        rightAnwser = json[progressStr][questionNumber]["right"].string!
         idiomDetailView.idiomFromLabel.text = json2
         idiomDetailView.idiomAnalysisLabel.text = json3
         createFish()
@@ -361,7 +364,10 @@ extension MainGameViewController
                         earnBait += 1
                         BaitNumberLabel.text = earnBait.description
                         questionNumber += 1
-                        loadQuestion()
+                        showIdiomView.idiomLabel.text = rightAnwser
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                            self.loadQuestion()
+                        }
                         print("点击了正确答案！")
                     }
                     else
