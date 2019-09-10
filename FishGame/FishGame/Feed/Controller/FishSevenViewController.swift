@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Lottie
+import Lottie
 import STKitSwift
 import AudioToolbox
 import Toast_Swift

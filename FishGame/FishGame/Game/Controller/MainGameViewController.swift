@@ -325,10 +325,13 @@ extension MainGameViewController
             print("释放倒计时Timer")
             let alertView = ResultView(frame: UIScreen.main.bounds, BaitNumber: earnBait)
             alertView.show()
-            countdownLabel.text = "END"
             NotificationCenter.default.addObserver(self, selector: #selector(finishEarn), name: NSNotification.Name(rawValue:"finishEarn"), object: nil)
             print(K_idiomProgress)
             NotificationCenter.default.addObserver(self, selector: #selector(continueEarn), name: NSNotification.Name(rawValue:"continueEarn\(K_idiomProgress)"), object: nil)
+        }
+        if countdownSeconds <= 0
+        {
+            countdownLabel.text = "END"
         }
     }
     @objc private func fishClick(tapGes: UITapGestureRecognizer)
@@ -350,8 +353,8 @@ extension MainGameViewController
                             let falseView = self.view.viewWithTag(tagValue)
                             falseView?.removeFromSuperview()
                         }
-                        UIView.animate(withDuration: 0.8, delay: 0, options: .curveEaseOut, animations: {
-                            subView.frame = CGRect(x: subView.frame.origin.x, y: subView.frame.origin.y - 0.4*K_ScreenH, width: subView.frame.size.width, height: subView.frame.size.height)
+                        UIView.animate(withDuration: 1.2, delay: 0, options: .curveEaseOut, animations: {
+                            subView.frame = CGRect(x: 0.4*K_ScreenW, y: 0.1*K_ScreenH, width: subView.frame.size.width, height: subView.frame.size.height)
                             subView.alpha = 0
                         }, completion: nil)
                         anwserTimer.invalidate()
