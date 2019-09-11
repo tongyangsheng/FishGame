@@ -77,6 +77,7 @@ extension LowBaitView
         goButton.setTitle("去赢取", for: .normal)
         goButton.setTitleColor(UIColor.init(r: 255, g: 255, b: 255), for: .normal)
         goButton.titleLabel?.font = UIFont(name: "PingFang SC", size: 18)
+        goButton.addTarget(self, action: #selector(pressToEarn(_:)), for: .touchUpInside)
         contentView.addSubview(goButton)
     }
 }
@@ -86,6 +87,12 @@ extension LowBaitView
     @objc func pressCancel(_ button: UIButton)
     {
         self.removeFromSuperview()
+    }
+    @objc func pressToEarn(_ button: UIButton)
+    {
+        NotificationCenter.default.post(name: NSNotification.Name("toEarn\(K_EarnTime)"), object: self, userInfo: ["post":"NewTest"])
+        K_EarnTime += 1
+        dismiss()
     }
 }
 

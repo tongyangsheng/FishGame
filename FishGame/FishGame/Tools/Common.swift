@@ -30,7 +30,7 @@ let K_ScreenW = UIScreen.main.bounds.width
 let K_ScreenH = UIScreen.main.bounds.height
 
 //初始鱼食数量
-var K_Bait = 100
+var K_Bait = 10
 
 //游戏等级
 var K_GameProgress = 1
@@ -48,4 +48,6 @@ var K_AudioPlayer: AVAudioPlayer =
     K_AudioPlayer.play()
     return K_AudioPlayer
 }()
+//
+var K_EarnTime = 0
 

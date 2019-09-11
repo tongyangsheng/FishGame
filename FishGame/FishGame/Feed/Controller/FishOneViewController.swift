@@ -492,8 +492,11 @@ extension FishOneViewController
         self.navigationController?.pushViewController(SecondVC, animated: true)
     }
     
+    
+    
     @objc func pressFeed(_ button: UIButton)
     {
+        NotificationCenter.default.addObserver(self, selector: #selector(pressEarn(_:)), name: NSNotification.Name(rawValue:"toEarn\(K_EarnTime)"), object: nil)
         if fishView.layer.animationKeys() == ["route1"] || fishView.layer.animationKeys() == ["route2"] || fishView.layer.animationKeys() == ["route3"] || fishView.layer.animationKeys() == ["route4"]
         {
             if K_Bait < 10
