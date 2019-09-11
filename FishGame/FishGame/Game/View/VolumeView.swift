@@ -12,7 +12,7 @@ import MediaPlayer
 class VolumeView: UIView
 {
     let contentView = UIView()
-    let slider:UISlider = UISlider()
+    var slider:UISlider = UISlider()
     override init(frame: CGRect)
     {
         super.init(frame: frame)
@@ -69,7 +69,7 @@ extension VolumeView
         slider.maximumValue = 1
         slider.setValue(AVAudioSession.sharedInstance().outputVolume, animated: true)
         slider.minimumTrackTintColor = UIColor(r: 109, g: 177, b: 247)
-        slider.addTarget(self, action: #selector(systemVolume), for: .valueChanged)
+        slider.addTarget(self, action: #selector(systemVolume(sender:)), for: .valueChanged)
         contentView.addSubview(slider)
     }
 }
@@ -108,10 +108,9 @@ extension VolumeView
         dismiss()
     }
     
-    @objc func systemVolume()
+    @objc func systemVolume(sender: UISlider)
     {
-        (MPVolumeView().subviews.filter{NSStringFromClass($0.classForCoder) == "MPVolumeSlider"}.first as? UISlider)?.setValue(slider.value, animated: false
-        )
+        MPVolumeView.setVolum(slider.value)
     }
 }
 
