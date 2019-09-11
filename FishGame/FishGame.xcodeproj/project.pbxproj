@@ -24,6 +24,7 @@
 		EF3B2804230BC04B00E1EA79 /* photoShutter.caf in Resources */ = {isa = PBXBuildFile; fileRef = EF3B2803230BC04A00E1EA79 /* photoShutter.caf */; };
 		EF3B2806230BC0C900E1EA79 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF3B2805230BC0C900E1EA79 /* AudioToolbox.framework */; };
 		EF3B2808230BD10300E1EA79 /* weishi.json in Resources */ = {isa = PBXBuildFile; fileRef = EF3B2807230BD10300E1EA79 /* weishi.json */; };
+		EF4D4ACE232889D600F7FB92 /* MPVolumeView-Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF4D4ACD232889D600F7FB92 /* MPVolumeView-Extension.swift */; };
 		EF53C7572317B368004A4A65 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF53C7562317B368004A4A65 /* AVFoundation.framework */; };
 		EF53C75B2317C2C6004A4A65 /* backMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EF53C75A2317C2C6004A4A65 /* backMusic.mp3 */; };
 		EF53C75D2317C654004A4A65 /* gameMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = EF53C75C2317C654004A4A65 /* gameMusic.mp3 */; };
@@ -107,6 +108,7 @@
 		EF3B2803230BC04A00E1EA79 /* photoShutter.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = photoShutter.caf; sourceTree = "<group>"; };
 		EF3B2805230BC0C900E1EA79 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		EF3B2807230BD10300E1EA79 /* weishi.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = weishi.json; sourceTree = "<group>"; };
+		EF4D4ACD232889D600F7FB92 /* MPVolumeView-Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MPVolumeView-Extension.swift"; sourceTree = "<group>"; };
 		EF53C7562317B368004A4A65 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		EF53C75A2317C2C6004A4A65 /* backMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backMusic.mp3; sourceTree = "<group>"; };
 		EF53C75C2317C654004A4A65 /* gameMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = gameMusic.mp3; sourceTree = "<group>"; };
@@ -359,6 +361,7 @@
 			children = (
 				EF0DD81B23054ED000F7E7CB /* UIDevice-Extension.swift */,
 				EF9D2633230A35C9007EECDB /* UIColor-Extension.swift */,
+				EF4D4ACD232889D600F7FB92 /* MPVolumeView-Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -707,6 +710,7 @@
 				EFA546C723164DAD00495721 /* FishFiveViewController.swift in Sources */,
 				EF0DD7DE23053F5700F7E7CB /* AppDelegate.swift in Sources */,
 				EF0DD81C23054ED000F7E7CB /* UIDevice-Extension.swift in Sources */,
+				EF4D4ACE232889D600F7FB92 /* MPVolumeView-Extension.swift in Sources */,
 				EF64A1062314D53100682684 /* BackAlertView.swift in Sources */,
 				EFA546C523164D8B00495721 /* FishFourViewController.swift in Sources */,
 				EFA4C356230FB7430069849E /* VolumeView.swift in Sources */,
