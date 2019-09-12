@@ -43,12 +43,26 @@ extension ScreenShotView
         self.frame = UIScreen.main.bounds
         self.backgroundColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.7)
         //主体弹窗
-        contentView.frame = CGRect(x: 0.4*K_ScreenW, y: 0.03*K_ScreenH, width: 0.2*K_ScreenW, height: 1.75*0.2*K_ScreenW)
+        if UIDevice.current.userInterfaceIdiom == .pad
+        {
+            contentView.frame = CGRect(x: 0.4*K_ScreenW, y: 0.15*K_ScreenH, width: 0.2*K_ScreenW, height: 1.75*0.2*K_ScreenW)
+        }
+        else
+        {
+            contentView.frame = CGRect(x: 0.4*K_ScreenW, y: 0.03*K_ScreenH, width: 0.2*K_ScreenW, height: 1.75*0.2*K_ScreenW)
+        }
         contentView.backgroundColor = .blue
         contentView.layer.cornerRadius = 12.0
         setupContentUI()
         self.addSubview(contentView)
-        fishImageView.frame = CGRect(x: 0.065*K_ScreenW, y: 0.2*K_ScreenH, width: 0.08*K_ScreenW, height: 0.65*0.08*K_ScreenW)
+        if UIDevice.current.userInterfaceIdiom == .pad
+        {
+        fishImageView.frame = CGRect(x: 0.065*K_ScreenW, y: 0.13*K_ScreenH, width: 0.08*K_ScreenW, height: 0.65*0.08*K_ScreenW)
+        }
+        else
+        {
+            fishImageView.frame = CGRect(x: 0.065*K_ScreenW, y: 0.2*K_ScreenH, width: 0.08*K_ScreenW, height: 0.65*0.08*K_ScreenW)
+        }
         fishImageView.image = UIImage(named: fishTypeImageStr)
         contentView.addSubview(fishImageView)
         //保存按钮
