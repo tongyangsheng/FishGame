@@ -198,7 +198,15 @@ extension FishTwoViewController
         feedButton.setImage(UIImage(named: "喂食"), for: .normal)
         feedButton.addTarget(self, action: #selector(pressFeed(_:)), for: .touchUpInside)
         
-        BaitStr.frame = CGRect(x: feedButton.frame.origin.x + 0.58*feedButton.frame.width, y: feedButton.frame.origin.y+0.32*feedButton.frame.height, width: 0.2*feedButton.frame.width, height: 0.6*0.14*feedButton.frame.width)
+       
+        if UIDevice.current.userInterfaceIdiom == .pad
+        {
+            BaitStr.frame = CGRect(x: feedButton.frame.origin.x + 0.55*feedButton.frame.width, y: feedButton.frame.origin.y+0.39*feedButton.frame.height, width: 0.2*feedButton.frame.width, height: 0.6*0.14*feedButton.frame.width)
+        }
+        else
+        {
+            BaitStr.frame = CGRect(x: feedButton.frame.origin.x + 0.58*feedButton.frame.width, y: feedButton.frame.origin.y+0.32*feedButton.frame.height, width: 0.2*feedButton.frame.width, height: 0.6*0.14*feedButton.frame.width)
+        }
         BaitStr.textColor = .white
         BaitStr.textAlignment = .center
         BaitStr.font = UIFont.systemFont(ofSize: 16)
