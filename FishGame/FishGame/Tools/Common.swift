@@ -29,6 +29,8 @@ let tabBarHeight = (bottomSafeAreaHeight + 49)
 let K_ScreenW = UIScreen.main.bounds.width
 let K_ScreenH = UIScreen.main.bounds.height
 
+
+
 //初始鱼食数量
 var K_Bait = 10
 

@@ -151,18 +151,31 @@ extension FishOneViewController
         backgroudFish.frame = UIScreen.main.bounds
         self.view.addSubview(backgroudFish)
         
-        progressBackImage.image = UIImage(named: "进度条")
-        progressBackImage.frame = CGRect(x: 0.11*K_ScreenW, y: 0.035*K_ScreenH, width: 0.29*K_ScreenW, height: 0.09*K_ScreenH)
-        self.view.addSubview(progressBackImage)
         
-        progressView.snp.makeConstraints { (maker) in
-            maker.left.equalTo(0.117*K_ScreenW)
-            maker.width.equalTo(0.277*K_ScreenW)
-            maker.top.equalTo(0.053*K_ScreenH)
-            maker.height.equalTo(0.053*K_ScreenH)
+        progressBackImage.image = UIImage(named: "进度条")
+        progressBackImage.frame = CGRect(x: 0.11*K_ScreenW, y: 0.035*K_ScreenH, width: 0.29*K_ScreenW, height: 0.15*0.29*K_ScreenW)
+        self.view.addSubview(progressBackImage)
+        if UIDevice.current.userInterfaceIdiom == .pad
+        {
+            progressView.snp.makeConstraints { (maker) in
+                maker.left.equalTo(0.117*K_ScreenW)
+                maker.width.equalTo(0.277*K_ScreenW)
+                maker.top.equalTo(0.053*K_ScreenH)
+                maker.height.equalTo(0.08*0.277*K_ScreenW)
+            }
+            progressLabel.frame = CGRect(x: 0.12*K_ScreenW + 0.5*0.27*K_ScreenW - 50, y: 0.04*K_ScreenH, width: 100, height: 0.053*K_ScreenH)
+        }
+        else
+        {
+            progressView.snp.makeConstraints { (maker) in
+                maker.left.equalTo(0.117*K_ScreenW)
+                maker.width.equalTo(0.277*K_ScreenW)
+                maker.top.equalTo(0.053*K_ScreenH)
+                maker.height.equalTo(0.1*0.277*K_ScreenW)
+        }
+            progressLabel.frame = CGRect(x: 0.12*K_ScreenW + 0.5*0.27*K_ScreenW - 50, y: 0.053*K_ScreenH, width: 100, height: 0.053*K_ScreenH)
         }
         
-        progressLabel.frame = CGRect(x: 0.12*K_ScreenW + 0.5*0.27*K_ScreenW - 50, y: 0.053*K_ScreenH, width: 100, height: 0.053*K_ScreenH)
         progressLabel.textAlignment = .center
         progressLabel.textColor = .white
         progressLabel.font = UIFont(name: "PingFang SC", size: 12)
@@ -176,7 +189,7 @@ extension FishOneViewController
         fishView.addSubview(fishBubble)
         
         fishView.addSubview(fishImage)
-
+        
         
         self.view.addSubview(fishView)
         //        第一个界面没有更小的鱼
@@ -192,8 +205,14 @@ extension FishOneViewController
         feedButton.setImage(UIImage(named: "喂食"), for: .normal)
         feedButton.addTarget(self, action: #selector(pressFeed(_:)), for: .touchUpInside)
         
-        
+        if UIDevice.current.userInterfaceIdiom == .pad
+        {
+            BaitStr.frame = CGRect(x: feedButton.frame.origin.x + 0.56*feedButton.frame.width, y: feedButton.frame.origin.y+0.37*feedButton.frame.height, width: 0.2*feedButton.frame.width, height: 0.6*0.14*feedButton.frame.width)
+        }
+        else
+        {
         BaitStr.frame = CGRect(x: feedButton.frame.origin.x + 0.58*feedButton.frame.width, y: feedButton.frame.origin.y+0.32*feedButton.frame.height, width: 0.2*feedButton.frame.width, height: 0.6*0.14*feedButton.frame.width)
+        }
         BaitStr.textColor = .white
         BaitStr.textAlignment = .center
         BaitStr.font = UIFont.systemFont(ofSize: 16)
@@ -786,6 +805,7 @@ extension FishOneViewController: UINavigationControllerDelegate
         navigationController.setNavigationBarHidden(true, animated: true)
     }
 }
+
 
 
 
