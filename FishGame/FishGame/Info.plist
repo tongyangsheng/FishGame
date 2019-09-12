@@ -19,9 +19,23 @@
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>7</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>“FishGame”需要访问您的蓝牙</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>“FishGame”需要访问您的日历</string>
+	<key>NSCameraUsageDescription</key>
+	<string>“FishGame”需要使用您的相机</string>
+	<key>NSContactsUsageDescription</key>
+	<string>“FishGame”需要访问您的通讯录</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>“FishGame”后台获取您的位置</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>“FishGame”使用期间获取您的位置</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>“FishGame”需要使用您的麦克风</string>
 	<key>NSPhotoLibraryAddUsageDescription</key>
 	<string>“FishGame”需要访问您的相册</string>
 	<key>UIRequiredDeviceCapabilities</key>
